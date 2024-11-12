@@ -16,6 +16,7 @@ class MainAppBackground extends StatelessWidget {
             const SizedBox(width: 50),
             Expanded(
                 child: Container(
+              margin: EdgeInsets.fromLTRB(0, 23, 0, 0),
               color: AppColors.secondaryAccent,
             )),
             const SizedBox(width: 50),
@@ -26,6 +27,7 @@ class MainAppBackground extends StatelessWidget {
             const Expanded(child: SizedBox()),
             Container(
               width: 40,
+              margin: EdgeInsets.fromLTRB(0, 23, 0, 0),
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
@@ -37,24 +39,27 @@ class MainAppBackground extends StatelessWidget {
         ),
         Column(
           children: [
+            const SizedBox(
+              height: 0,
+            ),
             Container(
-              height: 22,
+              height: 45,
               decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
-                Color(0xFFFFde59),
-                Color(0xFFFFde59),
                 Color(0xFFFF914d),
+                Color(0xFFFFde59),
+                Color(0xFFFFde59),
                 Color(0xFFFF914d)
               ], stops: [
                 0,
-                0.42,
-                0.58,
+                0.4,
+                0.6,
                 1
               ])),
             ),
             const Expanded(child: SizedBox()),
             Container(
-              height: 15,
+              height: 60,
               decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xFFFFde59),

@@ -35,13 +35,22 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         widthFactor: 0.7,
                         heightFactor: 1,
                         child: Container(
-                            decoration: const BoxDecoration(
-                              gradient: SweepGradient(
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(
+                                      0.2), // Kolor cienia z przezroczystością
+                                  spreadRadius: 5, // Rozprzestrzenianie cienia
+                                  blurRadius: 10, // Rozmycie cienia
+                                  offset: const Offset(0, 5),
+                                )
+                              ],
+                              gradient: const SweepGradient(
                                 colors: [Color(0xffffde59), Color(0xfffc466b)],
                                 stops: [0.2, 0.7],
                                 center: Alignment.topRight,
                               ),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30),
                               ),
@@ -99,18 +108,37 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         widthFactor: 0.7,
                         heightFactor: 1,
                         child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: SweepGradient(
-                              colors: [Color(0xffffde59), Color(0xfffc466b)],
-                              stops: [0.2, 0.7],
-                              center: Alignment.topRight,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(
+                                      0.2), // Kolor cienia z przezroczystością
+                                  spreadRadius: 5, // Rozprzestrzenianie cienia
+                                  blurRadius: 10, // Rozmycie cienia
+                                  offset: const Offset(0, 5),
+                                )
+                              ],
+                              gradient: const SweepGradient(
+                                colors: [Color(0xffffde59), Color(0xfffc466b)],
+                                stops: [0.2, 0.7],
+                                center: Alignment.topRight,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
                             ),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
-                            ),
-                          ),
-                        ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset('assets/img/notes.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(224, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
+                              ),
+                            )),
                       )
                     : FractionallySizedBox(
                         widthFactor: 0.7,
@@ -131,6 +159,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                               child: SizedBox(
                                 width: 70,
                                 height: 70,
+                                child: Image.asset('assets/img/notes.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(101, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
                               ),
                             )),
                       ),
@@ -148,18 +181,38 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         widthFactor: 0.7,
                         heightFactor: 1,
                         child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: SweepGradient(
-                              colors: [Color(0xffffde59), Color(0xfffc466b)],
-                              stops: [0.2, 0.7],
-                              center: Alignment.topRight,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(
+                                      0.2), // Kolor cienia z przezroczystością
+                                  spreadRadius: 5, // Rozprzestrzenianie cienia
+                                  blurRadius: 10, // Rozmycie cienia
+                                  offset: const Offset(0, 5),
+                                )
+                              ],
+                              gradient: const SweepGradient(
+                                colors: [Color(0xffffde59), Color(0xfffc466b)],
+                                stops: [0.2, 0.7],
+                                center: Alignment.topRight,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
                             ),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
-                            ),
-                          ),
-                        ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset(
+                                    'assets/img/weight-scale.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(224, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
+                              ),
+                            )),
                       )
                     : FractionallySizedBox(
                         widthFactor: 0.7,
@@ -180,6 +233,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                               child: SizedBox(
                                 width: 70,
                                 height: 70,
+                                child: Image.asset(
+                                    'assets/img/weight-scale.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(101, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
                               ),
                             )),
                       ),
