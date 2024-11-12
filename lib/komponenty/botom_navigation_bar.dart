@@ -25,55 +25,79 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       child: Row(
         children: [
           Expanded(
-            child: GestureDetector(
-              onTap: () =>
-                  widget.onItemSelected(0), // Wywołanie funkcji przy kliknięciu
-              child: AnimatedSwitcher(
-                duration:
-                    const Duration(milliseconds: 300), // Animacja przejścia
+            child: Container(
+              color: Colors.transparent,
+              child: GestureDetector(
+                onTap: () => widget
+                    .onItemSelected(0), // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 0
                     ? FractionallySizedBox(
-                        key: ValueKey<int>(0), // Unikalny klucz dla animacji
-                        widthFactor: 0.8,
+                        widthFactor: 0.7,
+                        heightFactor: 1,
                         child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: SweepGradient(
-                              colors: [Color(0xffffde59), Color(0xfffc466b)],
-                              stops: [0.2, 0.7],
-                              center: Alignment.topRight,
+                            decoration: const BoxDecoration(
+                              gradient: SweepGradient(
+                                colors: [Color(0xffffde59), Color(0xfffc466b)],
+                                stops: [0.2, 0.7],
+                                center: Alignment.topRight,
+                              ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
                             ),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30),
-                            ),
-                          ),
-                        ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset('assets/img/quotes.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(224, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
+                              ),
+                            )),
                       )
                     : FractionallySizedBox(
-                        key: ValueKey<int>(1), // Unikalny klucz dla animacji
                         widthFactor: 0.7,
-                        heightFactor: 0.9,
+                        heightFactor: 1,
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.element,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                        ),
+                            decoration: const BoxDecoration(
+                              gradient: SweepGradient(
+                                colors: [Color(0xffc6e9ed), Color(0xffa3b2ff)],
+                                stops: [0.7, 1],
+                                center: Alignment.bottomLeft,
+                              ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
+                            ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset('assets/img/quotes.png',
+                                    height: 50,
+                                    width: 50,
+                                    color: const Color.fromARGB(101, 0, 0, 0),
+                                    fit: BoxFit.scaleDown),
+                              ),
+                            )),
                       ),
               ),
             ),
           ),
           Expanded(
-            child: GestureDetector(
-              onTap: () =>
-                  widget.onItemSelected(1), // Wywołanie funkcji przy kliknięciu
-              child: AnimatedSwitcher(
-                duration:
-                    const Duration(milliseconds: 300), // Animacja przejścia
+            child: Container(
+              color: Colors.transparent,
+              child: GestureDetector(
+                onTap: () => widget
+                    .onItemSelected(1), // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 1
                     ? FractionallySizedBox(
-                        key: ValueKey<int>(2), // Unikalny klucz dla animacji
-                        widthFactor: 0.8,
+                        widthFactor: 0.7,
+                        heightFactor: 1,
                         child: Container(
                           decoration: const BoxDecoration(
                             gradient: SweepGradient(
@@ -89,30 +113,40 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         ),
                       )
                     : FractionallySizedBox(
-                        key: ValueKey<int>(3), // Unikalny klucz dla animacji
                         widthFactor: 0.7,
-                        heightFactor: 0.9,
+                        heightFactor: 1,
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.element,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                        ),
+                            decoration: const BoxDecoration(
+                              gradient: SweepGradient(
+                                colors: [Color(0xffc6e9ed), Color(0xffa3b2ff)],
+                                stops: [0.7, 1],
+                                center: Alignment.bottomLeft,
+                              ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
+                            ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                              ),
+                            )),
                       ),
               ),
             ),
           ),
           Expanded(
-            child: GestureDetector(
-              onTap: () =>
-                  widget.onItemSelected(2), // Wywołanie funkcji przy kliknięciu
-              child: AnimatedSwitcher(
-                duration:
-                    const Duration(milliseconds: 300), // Animacja przejścia
+            child: Container(
+              color: Colors.transparent,
+              child: GestureDetector(
+                onTap: () => widget
+                    .onItemSelected(2), // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 2
                     ? FractionallySizedBox(
-                        key: ValueKey<int>(4), // Unikalny klucz dla animacji
-                        widthFactor: 0.8,
+                        widthFactor: 0.7,
+                        heightFactor: 1,
                         child: Container(
                           decoration: const BoxDecoration(
                             gradient: SweepGradient(
@@ -128,15 +162,26 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         ),
                       )
                     : FractionallySizedBox(
-                        key: ValueKey<int>(5), // Unikalny klucz dla animacji
                         widthFactor: 0.7,
-                        heightFactor: 0.9,
+                        heightFactor: 1,
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.element,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                        ),
+                            decoration: const BoxDecoration(
+                              gradient: SweepGradient(
+                                colors: [Color(0xffc6e9ed), Color(0xffa3b2ff)],
+                                stops: [0.7, 1],
+                                center: Alignment.bottomLeft,
+                              ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                              ),
+                            ),
+                            child: Center(
+                              child: SizedBox(
+                                width: 70,
+                                height: 70,
+                              ),
+                            )),
                       ),
               ),
             ),

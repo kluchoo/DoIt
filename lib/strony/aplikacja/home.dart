@@ -31,8 +31,12 @@ class _HomeState extends State<Home> {
                 IndexedStack(
                   index: index,
                   children: [
-                    Column(), // Widok dla index == 0
-                    Column(), // Widok dla index == 1
+                    Column(
+                      children: [Text('data')],
+                    ), // Widok dla index == 0
+                    Column(
+                      children: [Text('lol')],
+                    ), // Widok dla index == 1
                     Column(), // Widok dla index == 2
                   ],
                 ),

@@ -30,7 +30,7 @@ class MainAppBackground extends StatelessWidget {
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
-                      colors: [Color(0xFFFFde59), Color(0xFFFF914d)])),
+                      colors: [Color(0x20FFde59), Color(0x20FF914d)])),
             ),
             const Expanded(child: SizedBox()),
           ],
@@ -38,7 +38,7 @@ class MainAppBackground extends StatelessWidget {
         Column(
           children: [
             Container(
-              height: 20,
+              height: 22,
               decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xFFFFde59),
@@ -58,14 +58,20 @@ class MainAppBackground extends StatelessWidget {
               decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xFFFFde59),
+                Color(0xFFFF914d),
                 Color(0xFFFFde59),
                 Color(0xFFFF914d),
-                Color(0xFFFF914d)
+                Color(0xFFFFde59),
+                Color(0xFFFF914d),
+                Color(0xFFFFde59),
               ], stops: [
                 0,
-                0.4,
+                0.08,
+                0.32,
+                0.42,
                 0.6,
-                1
+                0.75,
+                0.85
               ])),
             ),
           ],
