@@ -43,8 +43,9 @@ class _HomeState extends State<Home> {
             ])),
             child: Center(
                 child: Padding(
-              padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
-              child: StylizowanyTytul(context.watch<TitleProvider>().title),
+              padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+              child: StylizowanyTytul(context.watch<TitleProvider>().title,
+                  color: Colors.black),
             )),
           ),
         ),
@@ -54,13 +55,13 @@ class _HomeState extends State<Home> {
               index: index,
               children: const [
                 Center(
-                  child: StylizowanyTytul('Cytaty'),
+                  child: Text('data'),
                 ), // Widok dla index == 0
                 Center(
-                  child: StylizowanyTytul('Postępy'),
+                  child: Text('data'),
                 ), // Widok dla index == 1
                 Center(
-                  child: StylizowanyTytul('Plan Treningowy'),
+                  child: Text('data'),
                 ), // Widok dla index == 2
               ],
             ),
