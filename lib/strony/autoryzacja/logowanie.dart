@@ -13,7 +13,6 @@ class Logowanie extends StatefulWidget {
 }
 
 class _LogowanieState extends State<Logowanie> {
-  
   final _loginControler = TextEditingController();
   final _passwordControler = TextEditingController();
 
@@ -23,89 +22,94 @@ class _LogowanieState extends State<Logowanie> {
     super.dispose();
   }
 
-  void tescik(){
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+  void tescik() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         backgroundColor: Colors.black,
         closeIconColor: Colors.white,
         showCloseIcon: true,
         content: Container(
-        child: const Text('test', style: TextStyle(
-          color: Colors.white
-        ),),
-      ))
-    );
+          child: const Text(
+            'test',
+            style: TextStyle(color: Colors.white),
+          ),
+        )));
     return;
   }
 
-  void rejestracja(){
-    Navigator.push(context, MaterialPageRoute(builder: (ctx) => const Rejestracja()));
+  void rejestracja() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (ctx) => const Rejestracja()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        shadowColor: Colors.black,
-        title: const StylizowanyNaglowek('Logowanie'),
-      ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Row(
-            children: [
-              const SizedBox(width: 50),
-              Expanded(child: Container(color: AppColors.secondaryAccent,)),
-              const SizedBox(width: 50),
-            ],
-          ),
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 20, 0, 130),
-                child: Center(
-                  child: Image.asset('assets/img/doit.png',
-                  width: 200,),
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          shadowColor: Colors.black,
+          title: const StylizowanyNaglowek('Logowanie'),
+        ),
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            Row(
+              children: [
+                const SizedBox(width: 50),
+                Expanded(
+                    child: Container(
+                  color: AppColors.secondaryAccent,
+                )),
+                const SizedBox(width: 50),
+              ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 130),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/img/doit.png',
+                      width: 200,
+                    ),
+                  ),
                 ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Row(
-                    children: [
-                      Padding(padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
-                      child: StylizowanyNaglowek('Adres e-mail'),
-                      ),
-                    ],
-                  ),
-                  StylizowanePoleTekstowe(_loginControler, Icons.mail, false),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
+                          child: StylizowanyNaglowek('Adres e-mail'),
+                        ),
+                      ],
+                    ),
+                    StylizowanePoleTekstowe(_loginControler, Icons.mail, false),
 
-                  const Row(
-                    children: [
-                      const Padding(padding: EdgeInsets.fromLTRB(70, 25, 0, 0),
-                      child: StylizowanyNaglowek('Hasło'),
-                      ),
-                    ],
-                  ),
-                  StylizowanePoleTekstowe(_passwordControler, Icons.lock, true),
+                    const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(70, 25, 0, 0),
+                          child: StylizowanyNaglowek('Hasło'),
+                        ),
+                      ],
+                    ),
+                    StylizowanePoleTekstowe(
+                        _passwordControler, Icons.lock, true),
 
-                  TextButton(onPressed: tescik, child: Text('tescik')),
-                  const SizedBox(
-                    height: 150,
-                  ),
+                    TextButton(onPressed: tescik, child: const Text('tescik')),
+                    const SizedBox(
+                      height: 150,
+                    ),
 
-                  
+                    PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
 
-                  PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
-
-                  // TextButton(onPressed: tescik, child: Text('test')),
-                ],
-              ),
-            ],
-          )
-        ],
-      )
-    );
+                    // TextButton(onPressed: tescik, child: Text('test')),
+                  ],
+                ),
+              ],
+            )
+          ],
+        ));
   }
 }

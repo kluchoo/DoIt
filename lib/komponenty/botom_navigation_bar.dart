@@ -1,5 +1,6 @@
-import 'package:do_it/theme.dart';
+import 'package:do_it/providers/home_page_providers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({
@@ -28,8 +29,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             child: Container(
               color: Colors.transparent,
               child: GestureDetector(
-                onTap: () => widget
-                    .onItemSelected(0), // Wywołanie funkcji przy kliknięciu
+                onTap: () {
+                  widget.onItemSelected(0);
+                  context.read<TitleProvider>().changeTitle('Cytaty');
+                },
                 child: widget.chosenIndex == 0
                     ? FractionallySizedBox(
                         widthFactor: 0.7,
@@ -101,8 +104,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             child: Container(
               color: Colors.transparent,
               child: GestureDetector(
-                onTap: () => widget
-                    .onItemSelected(1), // Wywołanie funkcji przy kliknięciu
+                onTap: () {
+                  widget.onItemSelected(1);
+                  context.read<TitleProvider>().changeTitle('Postępy');
+                }, // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 1
                     ? FractionallySizedBox(
                         widthFactor: 0.7,
@@ -174,8 +179,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             child: Container(
               color: Colors.transparent,
               child: GestureDetector(
-                onTap: () => widget
-                    .onItemSelected(2), // Wywołanie funkcji przy kliknięciu
+                onTap: () {
+                  widget.onItemSelected(2);
+                  context.read<TitleProvider>().changeTitle('Plan Treningowy');
+                }, // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 2
                     ? FractionallySizedBox(
                         widthFactor: 0.7,
