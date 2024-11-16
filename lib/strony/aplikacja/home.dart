@@ -2,6 +2,7 @@ import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
 import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -51,19 +52,20 @@ class _HomeState extends State<Home> {
         ),
         body: MainAppBackground(Stack(
           children: [
-            IndexedStack(
-              index: index,
-              children: const [
-                Center(
-                  child: Text('data'),
-                ), // Widok dla index == 0
-                Center(
-                  child: Text('data'),
-                ), // Widok dla index == 1
-                Center(
-                  child: Text('data'),
-                ), // Widok dla index == 2
-              ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+              child: IndexedStack(
+                index: index,
+                children: const [
+                  Quotes(), // Widok dla index == 0
+                  Center(
+                    child: Text('data2'),
+                  ), // Widok dla index == 1
+                  Center(
+                    child: Text('data3'),
+                  ), // Widok dla index == 2
+                ],
+              ),
             ),
             Column(
               children: [
