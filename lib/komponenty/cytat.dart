@@ -2,14 +2,16 @@ import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class QuotesCard extends StatelessWidget {
-  QuotesCard(this.tekst, this.autor, this.polubienia, this.data, {super.key});
+class QuotesCard extends StatefulWidget {
+  QuotesCard(this.quote, {super.key});
 
-  final String tekst;
-  final String autor;
-  final String data;
-  int polubienia;
+  Quote quote;
 
+  @override
+  State<QuotesCard> createState() => _QuotesCardState();
+}
+
+class _QuotesCardState extends State<QuotesCard> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,47 +31,50 @@ class QuotesCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 28),
               child: Center(
-                  child: SingleChildScrollView(
-                child: RichText(
-                    softWrap: true,
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '\"',
-                          style: GoogleFonts.openSans(
-                            fontSize: 18,
-                            letterSpacing: 1,
-                            color: const Color(0xff5ce1e6),
-                            fontWeight: FontWeight.w800,
-                          ), // Kolor cudzysłowów
-                        ),
-                        TextSpan(
-                          text: tekst,
-                          style: GoogleFonts.openSans(
-                            fontSize: 15,
-                            letterSpacing: 1,
-                            color: const Color.fromARGB(255, 0, 0, 0),
-                            fontWeight: FontWeight.w800,
-                          ), // Kolor cudzysłowów
-                        ),
-                        TextSpan(
-                          text: '\"',
-                          style: GoogleFonts.openSans(
-                            fontSize: 18,
-                            letterSpacing: 1,
-                            color: const Color(0xff5ce1e6),
-                            fontWeight: FontWeight.w800,
-                          ), // Kolor cudzysłowów
-                        ),
-                      ],
-                    )),
-              )
-                  // StylizowanyNaglowek(
-                  //   '\" $tekst \"',
-                  //   color: Colors.black,
-                  // ),
-                  ),
+                  child: GestureDetector(
+                onDoubleTap: () {
+                  setState(() {
+                    print(widget.quote);
+                    // widget.quote._isFav;
+                  });
+                },
+                child: SingleChildScrollView(
+                  child: RichText(
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '\"',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              letterSpacing: 1,
+                              color: const Color(0xff5ce1e6),
+                              fontWeight: FontWeight.w800,
+                            ), // Kolor cudzysłowów
+                          ),
+                          TextSpan(
+                            text: widget.quote.quote,
+                            style: GoogleFonts.openSans(
+                              fontSize: 15,
+                              letterSpacing: 1,
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                              fontWeight: FontWeight.w800,
+                            ), // Kolor cudzysłowów
+                          ),
+                          TextSpan(
+                            text: '\"',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              letterSpacing: 1,
+                              color: const Color(0xff5ce1e6),
+                              fontWeight: FontWeight.w800,
+                            ), // Kolor cudzysłowów
+                          ),
+                        ],
+                      )),
+                ),
+              )),
             ),
             Positioned(
                 right: 0,
@@ -83,7 +88,7 @@ class QuotesCard extends StatelessWidget {
                         color: Color.fromARGB(255, 214, 28, 28),
                       ),
                       Text(
-                        polubienia.toString(),
+                        widget.quote.likes.toString(),
                         style: GoogleFonts.openSans(
                           fontSize: 14,
                           letterSpacing: 1,
@@ -102,7 +107,7 @@ class QuotesCard extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        data.toString(),
+                        widget.quote.date.toString(),
                         style: GoogleFonts.openSans(
                             fontSize: 12,
                             letterSpacing: 1,
@@ -129,7 +134,7 @@ class QuotesCard extends StatelessWidget {
                 ),
               ),
               Text(
-                autor,
+                widget.quote.author,
                 style: GoogleFonts.openSans(
                   fontSize: 14,
                   letterSpacing: 1,
@@ -162,10 +167,14 @@ class Quote {
   final String date;
   final String quote;
   final String author;
-  final int likes;
+  int likes;
 
   void toggleIsFav() {
     _isFav = !_isFav;
+    if (_isFav == true)
+      likes++;
+    else
+      likes--;
   }
 }
 

@@ -1,6 +1,5 @@
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
-import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:flutter/material.dart';

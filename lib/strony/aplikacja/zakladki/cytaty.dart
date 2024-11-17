@@ -53,8 +53,7 @@ class _QuotesState extends State<Quotes> {
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
                   final quote = QuotesData[index];
-                  return QuotesCard(
-                      quote.quote, quote.author, quote.likes, quote.date
+                  return QuotesCard(quote
                       // date: quote.data,
                       );
                 }),
