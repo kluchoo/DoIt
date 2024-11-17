@@ -12,12 +12,6 @@ class Quotes extends StatefulWidget {
 class _QuotesState extends State<Quotes> {
   final CardSwiperController swiperController = CardSwiperController();
 
-  // List<QuotesCard> cards = [
-  //   const QuotesCard("1"),
-  //   const QuotesCard('2'),
-  //   const QuotesCard('3'),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
@@ -44,7 +38,9 @@ class _QuotesState extends State<Quotes> {
                 onSwipe: (previousIndex, currentIndex, direction) {
                   if (direction == CardSwiperDirection.right) {
                     swiperController.undo();
-
+                    return false;
+                  }
+                  if (previousIndex == QuotesData.length - 1) {
                     return false;
                   }
                   return true;

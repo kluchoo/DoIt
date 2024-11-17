@@ -34,7 +34,8 @@ class _QuotesCardState extends State<QuotesCard> {
                   child: GestureDetector(
                 onDoubleTap: () {
                   setState(() {
-                    print(widget.quote);
+                    print(
+                        '${widget.quote.id} ${widget.quote.quote} ${widget.quote.likes}');
                     // widget.quote._isFav;
                   });
                 },
