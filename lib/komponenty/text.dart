@@ -26,9 +26,14 @@ class StylizowanyNaglowek extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style: GoogleFonts.inter(
-            textStyle: Theme.of(context).textTheme.headlineMedium,
-            color: color ?? AppColors.titleColor));
+        textAlign: TextAlign.center,
+        style: GoogleFonts.openSans(
+          fontSize: 16,
+          letterSpacing: 1,
+          fontWeight: FontWeight.w800,
+          textStyle: Theme.of(context).textTheme.headlineMedium,
+          color: color ?? AppColors.titleColor,
+        ));
   }
 }
 
