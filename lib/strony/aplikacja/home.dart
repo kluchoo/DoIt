@@ -4,6 +4,7 @@ import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -30,25 +31,28 @@ class _HomeState extends State<Home> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(65.0),
           child: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-              Color(0xFFFF914d),
-              Color(0xFFFFde59),
-              Color(0xFFFFde59),
-              Color(0xFFFF914d)
-            ], stops: [
-              0,
-              0.4,
-              0.6,
-              1
-            ])),
-            child: Center(
-                child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-              child: StylizowanyTytul(context.watch<TitleProvider>().title,
-                  color: Colors.black),
-            )),
-          ),
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Color(0xFFFF914d),
+                Color(0xFFFFde59),
+                Color(0xFFFFde59),
+                Color(0xFFFF914d)
+              ], stops: [
+                0,
+                0.4,
+                0.6,
+                1
+              ])),
+              child: Center(
+                  child: Text(
+                context.watch<TitleProvider>().title,
+                style: GoogleFonts.openSans(
+                  fontSize: 22,
+                  letterSpacing: 1,
+                  color: const Color.fromARGB(255, 0, 0, 0),
+                  fontWeight: FontWeight.w800,
+                ),
+              ))),
         ),
         body: MainAppBackground(Stack(
           children: [
