@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
   flutter_card_swiper: ^7.0.2
-  flutter_statusbarcolor_ns: ^0.6.0
 
 dev_dependencies:
   flutter_test:

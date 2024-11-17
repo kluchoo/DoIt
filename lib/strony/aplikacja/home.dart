@@ -42,16 +42,23 @@ class _HomeState extends State<Home> {
                 0.6,
                 1
               ])),
-              child: Center(
-                  child: Text(
-                context.watch<TitleProvider>().title,
-                style: GoogleFonts.openSans(
-                  fontSize: 22,
-                  letterSpacing: 1,
-                  color: const Color.fromARGB(255, 0, 0, 0),
-                  fontWeight: FontWeight.w800,
-                ),
-              ))),
+              child: Stack(
+                children: [
+                  AppBar(
+                    backgroundColor: Colors.transparent,
+                  ),
+                  Center(
+                      child: Text(
+                    context.watch<TitleProvider>().title,
+                    style: GoogleFonts.openSans(
+                      fontSize: 22,
+                      letterSpacing: 1,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ))
+                ],
+              )),
         ),
         body: MainAppBackground(Stack(
           children: [
