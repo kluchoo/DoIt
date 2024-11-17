@@ -40,15 +40,15 @@ class _QuotesState extends State<Quotes> {
                     swiperController.undo();
                     return false;
                   }
-                  if (previousIndex == QuotesData.length - 1) {
+                  if (previousIndex == quotesData.length - 1) {
                     return false;
                   }
                   return true;
                 },
-                cardsCount: QuotesData.length,
+                cardsCount: quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
-                  final quote = QuotesData[index];
+                  final quote = quotesData[index];
                   return QuotesCard(quote
                       // date: quote.data,
                       );

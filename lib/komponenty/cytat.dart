@@ -172,14 +172,15 @@ class Quote {
 
   void toggleIsFav() {
     _isFav = !_isFav;
-    if (_isFav == true)
+    if (_isFav == true) {
       likes++;
-    else
+    } else {
       likes--;
+    }
   }
 }
 
-List<Quote> QuotesData = [
+List<Quote> quotesData = [
   Quote(
     id: 0,
     date: '16.11.2024',
