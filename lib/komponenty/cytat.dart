@@ -187,11 +187,10 @@ class QuotesModel extends ChangeNotifier {
   final List<Quote> _quotesData = [
     Quote(
       ownerId: '0',
-      date: '16.11.2024',
-      quote:
-          'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
-      author: "Nieznany autor",
-      likes: 100,
+      date: '',
+      quote: '',
+      author: "",
+      likes: 0,
     ),
   ];
 
@@ -205,9 +204,9 @@ class QuotesModel extends ChangeNotifier {
   Future<void> toFirestore(Quote quote) async {
     await FirebaseFirestore.instance.collection('quotes').add({
       "author": quote.author,
-      "date": quote.date,
-      "likes": quote.likes,
-      "ownerId": 1,
+      "date": DateTime.now(),
+      "likes": 0,
+      "ownerId": "",
       "quote": quote.quote,
     });
   }
