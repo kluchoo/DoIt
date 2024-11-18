@@ -180,35 +180,45 @@ class Quote {
   }
 }
 
-List<Quote> quotesData = [
-  Quote(
-    id: 0,
-    date: '16.11.2024',
-    quote: 'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
-    author: "Nieznany autor",
-    likes: 100,
-  ),
-  Quote(
-    id: 1,
-    date: '14.11.2024',
-    quote:
-        'Generalnie rzecz biorąc, ja jestem w jednej dziedzinie za równouprawnieniem, a mianowicie: żeby w małżeństwie było 50% mężczyzn i 50% kobiet.',
-    author: "Janusz Korwin-Mikke",
-    likes: 21,
-  ),
-  Quote(
-    id: 2,
-    date: '14.11.2024',
-    quote: 'Państwa nie mają przyjażni tylko interesy',
-    author: "Winston Churchill",
-    likes: 1981,
-  ),
-  Quote(
-    id: 3,
-    date: '01.11.2020',
-    quote:
-        'lLorem ipsum odor amet, consectetuer adipiscing elit. Lobortis sociosqu in interdum donec primis pellentesque vitae enim orci. Rutrum senectus vel nunc dis finibus nibh sem. Suspendisse maecenas varius maecenas bibendum ornare. Rhoncus primis fringilla primis taciti bibendum habitant inceptos a ad. Etiam porttitor eget luctus nostra in litora conubia? Ridiculus suspendisse ac duis malesuada volutpat; sed tempus venenatis. Libero diam potenti ridiculus tristique potenti amet. Habitant lectus urna duis libero conubia; porta elit. Augue posuere morbi in class purus facilisi porttitor id. Facilisi hac fermentum donec orci leo hendrerit efficitur. Magna senectus quam feugiat parturient ad at taciti. Parturient molestie sodales suspendisse mus phasellus; orci himenaeos velit mus. Finibus dis neque conubia ut hendrerit sapien nisi aenean congue. Est pellentesque venenatis odio feugiat fringilla conubia varius. Cras nostra lobortis tempor ullamcorper netus magnis potenti malesuada.',
-    author: "Winston Churchill",
-    likes: 21841,
-  ),
-];
+class QuotesModel extends ChangeNotifier {
+  final List<Quote> _quotesData = [
+    Quote(
+      id: 0,
+      date: '16.11.2024',
+      quote:
+          'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
+      author: "Nieznany autor",
+      likes: 100,
+    ),
+    Quote(
+      id: 1,
+      date: '14.11.2024',
+      quote:
+          'Generalnie rzecz biorąc, ja jestem w jednej dziedzinie za równouprawnieniem, a mianowicie: żeby w małżeństwie było 50% mężczyzn i 50% kobiet.',
+      author: "Janusz Korwin-Mikke",
+      likes: 21,
+    ),
+    Quote(
+      id: 2,
+      date: '14.11.2024',
+      quote: 'Państwa nie mają przyjażni tylko interesy',
+      author: "Winston Churchill",
+      likes: 1981,
+    ),
+    Quote(
+      id: 3,
+      date: '01.11.2020',
+      quote:
+          'lLorem ipsum odor amet, consectetuer adipiscing elit. Lobortis sociosqu in interdum donec primis pellentesque vitae enim orci. Rutrum senectus vel nunc dis finibus nibh sem. Suspendisse maecenas varius maecenas bibendum ornare. Rhoncus primis fringilla primis taciti bibendum habitant inceptos a ad. Etiam porttitor eget luctus nostra in litora conubia? Ridiculus suspendisse ac duis malesuada volutpat; sed tempus venenatis. Libero diam potenti ridiculus tristique potenti amet. Habitant lectus urna duis libero conubia; porta elit. Augue posuere morbi in class purus facilisi porttitor id. Facilisi hac fermentum donec orci leo hendrerit efficitur. Magna senectus quam feugiat parturient ad at taciti. Parturient molestie sodales suspendisse mus phasellus; orci himenaeos velit mus. Finibus dis neque conubia ut hendrerit sapien nisi aenean congue. Est pellentesque venenatis odio feugiat fringilla conubia varius. Cras nostra lobortis tempor ullamcorper netus magnis potenti malesuada.',
+      author: "Winston Churchill",
+      likes: 21841,
+    ),
+  ];
+
+  List<Quote> get quotesData => _quotesData;
+
+  void addQuote(Quote quote) {
+    _quotesData.add(quote);
+    notifyListeners();
+  }
+}

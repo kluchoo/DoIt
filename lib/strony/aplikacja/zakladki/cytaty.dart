@@ -1,6 +1,9 @@
 import 'package:do_it/komponenty/cytat.dart';
+import 'package:do_it/strony/aplikacja/zakladki/tworzenie_cytatu.dart';
+import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:provider/provider.dart';
 
 class Quotes extends StatefulWidget {
   const Quotes({super.key});
@@ -14,10 +17,12 @@ class _QuotesState extends State<Quotes> {
 
   @override
   Widget build(BuildContext context) {
+    final quotesModel = Provider.of<QuotesModel>(context);
+
     return FractionallySizedBox(
       child: Column(
         children: [
-          Row(children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.asset(
@@ -25,6 +30,22 @@ class _QuotesState extends State<Quotes> {
                 width: 150,
               ),
             ),
+            Container(
+                margin: const EdgeInsets.fromLTRB(0, 120, 40, 0),
+                child: IconButton.filled(
+                    style: ButtonStyle(
+                        iconSize: const WidgetStatePropertyAll(40),
+                        backgroundColor:
+                            WidgetStatePropertyAll(AppColors.primaryColor),
+                        iconColor: const WidgetStatePropertyAll(Colors.black),
+                        elevation: const WidgetStatePropertyAll(0)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const TworzenieCytatu()));
+                    },
+                    icon: const Icon(Icons.add)))
           ]),
           Flexible(
             child: CardSwiper(
@@ -40,15 +61,15 @@ class _QuotesState extends State<Quotes> {
                     swiperController.undo();
                     return false;
                   }
-                  if (previousIndex == quotesData.length - 1) {
+                  if (previousIndex == quotesModel.quotesData.length - 1) {
                     return false;
                   }
                   return true;
                 },
-                cardsCount: quotesData.length,
+                cardsCount: quotesModel.quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
-                  final quote = quotesData[index];
+                  final quote = quotesModel.quotesData[index];
                   return QuotesCard(quote
                       // date: quote.data,
                       );

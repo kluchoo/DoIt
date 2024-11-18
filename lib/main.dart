@@ -1,3 +1,4 @@
+import 'package:do_it/komponenty/cytat.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/home.dart';
 import 'package:do_it/theme.dart';
@@ -9,6 +10,7 @@ void main() {
     MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => TitleProvider()),
+          ChangeNotifierProvider(create: (context) => QuotesModel())
         ],
         child: MaterialApp(
           theme: primaryTheme,
