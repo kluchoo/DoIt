@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1085362780932",
+    "firebase_url": "https://do-it-777-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "do-it-777",
+    "storage_bucket": "do-it-777.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085362780932:android:7f3acfaaa99fe68279ae51",
+        "android_client_info": {
+          "package_name": "com.example.do_it"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAst345fy9oWDaFThJ6-kZ90a3ept2f7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

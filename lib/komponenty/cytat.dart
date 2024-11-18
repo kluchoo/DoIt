@@ -158,20 +158,11 @@ class Quote {
 
   // pola
   final int id;
-  bool _isFav = false;
+  final bool isFav = false;
   final String date;
   final String quote;
   final String author;
   int likes;
-
-  void toggleIsFav() {
-    _isFav = !_isFav;
-    if (_isFav == true) {
-      likes++;
-    } else {
-      likes--;
-    }
-  }
 }
 
 class QuotesModel extends ChangeNotifier {
