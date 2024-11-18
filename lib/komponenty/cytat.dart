@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -157,7 +158,25 @@ class Quote {
   //gettery
 
   // pola
-  final int id;
+  final String id;
+  final bool isFav = false;
+  final String date;
+  final String quote;
+  final String author;
+  int likes;
+}
+
+class QuoteToCreate {
+  //konstruktor
+  QuoteToCreate(
+      {required this.date,
+      required this.quote,
+      required this.author,
+      required this.likes});
+
+  //gettery
+
+  // pola
   final bool isFav = false;
   final String date;
   final String quote;
@@ -168,42 +187,50 @@ class Quote {
 class QuotesModel extends ChangeNotifier {
   final List<Quote> _quotesData = [
     Quote(
-      id: 0,
+      id: '0',
       date: '16.11.2024',
       quote:
           'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
       author: "Nieznany autor",
       likes: 100,
     ),
-    Quote(
-      id: 1,
-      date: '14.11.2024',
-      quote:
-          'Generalnie rzecz biorąc, ja jestem w jednej dziedzinie za równouprawnieniem, a mianowicie: żeby w małżeństwie było 50% mężczyzn i 50% kobiet.',
-      author: "Janusz Korwin-Mikke",
-      likes: 21,
-    ),
-    Quote(
-      id: 2,
-      date: '14.11.2024',
-      quote: 'Państwa nie mają przyjażni tylko interesy',
-      author: "Winston Churchill",
-      likes: 1981,
-    ),
-    Quote(
-      id: 3,
-      date: '01.11.2020',
-      quote:
-          'lLorem ipsum odor amet, consectetuer adipiscing elit. Lobortis sociosqu in interdum donec primis pellentesque vitae enim orci. Rutrum senectus vel nunc dis finibus nibh sem. Suspendisse maecenas varius maecenas bibendum ornare. Rhoncus primis fringilla primis taciti bibendum habitant inceptos a ad. Etiam porttitor eget luctus nostra in litora conubia? Ridiculus suspendisse ac duis malesuada volutpat; sed tempus venenatis. Libero diam potenti ridiculus tristique potenti amet. Habitant lectus urna duis libero conubia; porta elit. Augue posuere morbi in class purus facilisi porttitor id. Facilisi hac fermentum donec orci leo hendrerit efficitur. Magna senectus quam feugiat parturient ad at taciti. Parturient molestie sodales suspendisse mus phasellus; orci himenaeos velit mus. Finibus dis neque conubia ut hendrerit sapien nisi aenean congue. Est pellentesque venenatis odio feugiat fringilla conubia varius. Cras nostra lobortis tempor ullamcorper netus magnis potenti malesuada.',
-      author: "Winston Churchill",
-      likes: 21841,
-    ),
   ];
 
   List<Quote> get quotesData => _quotesData;
 
-  void addQuote(Quote quote) {
-    _quotesData.add(quote);
+  void addQuote(QuoteToCreate quote) {
+    toFirestore(quote);
     notifyListeners();
+  }
+
+  Future<void> toFirestore(QuoteToCreate quote) async {
+    await FirebaseFirestore.instance.collection('quotes').add({
+      "author": quote.author,
+      "date": quote.date,
+      "likes": quote.likes,
+      "ownerId": 1,
+      "quote": quote.quote,
+    });
+  }
+
+  Future<void> fetchQuotes() async {
+    final QuerySnapshot snapshot =
+        await FirebaseFirestore.instance.collection('quotes').get();
+    _quotesData.clear();
+    for (var doc in snapshot.docs) {
+      _quotesData.add(Quote(
+        id: doc.id,
+        date: doc['date'],
+        quote: doc['quote'],
+        author: doc['author'],
+        likes: doc['likes'],
+      ));
+    }
+    notifyListeners();
+  }
+
+  Future<void> fetchAndAddQuote(QuoteToCreate quote) async {
+    toFirestore(quote);
+    fetchQuotes();
   }
 }

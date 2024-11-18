@@ -6,7 +6,9 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:provider/provider.dart';
 
 class Quotes extends StatefulWidget {
-  const Quotes({super.key});
+  const Quotes({
+    super.key,
+  });
 
   @override
   State<Quotes> createState() => _QuotesState();
@@ -18,6 +20,8 @@ class _QuotesState extends State<Quotes> {
   @override
   Widget build(BuildContext context) {
     final quotesModel = Provider.of<QuotesModel>(context);
+
+    quotesModel.fetchQuotes();
 
     return FractionallySizedBox(
       child: Column(

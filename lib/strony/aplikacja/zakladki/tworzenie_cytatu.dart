@@ -20,13 +20,13 @@ class TworzenieCytatu extends StatelessWidget {
                 backgroundColor: WidgetStatePropertyAll(AppColors.primaryColor),
                 iconColor: const WidgetStatePropertyAll(Colors.black),
                 elevation: const WidgetStatePropertyAll(0)),
-            onPressed: () {
-              final newQuote = Quote(
-                id: 5,
-                date: "18.11.2024",
-                quote: "dasdasdad",
-                author: "Jan Kumaty",
-                likes: 24,
+            onPressed: () async {
+              final newQuote = QuoteToCreate(
+                date: '16.11.2024',
+                quote:
+                    'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
+                author: "Nieznany autor",
+                likes: 100,
               );
               Provider.of<QuotesModel>(context, listen: false)
                   .addQuote(newQuote);
