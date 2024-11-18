@@ -22,20 +22,6 @@ class _LogowanieState extends State<Logowanie> {
     super.dispose();
   }
 
-  void tescik() {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: Colors.black,
-        closeIconColor: Colors.white,
-        showCloseIcon: true,
-        content: Container(
-          child: const Text(
-            'test',
-            style: TextStyle(color: Colors.white),
-          ),
-        )));
-    return;
-  }
-
   void rejestracja() {
     Navigator.push(
         context, MaterialPageRoute(builder: (ctx) => const Rejestracja()));
@@ -96,11 +82,6 @@ class _LogowanieState extends State<Logowanie> {
                     ),
                     StylizowanePoleTekstowe(
                         _passwordControler, Icons.lock, true),
-
-                    TextButton(onPressed: tescik, child: const Text('tescik')),
-                    const SizedBox(
-                      height: 100,
-                    ),
 
                     PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
 
