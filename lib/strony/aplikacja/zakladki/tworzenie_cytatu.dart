@@ -4,14 +4,9 @@ import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class TworzenieCytatu extends StatefulWidget {
+class TworzenieCytatu extends StatelessWidget {
   const TworzenieCytatu({super.key});
 
-  @override
-  State<TworzenieCytatu> createState() => _TworzenieCytatuState();
-}
-
-class _TworzenieCytatuState extends State<TworzenieCytatu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
