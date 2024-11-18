@@ -99,7 +99,7 @@ class _LogowanieState extends State<Logowanie> {
 
                     TextButton(onPressed: tescik, child: const Text('tescik')),
                     const SizedBox(
-                      height: 150,
+                      height: 100,
                     ),
 
                     PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
