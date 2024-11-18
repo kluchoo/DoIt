@@ -21,7 +21,9 @@ class _QuotesState extends State<Quotes> {
   Widget build(BuildContext context) {
     final quotesModel = Provider.of<QuotesModel>(context);
 
-    quotesModel.fetchQuotes();
+    if (quotesModel.quotesData.length == 1) {
+      quotesModel.fetchQuotes();
+    }
 
     return FractionallySizedBox(
       child: Column(

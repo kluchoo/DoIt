@@ -21,7 +21,8 @@ class TworzenieCytatu extends StatelessWidget {
                 iconColor: const WidgetStatePropertyAll(Colors.black),
                 elevation: const WidgetStatePropertyAll(0)),
             onPressed: () async {
-              final newQuote = QuoteToCreate(
+              final newQuote = Quote(
+                ownerId: 'dasdas', //id użytkownika
                 date: '16.11.2024',
                 quote:
                     'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',

@@ -149,7 +149,7 @@ class _QuotesCardState extends State<QuotesCard> {
 class Quote {
   //konstruktor
   Quote(
-      {required this.id,
+      {required this.ownerId,
       required this.date,
       required this.quote,
       required this.author,
@@ -158,8 +158,7 @@ class Quote {
   //gettery
 
   // pola
-  final String id;
-  final bool isFav = false;
+  final String ownerId;
   final String date;
   final String quote;
   final String author;
@@ -187,7 +186,7 @@ class QuoteToCreate {
 class QuotesModel extends ChangeNotifier {
   final List<Quote> _quotesData = [
     Quote(
-      id: '0',
+      ownerId: '0',
       date: '16.11.2024',
       quote:
           'W tym właśnie punkcie język potoczny rezygnuje i wychodzi na piwo.',
@@ -198,12 +197,12 @@ class QuotesModel extends ChangeNotifier {
 
   List<Quote> get quotesData => _quotesData;
 
-  void addQuote(QuoteToCreate quote) {
+  void addQuote(Quote quote) {
     toFirestore(quote);
     notifyListeners();
   }
 
-  Future<void> toFirestore(QuoteToCreate quote) async {
+  Future<void> toFirestore(Quote quote) async {
     await FirebaseFirestore.instance.collection('quotes').add({
       "author": quote.author,
       "date": quote.date,
@@ -219,7 +218,7 @@ class QuotesModel extends ChangeNotifier {
     _quotesData.clear();
     for (var doc in snapshot.docs) {
       _quotesData.add(Quote(
-        id: doc.id,
+        ownerId: doc.id,
         date: doc['date'],
         quote: doc['quote'],
         author: doc['author'],
@@ -229,7 +228,7 @@ class QuotesModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> fetchAndAddQuote(QuoteToCreate quote) async {
+  Future<void> fetchAndAddQuote(Quote quote) async {
     toFirestore(quote);
     fetchQuotes();
   }
