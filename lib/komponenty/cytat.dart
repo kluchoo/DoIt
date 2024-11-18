@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuotesCard extends StatefulWidget {
-  QuotesCard(this.quote, {super.key});
+  const QuotesCard(this.quote, {super.key});
 
-  Quote quote;
+  final Quote quote;
 
   @override
   State<QuotesCard> createState() => _QuotesCardState();
@@ -32,13 +32,7 @@ class _QuotesCardState extends State<QuotesCard> {
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 28),
               child: Center(
                   child: GestureDetector(
-                onDoubleTap: () {
-                  setState(() {
-                    print(
-                        '${widget.quote.id} ${widget.quote.quote} ${widget.quote.likes}');
-                    // widget.quote._isFav;
-                  });
-                },
+                onDoubleTap: () {},
                 child: SingleChildScrollView(
                   child: RichText(
                       softWrap: true,
