@@ -1,5 +1,6 @@
 import 'package:do_it/komponenty/styled_button.dart';
 import 'package:do_it/komponenty/styled_text.dart';
+import 'package:do_it/strony/aplikacja/home.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -107,6 +108,8 @@ class _SignUpFormState extends State<SignUpForm> {
                   final password = _passwordController.text.trim();
                   print(email);
                   print(password);
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (ctx) => const Home()));
                 }
               },
               child: const StyledButtonText('Zaloguj się'),
