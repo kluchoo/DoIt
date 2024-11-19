@@ -1,143 +1,96 @@
-import 'package:do_it/komponenty/buttons.dart';
-import 'package:do_it/komponenty/text.dart';
-import 'package:do_it/komponenty/textfield.dart';
-import 'package:do_it/strony/autoryzacja/rejestracja.dart';
+import 'package:do_it/komponenty/styled_button.dart';
+import 'package:do_it/komponenty/styled_text.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class Logowanie extends StatefulWidget {
-  const Logowanie({super.key});
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
 
   @override
-  State<Logowanie> createState() => _LogowanieState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _LogowanieState extends State<Logowanie> {
+class _SignUpFormState extends State<SignUpForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // final _loginControler = TextEditingController();
-  // final _passwordControler = TextEditingController();
-
-  // void dispose() {
-  //   _loginControler.dispose();
-  //   _passwordControler.dispose();
-  //   super.dispose();
-  // }
-
-  void rejestracja() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (ctx) => const Rejestracja()));
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          shadowColor: Colors.black,
-          title: const StylizowanyNaglowek('Logowanie'),
-        ),
-        body: Stack(
-          fit: StackFit.expand,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: [
-                const SizedBox(width: 50),
-                Expanded(
-                    child: Container(
-                  color: AppColors.secondaryAccent,
-                )),
-                const SizedBox(width: 50),
-              ],
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 130),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/img/doit.png',
-                      width: 200,
-                    ),
+            // intro text
+
+            Center(
+                child: Text('Logowanie',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.openSans(
+                      fontSize: 16,
+                      letterSpacing: 1,
+                      fontWeight: FontWeight.w800,
+                      textStyle: Theme.of(context).textTheme.headlineMedium,
+                    ))),
+            const SizedBox(height: 12.0),
+
+            // email address
+            TextFormField(
+              controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                  filled: true,
+                  fillColor: AppColors.titleColor,
+                  prefixIcon: Icon(
+                    Icons.mail,
+                    color: Colors.black,
                   ),
-                ),
-                Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        // intro text
-                        Center(child: TextField()),
-                        SizedBox(
-                          height: 16.0,
-                        ),
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                      borderSide: BorderSide(color: Colors.black)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                      borderSide:
+                          BorderSide(color: AppColors.primaryColor, width: 2))),
+            ),
+            const SizedBox(height: 16.0),
 
-                        // email address
-                        TextFormField(
-                          controller: _emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(labelText: 'Email'),
-                        ),
-                        const SizedBox(
-                          height: 16.0,
-                        ),
-                        //password
+            // password
+            TextFormField(
+              controller: _passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                  filled: true,
+                  fillColor: AppColors.titleColor,
+                  prefixIcon: Icon(
+                    Icons.key,
+                    color: Colors.black,
+                  ),
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                      borderSide: BorderSide(color: Colors.black)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                      borderSide:
+                          BorderSide(color: AppColors.primaryColor, width: 2))),
+            ),
+            const SizedBox(height: 16.0),
 
-                        TextFormField(
-                          controller: _passwordController,
-                          obscureText: true,
-                          decoration:
-                              const InputDecoration(labelText: 'Password'),
-                        ),
-                        const SizedBox(
-                          height: 16.0,
-                        ),
+            // error feedback
 
-                        //error feedback
-
-                        //submit button
-
-                        StygiButon(
-                          () async {},
-                          ('Zarejestruj się'),
-                        )
-                      ],
-                    ))
-
-                // Column(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     const Row(
-                //       children: [
-                //         Padding(
-                //           padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
-                //           child: StylizowanyNaglowek('Adres e-mail'),
-                //         ),
-                //       ],
-                //     ),
-                //     StylizowanePoleTekstowe(_loginControler, Icons.mail, false),
-
-                //     const Row(
-                //       children: [
-                //         Padding(
-                //           padding: EdgeInsets.fromLTRB(70, 25, 0, 0),
-                //           child: StylizowanyNaglowek('Hasło'),
-                //         ),
-                //       ],
-                //     ),
-                //     StylizowanePoleTekstowe(
-                //         _passwordControler, Icons.lock, true),
-
-                //     PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
-
-                //     // TextButton(onPressed: tescik, child: Text('test')),
-                //   ],
-                // ),
-              ],
-            )
+            // submit button
+            StyledButton(
+              onPressed: () async {},
+              child: const StyledButtonText('Zaloguj się'),
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
