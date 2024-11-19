@@ -36,15 +36,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   if (isSignUpForm)
                     Column(children: [
                       const SignInForm(),
-                      const StylizowanyText('Already have an account?'),
+                      const StylizowanyText('Masz już konto?'),
                       TextButton(
                         onPressed: () {
                           setState(() {
                             isSignUpForm = false;
                           });
                         },
-                        child: Text('Sign in instead',
-                            style: GoogleFonts.poppins()),
+                        child:
+                            Text('Zaloguj się', style: GoogleFonts.poppins()),
                       )
                     ]),
 

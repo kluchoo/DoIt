@@ -41,51 +41,74 @@ class _SignUpFormState extends State<SignUpForm> {
 
             // email address
             TextFormField(
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: AppColors.titleColor,
-                  prefixIcon: Icon(
-                    Icons.mail,
-                    color: Colors.black,
-                  ),
-                  border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      borderSide: BorderSide(color: Colors.black)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(50)),
-                      borderSide:
-                          BorderSide(color: AppColors.primaryColor, width: 2))),
-            ),
+                controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: AppColors.titleColor,
+                    prefixIcon: Icon(
+                      Icons.mail,
+                      color: Colors.black,
+                    ),
+                    border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderSide: BorderSide(color: Colors.black)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                        borderSide: BorderSide(
+                            color: AppColors.primaryColor, width: 2))),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Podaj email';
+                  }
+                  return null;
+                }),
+
             const SizedBox(height: 16.0),
 
             // password
             TextFormField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: AppColors.titleColor,
-                  prefixIcon: Icon(
-                    Icons.key,
-                    color: Colors.black,
-                  ),
-                  border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      borderSide: BorderSide(color: Colors.black)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(Radius.circular(50)),
-                      borderSide:
-                          BorderSide(color: AppColors.primaryColor, width: 2))),
-            ),
+                controller: _passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: AppColors.titleColor,
+                    prefixIcon: Icon(
+                      Icons.key,
+                      color: Colors.black,
+                    ),
+                    border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderSide: BorderSide(color: Colors.black)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
+                        borderSide: BorderSide(
+                            color: AppColors.primaryColor, width: 2))),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Podaj hasło';
+                  }
+                  if (value.length < 8) {
+                    return 'Hasło musi mieć co najmniej 8 znaków';
+                  }
+                  return null;
+                }),
             const SizedBox(height: 16.0),
 
             // error feedback
 
             // submit button
             StyledButton(
-              onPressed: () async {},
+              onPressed: () async {
+                if (_formKey.currentState!.validate()) {
+                  final email = _emailController.text.trim();
+                  final password = _passwordController.text.trim();
+                  print(email);
+                  print(password);
+                }
+              },
               child: const StyledButtonText('Zaloguj się'),
             ),
           ],
