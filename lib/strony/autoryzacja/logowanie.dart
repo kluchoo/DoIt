@@ -13,14 +13,18 @@ class Logowanie extends StatefulWidget {
 }
 
 class _LogowanieState extends State<Logowanie> {
-  final _loginControler = TextEditingController();
-  final _passwordControler = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  void dispose() {
-    _loginControler.dispose();
-    _passwordControler.dispose();
-    super.dispose();
-  }
+  // final _loginControler = TextEditingController();
+  // final _passwordControler = TextEditingController();
+
+  // void dispose() {
+  //   _loginControler.dispose();
+  //   _passwordControler.dispose();
+  //   super.dispose();
+  // }
 
   void rejestracja() {
     Navigator.push(
@@ -59,35 +63,78 @@ class _LogowanieState extends State<Logowanie> {
                     ),
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Row(
+                Form(
+                    key: _formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
-                          child: StylizowanyNaglowek('Adres e-mail'),
+                        // intro text
+                        Center(child: TextField()),
+                        SizedBox(
+                          height: 16.0,
                         ),
-                      ],
-                    ),
-                    StylizowanePoleTekstowe(_loginControler, Icons.mail, false),
 
-                    const Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(70, 25, 0, 0),
-                          child: StylizowanyNaglowek('Hasło'),
+                        // email address
+                        TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(labelText: 'Email'),
                         ),
+                        const SizedBox(
+                          height: 16.0,
+                        ),
+                        //password
+
+                        TextFormField(
+                          controller: _passwordController,
+                          obscureText: true,
+                          decoration:
+                              const InputDecoration(labelText: 'Password'),
+                        ),
+                        const SizedBox(
+                          height: 16.0,
+                        ),
+
+                        //error feedback
+
+                        //submit button
+
+                        StygiButon(
+                          () async {},
+                          ('Zarejestruj się'),
+                        )
                       ],
-                    ),
-                    StylizowanePoleTekstowe(
-                        _passwordControler, Icons.lock, true),
+                    ))
 
-                    PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     const Row(
+                //       children: [
+                //         Padding(
+                //           padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
+                //           child: StylizowanyNaglowek('Adres e-mail'),
+                //         ),
+                //       ],
+                //     ),
+                //     StylizowanePoleTekstowe(_loginControler, Icons.mail, false),
 
-                    // TextButton(onPressed: tescik, child: Text('test')),
-                  ],
-                ),
+                //     const Row(
+                //       children: [
+                //         Padding(
+                //           padding: EdgeInsets.fromLTRB(70, 25, 0, 0),
+                //           child: StylizowanyNaglowek('Hasło'),
+                //         ),
+                //       ],
+                //     ),
+                //     StylizowanePoleTekstowe(
+                //         _passwordControler, Icons.lock, true),
+
+                //     PrzyciskZUkrytymTlem(rejestracja, 'Zarejestruj się!')
+
+                //     // TextButton(onPressed: tescik, child: Text('test')),
+                //   ],
+                // ),
               ],
             )
           ],

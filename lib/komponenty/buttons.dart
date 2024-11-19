@@ -10,11 +10,31 @@ class PrzyciskZUkrytymTlem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: onPressed, child: Text(text,
-    style: GoogleFonts.inter(
-      textStyle: Theme.of(context).textTheme.titleMedium,
-      color: AppColors.primaryColor
-    ),
-    ));
+    return TextButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          style: GoogleFonts.inter(
+              textStyle: Theme.of(context).textTheme.titleMedium,
+              color: AppColors.primaryColor),
+        ));
+  }
+}
+
+class StygiButon extends StatelessWidget {
+  const StygiButon(this.onPressed, this.text, {super.key});
+  final Function() onPressed;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(
+        text,
+        style: GoogleFonts.inter(
+            textStyle: Theme.of(context).textTheme.titleMedium,
+            color: AppColors.primaryColor),
+      ),
+    );
   }
 }
