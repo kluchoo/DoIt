@@ -1,4 +1,5 @@
 import 'package:do_it/komponenty/cytat.dart';
+import 'package:do_it/models/quote_model.dart';
 import 'package:do_it/strony/aplikacja/zakladki/tworzenie_cytatu.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
