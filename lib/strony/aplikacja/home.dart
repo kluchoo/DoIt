@@ -3,17 +3,17 @@ import 'package:do_it/komponenty/botom_navigation_bar.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-class Home extends StatefulWidget {
+class Home extends ConsumerStatefulWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  ConsumerState<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends ConsumerState<Home> {
   int index = 0;
 
   void updateIndex(int newIndex) {
@@ -23,8 +23,9 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
+    final title = ref.watch(titleProvider).title;
+
     return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: PreferredSize(
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
                   ),
                   Center(
                       child: Text(
-                    context.watch<TitleProvider>().title,
+                    title,
                     style: GoogleFonts.openSans(
                       fontSize: 22,
                       letterSpacing: 1,

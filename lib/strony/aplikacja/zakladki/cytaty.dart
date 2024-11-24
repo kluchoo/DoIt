@@ -1,26 +1,26 @@
 import 'package:do_it/komponenty/cytat.dart';
-import 'package:do_it/models/quote_model.dart';
 import 'package:do_it/strony/aplikacja/zakladki/tworzenie_cytatu.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:do_it/providers/home_page_providers.dart';
 
-class Quotes extends StatefulWidget {
+class Quotes extends ConsumerStatefulWidget {
   const Quotes({
     super.key,
   });
 
   @override
-  State<Quotes> createState() => _QuotesState();
+  ConsumerState<Quotes> createState() => _QuotesState();
 }
 
-class _QuotesState extends State<Quotes> {
+class _QuotesState extends ConsumerState<Quotes> {
   final CardSwiperController swiperController = CardSwiperController();
 
   @override
   Widget build(BuildContext context) {
-    final quotesModel = Provider.of<QuotesModel>(context);
+    final quotesModel = ref.watch(quotesProvider);
 
     if (quotesModel.quotesData.length == 1) {
       quotesModel.fetchQuotes();
