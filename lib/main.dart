@@ -1,12 +1,7 @@
-import 'package:do_it/komponenty/cytat.dart';
-import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/home.dart';
-import 'package:do_it/strony/autoryzacja/logowanie.dart';
-import 'package:do_it/strony/autoryzacja/rejestracja.dart';
-import 'package:do_it/strony/autoryzacja/welcome.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -20,14 +15,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => TitleProvider()),
-          ChangeNotifierProvider(create: (context) => QuotesModel())
-        ],
+    ProviderScope(
         child: MaterialApp(
-          theme: primaryTheme,
-          home: const WelcomeScreen(),
-        )),
+      theme: primaryTheme,
+      home: const Home(),
+    )),
   );
 }
