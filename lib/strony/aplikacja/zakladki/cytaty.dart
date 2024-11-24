@@ -23,7 +23,7 @@ class _QuotesState extends ConsumerState<Quotes> {
     final quotesModel = ref.watch(quotesProvider);
 
     if (quotesModel.quotesData.length == 1) {
-      quotesModel.fetchQuotes();
+      quotesModel.fetchQuotes(ref);
     }
 
     return FractionallySizedBox(
@@ -56,21 +56,28 @@ class _QuotesState extends ConsumerState<Quotes> {
           ]),
           Flexible(
             child: CardSwiper(
-                duration: const Duration(milliseconds: 300),
-                maxAngle: 10,
+                duration: const Duration(milliseconds: 150),
                 numberOfCardsDisplayed: 1,
                 allowedSwipeDirection: const AllowedSwipeDirection.only(
                     up: false, down: false, left: true, right: true),
                 isLoop: false,
                 controller: swiperController,
+                onEnd: () => {
+                      ref.read(currentQuoteProvider.notifier).increment(),
+                      ref.refresh(quotesProvider).fetchQuotes(ref),
+                      print(ref.read(currentQuoteProvider).skipped),
+                      swiperController.undo(),
+
+                      // ref.watch(quotesProvider).fetchQuotes(),
+                    },
                 onSwipe: (previousIndex, currentIndex, direction) {
                   if (direction == CardSwiperDirection.right) {
                     swiperController.undo();
                     return false;
                   }
-                  if (previousIndex == quotesModel.quotesData.length - 1) {
-                    return false;
-                  }
+                  // if (previousIndex == quotesModel.quotesData.length - 1) {
+                  //   return false;
+                  // }
                   return true;
                 },
                 cardsCount: quotesModel.quotesData.length,

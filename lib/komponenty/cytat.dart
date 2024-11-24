@@ -1,3 +1,4 @@
+import 'package:do_it/models/quote_model.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -143,41 +144,4 @@ class _QuotesCardState extends State<QuotesCard> {
       ],
     );
   }
-}
-
-class Quote {
-  //konstruktor
-  Quote(
-      {required this.ownerId,
-      required this.date,
-      required this.quote,
-      required this.author,
-      required this.likes});
-
-  //gettery
-
-  // pola
-  final String ownerId;
-  final String date;
-  final String quote;
-  final String author;
-  int likes;
-}
-
-class QuoteToCreate {
-  //konstruktor
-  QuoteToCreate(
-      {required this.date,
-      required this.quote,
-      required this.author,
-      required this.likes});
-
-  //gettery
-
-  // pola
-  final bool isFav = false;
-  final String date;
-  final String quote;
-  final String author;
-  int likes;
 }

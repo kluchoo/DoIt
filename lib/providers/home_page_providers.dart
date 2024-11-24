@@ -1,6 +1,12 @@
+import 'package:do_it/models/app_user.dart';
 import 'package:do_it/models/quote_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final AppUserProvider = ChangeNotifierProvider((ref) {
+  return AppUser(
+      email: "tester@gmail.com", uid: "BuAn4rNn57gOkLu0MqgrImjgAMk1");
+});
 
 final quotesProvider = ChangeNotifierProvider((ref) {
   return QuotesModel();
@@ -22,3 +28,16 @@ class TitleProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+class CurrentQuoteNotifier extends ChangeNotifier {
+  int skipped = -1;
+  int displayed = 2;
+
+  void increment() {
+    displayed += 2;
+  }
+}
+
+final currentQuoteProvider = ChangeNotifierProvider((ref) {
+  return CurrentQuoteNotifier();
+});
