@@ -76,11 +76,21 @@ class QuotesModel extends ChangeNotifier {
     // Fetch all documents ordered by date descending
     final QuerySnapshot snapshot = await FirebaseFirestore.instance
         .collection('quotes')
-        .orderBy('date', descending: true)
+        .orderBy('date', descending: false)
         .get();
 
+    if (snapshot.docs.isEmpty) {
+      debugPrint("No quotes found");
+      return;
+    } else {
+      final String userId = ref.watch(AppUserProvider).uid;
+      await FirebaseFirestore.instance.collection('users').doc(userId).update({
+        'watchedQuotes': FieldValue.increment(2),
+      });
+    }
+
     // Skip the desired number of documents and take the next two
-    final documents = snapshot.docs.skip(0).take(displayCount);
+    final documents = snapshot.docs.skip(skipCount).take(displayCount);
     _quotesData.clear();
     for (var doc in documents) {
       _quotesData.add(Quote(

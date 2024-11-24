@@ -30,7 +30,7 @@ class TitleProvider extends ChangeNotifier {
 }
 
 class CurrentQuoteNotifier extends ChangeNotifier {
-  int skipped = -1;
+  int skipped = 0;
   int displayed = 2;
 
   void increment() {

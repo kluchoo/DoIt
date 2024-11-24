@@ -22,10 +22,6 @@ class _QuotesState extends ConsumerState<Quotes> {
   Widget build(BuildContext context) {
     final quotesModel = ref.watch(quotesProvider);
 
-    if (quotesModel.quotesData.length == 1) {
-      quotesModel.fetchQuotes(ref);
-    }
-
     return FractionallySizedBox(
       child: Column(
         children: [
@@ -65,7 +61,6 @@ class _QuotesState extends ConsumerState<Quotes> {
                 onEnd: () => {
                       ref.read(currentQuoteProvider.notifier).increment(),
                       ref.refresh(quotesProvider).fetchQuotes(ref),
-                      print(ref.read(currentQuoteProvider).skipped),
                       swiperController.undo(),
 
                       // ref.watch(quotesProvider).fetchQuotes(),
@@ -75,14 +70,14 @@ class _QuotesState extends ConsumerState<Quotes> {
                     swiperController.undo();
                     return false;
                   }
-                  // if (previousIndex == quotesModel.quotesData.length - 1) {
-                  //   return false;
-                  // }
                   return true;
                 },
                 cardsCount: quotesModel.quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
+                  if (quotesModel.quotesData.length == 1) {
+                    quotesModel.fetchQuotes(ref);
+                  }
                   final quote = quotesModel.quotesData[index];
                   return QuotesCard(quote
                       // date: quote.data,
