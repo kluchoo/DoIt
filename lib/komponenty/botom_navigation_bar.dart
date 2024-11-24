@@ -1,8 +1,8 @@
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CustomBottomNavigationBar extends StatefulWidget {
+class CustomBottomNavigationBar extends ConsumerStatefulWidget {
   const CustomBottomNavigationBar({
     this.chosenIndex = 0,
     required this.onItemSelected, // Funkcja do zmiany index
@@ -14,11 +14,12 @@ class CustomBottomNavigationBar extends StatefulWidget {
       onItemSelected; // Typ dla funkcji, która zmienia index
 
   @override
-  State<CustomBottomNavigationBar> createState() =>
+  ConsumerState<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
 }
 
-class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
+class _CustomBottomNavigationBarState
+    extends ConsumerState<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -31,7 +32,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: GestureDetector(
                 onTap: () {
                   widget.onItemSelected(0);
-                  context.read<TitleProvider>().changeTitle('Cytaty');
+                  ref.read(titleProvider).changeTitle('Cytaty');
                 },
                 child: widget.chosenIndex == 0
                     ? FractionallySizedBox(
@@ -106,7 +107,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: GestureDetector(
                 onTap: () {
                   widget.onItemSelected(1);
-                  context.read<TitleProvider>().changeTitle('Postępy');
+                  ref.read(titleProvider).changeTitle('Postępy');
                 }, // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 1
                     ? FractionallySizedBox(
@@ -181,7 +182,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: GestureDetector(
                 onTap: () {
                   widget.onItemSelected(2);
-                  context.read<TitleProvider>().changeTitle('Plan Treningowy');
+                  ref.read(titleProvider).changeTitle('Plan Treningowy');
                 }, // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 2
                     ? FractionallySizedBox(
