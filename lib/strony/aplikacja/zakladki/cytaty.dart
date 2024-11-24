@@ -49,8 +49,8 @@ class _QuotesState extends State<Quotes> {
           ]),
           Flexible(
             child: CardSwiper(
-                duration: const Duration(milliseconds: 100),
-                maxAngle: 15,
+                duration: const Duration(milliseconds: 300),
+                maxAngle: 10,
                 numberOfCardsDisplayed: 1,
                 allowedSwipeDirection: const AllowedSwipeDirection.only(
                     up: false, down: false, left: true, right: true),

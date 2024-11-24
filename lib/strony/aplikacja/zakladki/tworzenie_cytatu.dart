@@ -14,23 +14,28 @@ class TworzenieCytatu extends StatelessWidget {
           shadowColor: Colors.black,
           title: const StylizowanyNaglowek('Tworzenie cytatu'),
         ),
-        body: IconButton.filled(
-            style: ButtonStyle(
-                iconSize: const WidgetStatePropertyAll(40),
-                backgroundColor: WidgetStatePropertyAll(AppColors.primaryColor),
-                iconColor: const WidgetStatePropertyAll(Colors.black),
-                elevation: const WidgetStatePropertyAll(0)),
-            onPressed: () {
-              final newQuote = Quote(
-                id: 5,
-                date: "18.11.2024",
-                quote: "dasdasdad",
-                author: "Jan Kumaty",
-                likes: 24,
-              );
-              Provider.of<QuotesModel>(context, listen: false)
-                  .addQuote(newQuote);
-            },
-            icon: const Icon(Icons.add)));
+        body: Column(
+          children: [
+            IconButton.filled(
+                style: ButtonStyle(
+                    iconSize: const WidgetStatePropertyAll(40),
+                    backgroundColor:
+                        WidgetStatePropertyAll(AppColors.primaryColor),
+                    iconColor: const WidgetStatePropertyAll(Colors.black),
+                    elevation: const WidgetStatePropertyAll(0)),
+                onPressed: () {
+                  final newQuote = Quote(
+                    id: 5,
+                    date: "18.11.2024",
+                    quote: "dasdasdad",
+                    author: "Jan Kumaty",
+                    likes: 24,
+                  );
+                  Provider.of<QuotesModel>(context, listen: false)
+                      .addQuote(newQuote);
+                },
+                icon: const Icon(Icons.add)),
+          ],
+        ));
   }
 }
