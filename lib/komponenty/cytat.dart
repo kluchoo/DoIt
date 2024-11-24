@@ -103,7 +103,7 @@ class _QuotesCardState extends State<QuotesCard> {
                   child: Row(
                     children: [
                       Text(
-                        widget.quote.date.toString(),
+                        '${widget.quote.date.toUtc().day}.${widget.quote.date.toUtc().month}.${widget.quote.date.toUtc().year}',
                         style: GoogleFonts.openSans(
                             fontSize: 12,
                             letterSpacing: 1,
