@@ -72,7 +72,6 @@ class _QuotesState extends ConsumerState<Quotes> {
                 cardsCount: quotesModel.quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
-                  debugPrint(index.toString());
                   if (quotesModel.quotesData.length == 1) {
                     quotesModel.fetchQuotes(ref, context);
                   }

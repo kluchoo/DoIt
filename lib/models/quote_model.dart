@@ -85,15 +85,14 @@ class QuotesModel extends ChangeNotifier {
       docs.removeLast();
     }
 
-    debugPrint(((displayCount) + skipCount).toString() +
-        " " +
-        (docs.length).toString());
+    debugPrint(docs.length.toString() + " " + displayCount.toString());
 
     if ((displayCount) + skipCount > docs.length) {
       return;
     } else {
-      ref.read(currentQuoteProvider.notifier).increment();
-      if (snapshot.docs.isEmpty) {
+      _quotesData.clear();
+
+      if (docs.isEmpty) {
         debugPrint("No quotes found");
         return;
       } else {
@@ -105,8 +104,8 @@ class QuotesModel extends ChangeNotifier {
           'watchedQuotes': FieldValue.increment(2),
         });
       }
-      final documents = snapshot.docs.skip(skipCount).take(displayCount);
-      _quotesData.clear();
+      final documents = docs.skip(skipCount).take(displayCount);
+
       for (var doc in documents) {
         _quotesData.add(Quote(
           ownerId: doc.id,
@@ -116,6 +115,7 @@ class QuotesModel extends ChangeNotifier {
           likes: doc['likes'],
         ));
       }
+      ref.read(currentQuoteProvider.notifier).increment();
       notifyListeners();
     }
   }
