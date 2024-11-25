@@ -46,7 +46,7 @@ class _QuotesState extends ConsumerState<Quotes> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (ctx) => const TworzenieCytatu()));
+                              builder: (ctx) => TworzenieCytatu()));
                     },
                     icon: const Icon(Icons.add)))
           ]),
@@ -58,13 +58,10 @@ class _QuotesState extends ConsumerState<Quotes> {
                     up: false, down: false, left: true, right: true),
                 isLoop: false,
                 controller: swiperController,
-                onEnd: () => {
-                      ref.read(currentQuoteProvider.notifier).increment(),
-                      ref.refresh(quotesProvider).fetchQuotes(ref),
-                      swiperController.undo(),
-
-                      // ref.watch(quotesProvider).fetchQuotes(),
-                    },
+                onEnd: () {
+                  ref.refresh(quotesProvider).fetchQuotes(ref, context);
+                  swiperController.undo();
+                },
                 onSwipe: (previousIndex, currentIndex, direction) {
                   if (direction == CardSwiperDirection.right) {
                     swiperController.undo();
@@ -75,13 +72,12 @@ class _QuotesState extends ConsumerState<Quotes> {
                 cardsCount: quotesModel.quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
+                  debugPrint(index.toString());
                   if (quotesModel.quotesData.length == 1) {
-                    quotesModel.fetchQuotes(ref);
+                    quotesModel.fetchQuotes(ref, context);
                   }
                   final quote = quotesModel.quotesData[index];
-                  return QuotesCard(quote
-                      // date: quote.data,
-                      );
+                  return QuotesCard(quote);
                 }),
           ),
         ],

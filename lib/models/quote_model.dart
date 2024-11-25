@@ -63,12 +63,12 @@ class QuotesModel extends ChangeNotifier {
       "author": quote.author,
       "date": DateTime.now(),
       "likes": 0,
-      "ownerId": "",
+      "ownerId": quote.ownerId,
       "quote": quote.quote,
     });
   }
 
-  Future<void> fetchQuotes(WidgetRef ref) async {
+  Future<void> fetchQuotes(WidgetRef ref, context) async {
     // Number of documents to skip
     int skipCount = ref.watch(currentQuoteProvider).skipped;
     int displayCount = ref.watch(currentQuoteProvider).displayed;
@@ -79,33 +79,49 @@ class QuotesModel extends ChangeNotifier {
         .orderBy('date', descending: false)
         .get();
 
-    if (snapshot.docs.isEmpty) {
-      debugPrint("No quotes found");
+    final List<DocumentSnapshot> docs = snapshot.docs.toList();
+
+    if (docs.length % 2 != 0) {
+      docs.removeLast();
+    }
+
+    debugPrint(((displayCount) + skipCount).toString() +
+        " " +
+        (docs.length).toString());
+
+    if ((displayCount) + skipCount > docs.length) {
       return;
     } else {
-      final String userId = ref.watch(AppUserProvider).uid;
-      await FirebaseFirestore.instance.collection('users').doc(userId).update({
-        'watchedQuotes': FieldValue.increment(2),
-      });
+      ref.read(currentQuoteProvider.notifier).increment();
+      if (snapshot.docs.isEmpty) {
+        debugPrint("No quotes found");
+        return;
+      } else {
+        final String userId = ref.watch(appUserProvider).uid;
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userId)
+            .update({
+          'watchedQuotes': FieldValue.increment(2),
+        });
+      }
+      final documents = snapshot.docs.skip(skipCount).take(displayCount);
+      _quotesData.clear();
+      for (var doc in documents) {
+        _quotesData.add(Quote(
+          ownerId: doc.id,
+          date: doc['date'].toDate(),
+          quote: doc['quote'],
+          author: doc['author'],
+          likes: doc['likes'],
+        ));
+      }
+      notifyListeners();
     }
-
-    // Skip the desired number of documents and take the next two
-    final documents = snapshot.docs.skip(skipCount).take(displayCount);
-    _quotesData.clear();
-    for (var doc in documents) {
-      _quotesData.add(Quote(
-        ownerId: doc.id,
-        date: doc['date'].toDate(),
-        quote: doc['quote'],
-        author: doc['author'],
-        likes: doc['likes'],
-      ));
-    }
-    notifyListeners();
   }
 
-  Future<void> fetchAndAddQuote(Quote quote, WidgetRef ref) async {
+  Future<void> fetchAndAddQuote(Quote quote, WidgetRef ref, context) async {
     toFirestore(quote);
-    fetchQuotes(ref);
+    fetchQuotes(ref, context);
   }
 }
