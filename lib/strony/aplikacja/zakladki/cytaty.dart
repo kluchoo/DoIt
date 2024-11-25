@@ -21,6 +21,9 @@ class _QuotesState extends ConsumerState<Quotes> {
   @override
   Widget build(BuildContext context) {
     final quotesModel = ref.watch(quotesProvider);
+    if (quotesModel.quotesData.length == 1) {
+      ref.read(quotesProvider).fetchQuotes(ref, context);
+    }
 
     return FractionallySizedBox(
       child: Column(
@@ -58,9 +61,30 @@ class _QuotesState extends ConsumerState<Quotes> {
                     up: false, down: false, left: true, right: true),
                 isLoop: false,
                 controller: swiperController,
-                onEnd: () {
-                  ref.refresh(quotesProvider).fetchQuotes(ref, context);
-                  swiperController.undo();
+                onEnd: () async {
+                  bool status = await ref
+                      .refresh(quotesProvider)
+                      .fetchQuotes(ref, context);
+
+                  if (status == true) {
+                    swiperController.undo();
+                  } else {
+                    swiperController.undo();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'ładowanie cytatów',
+                          textAlign: TextAlign.center,
+                        ),
+                        duration: Duration(seconds: 2),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal:
+                              8.0, // Inner padding for SnackBar content.
+                        ),
+                        backgroundColor: Colors.black,
+                      ),
+                    );
+                  }
                 },
                 onSwipe: (previousIndex, currentIndex, direction) {
                   if (direction == CardSwiperDirection.right) {
@@ -72,9 +96,6 @@ class _QuotesState extends ConsumerState<Quotes> {
                 cardsCount: quotesModel.quotesData.length,
                 cardBuilder:
                     (context, index, percentThresholdX, percentThresholdY) {
-                  if (quotesModel.quotesData.length == 1) {
-                    quotesModel.fetchQuotes(ref, context);
-                  }
                   final quote = quotesModel.quotesData[index];
                   return QuotesCard(quote);
                 }),
