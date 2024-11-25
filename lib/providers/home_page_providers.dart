@@ -3,9 +3,11 @@ import 'package:do_it/models/quote_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final AppUserProvider = ChangeNotifierProvider((ref) {
+final appUserProvider = ChangeNotifierProvider((ref) {
   return AppUser(
-      email: "tester@gmail.com", uid: "BuAn4rNn57gOkLu0MqgrImjgAMk1");
+      email: "tester@gmail.com",
+      uid: "BuAn4rNn57gOkLu0MqgrImjgAMk1",
+      name: "Tester");
 });
 
 final quotesProvider = ChangeNotifierProvider((ref) {
