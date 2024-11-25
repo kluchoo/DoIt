@@ -68,7 +68,7 @@ class QuotesModel extends ChangeNotifier {
     });
   }
 
-  Future<void> fetchQuotes(WidgetRef ref, context) async {
+  Future<bool> fetchQuotes(WidgetRef ref, context) async {
     // Number of documents to skip
     int skipCount = ref.watch(currentQuoteProvider).skipped;
     int displayCount = ref.watch(currentQuoteProvider).displayed;
@@ -85,16 +85,12 @@ class QuotesModel extends ChangeNotifier {
       docs.removeLast();
     }
 
-    debugPrint(docs.length.toString() + " " + displayCount.toString());
-
     if ((displayCount) + skipCount > docs.length) {
-      return;
+      ref.read(currentQuoteProvider).restart();
+      return true;
     } else {
-      _quotesData.clear();
-
       if (docs.isEmpty) {
-        debugPrint("No quotes found");
-        return;
+        return true;
       } else {
         final String userId = ref.watch(appUserProvider).uid;
         await FirebaseFirestore.instance
@@ -103,20 +99,59 @@ class QuotesModel extends ChangeNotifier {
             .update({
           'watchedQuotes': FieldValue.increment(2),
         });
-      }
-      final documents = docs.skip(skipCount).take(displayCount);
 
-      for (var doc in documents) {
-        _quotesData.add(Quote(
-          ownerId: doc.id,
-          date: doc['date'].toDate(),
-          quote: doc['quote'],
-          author: doc['author'],
-          likes: doc['likes'],
-        ));
+        debugPrint((docs.length.toString()) +
+            ' ' +
+            (displayCount).toString() +
+            " " +
+            (quotesData.length).toString());
+
+        final documents = docs.skip(skipCount).take(displayCount);
+        _quotesData.clear();
+
+        if (displayCount + 2 < docs.length) {
+          ref.read(currentQuoteProvider.notifier).increment();
+          for (var doc in documents) {
+            _quotesData.add(Quote(
+              ownerId: doc.id,
+              date: doc['date'].toDate(),
+              quote: doc['quote'],
+              author: doc['author'],
+              likes: doc['likes'],
+            ));
+          }
+          debugPrint("1");
+          notifyListeners();
+          return true;
+        } else if (displayCount + 2 == docs.length) {
+          ref.read(currentQuoteProvider.notifier).increment();
+          for (var doc in documents) {
+            _quotesData.add(Quote(
+              ownerId: doc.id,
+              date: doc['date'].toDate(),
+              quote: doc['quote'],
+              author: doc['author'],
+              likes: doc['likes'],
+            ));
+          }
+          debugPrint("2");
+          notifyListeners();
+          return true;
+        } else {
+          for (var doc in documents) {
+            _quotesData.add(Quote(
+              ownerId: doc.id,
+              date: doc['date'].toDate(),
+              quote: doc['quote'],
+              author: doc['author'],
+              likes: doc['likes'],
+            ));
+          }
+          debugPrint("3");
+          notifyListeners();
+          return false;
+        }
       }
-      ref.read(currentQuoteProvider.notifier).increment();
-      notifyListeners();
     }
   }
 

@@ -38,6 +38,10 @@ class CurrentQuoteNotifier extends ChangeNotifier {
   void increment() {
     displayed += 2;
   }
+
+  void restart() {
+    displayed = 2;
+  }
 }
 
 final currentQuoteProvider = ChangeNotifierProvider((ref) {
