@@ -65,7 +65,7 @@ class _QuotesState extends ConsumerState<Quotes> {
           ]),
           Flexible(
             child: quotesModel.quotesData.isEmpty
-                ? Center(
+                ? const Center(
                     child: CircularProgressIndicator(),
                   )
                 : CardSwiper(
@@ -96,6 +96,7 @@ class _QuotesState extends ConsumerState<Quotes> {
                         swiperController.undo();
                       } else {
                         // Brak więcej cytatów do załadowania
+                        swiperController.undo();
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
