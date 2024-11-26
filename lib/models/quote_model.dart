@@ -88,8 +88,8 @@ class QuotesModel extends ChangeNotifier {
     if (skipCount + displayCount > docs.length) {
       // Brak więcej cytatów do załadowania
       debugPrint('No more quotes to load. Restarting...');
-      ref.read(currentQuoteProvider.notifier).restart();
-      _quotesData.clear();
+      // ref.read(currentQuoteProvider.notifier).restart();
+      // _quotesData.clear();
       notifyListeners();
       return false;
     } else {
