@@ -17,13 +17,23 @@ class Quotes extends ConsumerStatefulWidget {
 
 class _QuotesState extends ConsumerState<Quotes> {
   final CardSwiperController swiperController = CardSwiperController();
+  bool _isInitialized = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_isInitialized) {
+      ref.read(quotesProvider).fetchQuotes(ref, context);
+      _isInitialized = true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final quotesModel = ref.watch(quotesProvider);
-    if (quotesModel.quotesData.length == 1) {
-      ref.read(quotesProvider).fetchQuotes(ref, context);
-    }
+
+    // Logowanie długości listy cytatów
+    debugPrint('Quotes to display: ${quotesModel.quotesData.length}');
 
     return FractionallySizedBox(
       child: Column(
@@ -54,51 +64,64 @@ class _QuotesState extends ConsumerState<Quotes> {
                     icon: const Icon(Icons.add)))
           ]),
           Flexible(
-            child: CardSwiper(
-                duration: const Duration(milliseconds: 150),
-                numberOfCardsDisplayed: 1,
-                allowedSwipeDirection: const AllowedSwipeDirection.only(
-                    up: false, down: false, left: true, right: true),
-                isLoop: false,
-                controller: swiperController,
-                onEnd: () async {
-                  bool status = await ref
-                      .refresh(quotesProvider)
-                      .fetchQuotes(ref, context);
+            child: quotesModel.quotesData.isEmpty
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : CardSwiper(
+                    duration: const Duration(milliseconds: 150),
+                    numberOfCardsDisplayed: 1,
+                    allowedSwipeDirection: const AllowedSwipeDirection.only(
+                        up: false, down: false, left: true, right: true),
+                    isLoop: false,
+                    controller: swiperController,
+                    onEnd: () async {
+                      bool hasMoreQuotes = await ref
+                          .read(quotesProvider)
+                          .fetchQuotes(ref, context);
 
-                  if (status == true) {
-                    swiperController.undo();
-                  } else {
-                    swiperController.undo();
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                          'ładowanie cytatów',
-                          textAlign: TextAlign.center,
-                        ),
-                        duration: Duration(seconds: 2),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal:
-                              8.0, // Inner padding for SnackBar content.
-                        ),
-                        backgroundColor: Colors.black,
-                      ),
-                    );
-                  }
-                },
-                onSwipe: (previousIndex, currentIndex, direction) {
-                  if (direction == CardSwiperDirection.right) {
-                    swiperController.undo();
-                    return false;
-                  }
-                  return true;
-                },
-                cardsCount: quotesModel.quotesData.length,
-                cardBuilder:
-                    (context, index, percentThresholdX, percentThresholdY) {
-                  final quote = quotesModel.quotesData[index];
-                  return QuotesCard(quote);
-                }),
+                      if (hasMoreQuotes) {
+                        // Nowe cytaty są ładowane
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              'Ładowanie kolejnych cytatów...',
+                              textAlign: TextAlign.center,
+                            ),
+                            duration: Duration(seconds: 2),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
+                            backgroundColor: Colors.black,
+                          ),
+                        );
+                        swiperController.undo();
+                      } else {
+                        // Brak więcej cytatów do załadowania
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              'Brak więcej cytatów do wyświetlenia.',
+                              textAlign: TextAlign.center,
+                            ),
+                            duration: Duration(seconds: 2),
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
+                            backgroundColor: Colors.black,
+                          ),
+                        );
+                      }
+                    },
+                    onSwipe: (previousIndex, currentIndex, direction) {
+                      if (direction == CardSwiperDirection.right) {
+                        swiperController.undo();
+                        return false;
+                      }
+                      return true;
+                    },
+                    cardsCount: quotesModel.quotesData.length,
+                    cardBuilder:
+                        (context, index, percentThresholdX, percentThresholdY) {
+                      final quote = quotesModel.quotesData[index];
+                      return QuotesCard(quote);
+                    }),
           ),
         ],
       ),
