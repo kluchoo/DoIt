@@ -118,13 +118,13 @@ class _TworzenieCytatuState extends ConsumerState<TworzenieCytatu> {
                           final selectedDate = await showDatePicker(
                             context: context,
                             initialDate: date,
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime(2100),
+                            firstDate: DateTime(-4000),
+                            lastDate: DateTime(2025),
                           );
 
                           if (selectedDate != null) {
                             setState(() {
-                              date = selectedDate;
+                              date = selectedDate.add(const Duration(days: 1));
                             });
                           }
                         },
