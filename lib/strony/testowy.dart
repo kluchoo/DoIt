@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +23,38 @@ class _TestyState extends ConsumerState<Testy> {
         child: Column(
           children: [
             Image(image: img.image),
+            TextButton(
+              onPressed: () async {
+                try {
+                  FilePickerResult? result =
+                      await FilePicker.platform.pickFiles(
+                    type: FileType.image,
+                    withData: true, // Upewnij się, że otrzymamy dane pliku
+                  );
+
+                  if (result != null && result.files.isNotEmpty) {
+                    // Użyj bytes zamiast byt
+                    Uint8List? fileBytes = result.files.first.bytes;
+
+                    if (fileBytes != null) {
+                      setState(() {
+                        img = Image.memory(fileBytes);
+                      });
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text('Nie udało się wczytać pliku')),
+                      );
+                    }
+                  }
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Błąd: ${e.toString()}')),
+                  );
+                }
+              },
+              child: const Text('Wybierz plik'),
+            ),
             TextButton(
                 onPressed: () async {
                   await updateProfileImg(ref, 'assets/img/doit.png');
