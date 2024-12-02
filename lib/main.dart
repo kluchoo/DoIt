@@ -19,7 +19,7 @@ void main() async {
     ProviderScope(
         child: MaterialApp(
       theme: primaryTheme,
-      home: const Testy(),
+      home: Testy(),
     )),
   );
 }
