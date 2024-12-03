@@ -15,30 +15,34 @@ class Testy extends ConsumerStatefulWidget {
 
 class _TestyState extends ConsumerState<Testy> {
   Image img = Image.asset('assets/img/doititransparent.png');
+  Uint8List? pickedImageBytes; // zamiast Image pickedImage
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Image(image: img.image),
+            Image(
+              image: img.image,
+              width: 800,
+            ),
+            if (pickedImageBytes != null)
+              Image.memory(pickedImageBytes!, height: 100),
             TextButton(
               onPressed: () async {
                 try {
                   FilePickerResult? result =
                       await FilePicker.platform.pickFiles(
                     type: FileType.image,
-                    withData: true, // Upewnij się, że otrzymamy dane pliku
+                    withData: true,
                   );
 
                   if (result != null && result.files.isNotEmpty) {
-                    // Użyj bytes zamiast byt
                     Uint8List? fileBytes = result.files.first.bytes;
-
                     if (fileBytes != null) {
                       setState(() {
-                        img = Image.memory(fileBytes);
+                        pickedImageBytes = fileBytes;
                       });
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -57,7 +61,13 @@ class _TestyState extends ConsumerState<Testy> {
             ),
             TextButton(
                 onPressed: () async {
-                  await updateProfileImg(ref, 'assets/img/doit.png');
+                  if (pickedImageBytes != null) {
+                    await updateProfileImg(ref, pickedImageBytes!);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Najpierw wybierz zdjęcie')),
+                    );
+                  }
                 },
                 child: const Text('wyślij do bazy danych')),
             TextButton(
@@ -85,6 +95,11 @@ class _TestyState extends ConsumerState<Testy> {
   }
 }
 
+// Nowa funkcja do kodowania bytes na base64
+String encodeBytes(Uint8List bytes) {
+  return base64Encode(bytes);
+}
+
 Future<String> encode(String img) async {
   final ByteData bytes = await rootBundle.load(img);
   final List<int> bytesList = bytes.buffer.asUint8List();
@@ -97,8 +112,9 @@ Future<Uint8List> decode(String base64String) async {
   return decodedBytes;
 }
 
-Future<void> updateProfileImg(WidgetRef ref, String img) async {
-  String base64Image = await encode(img);
+// Zmodyfikowana funkcja updateProfileImg
+Future<void> updateProfileImg(WidgetRef ref, Uint8List imageBytes) async {
+  String base64Image = encodeBytes(imageBytes);
   await FirebaseFirestore.instance
       .collection('users')
       .doc(ref.read(appUserProvider).uid)
