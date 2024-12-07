@@ -1,10 +1,13 @@
 import 'dart:convert';
+import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'aplikacja/zakladki/camera.dart';
 
 class Testy extends ConsumerStatefulWidget {
   const Testy({super.key});
@@ -15,7 +18,7 @@ class Testy extends ConsumerStatefulWidget {
 
 class _TestyState extends ConsumerState<Testy> {
   Image img = Image.asset('assets/img/doititransparent.png');
-  Uint8List? pickedImageBytes; // zamiast Image pickedImage
+  Uint8List? pickedImageBytes;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,26 @@ class _TestyState extends ConsumerState<Testy> {
             ),
             if (pickedImageBytes != null)
               Image.memory(pickedImageBytes!, height: 100),
+            TextButton.icon(
+                onPressed: () async {
+                  final XFile? picture = await Navigator.push<XFile>(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Camera(),
+                    ),
+                  );
+
+                  if (picture != null) {
+                    // Konwertuj XFile na Uint8List
+                    final Uint8List imageBytes = await picture.readAsBytes();
+
+                    setState(() {
+                      pickedImageBytes = imageBytes;
+                    });
+                  }
+                },
+                label: const Text('Zrób zdjęcie'),
+                icon: const Icon(Icons.image)),
             TextButton(
               onPressed: () async {
                 try {

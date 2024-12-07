@@ -1,4 +1,5 @@
 import 'package:do_it/strony/aplikacja/home.dart';
+import 'package:do_it/strony/aplikacja/zakladki/camera.dart';
 import 'package:do_it/strony/testowy.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(
     ProviderScope(
         child: MaterialApp(
