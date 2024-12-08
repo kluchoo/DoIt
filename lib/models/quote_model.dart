@@ -97,7 +97,6 @@ class QuotesModel extends ChangeNotifier {
       await FirebaseFirestore.instance.collection('users').doc(userId).update({
         'watchedQuotes': FieldValue.increment(2),
       });
-
       final documents = docs.skip(skipCount).take(displayCount);
       _quotesData.clear();
 

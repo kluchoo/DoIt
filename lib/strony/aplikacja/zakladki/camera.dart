@@ -47,7 +47,7 @@ class _CameraState extends State<Camera> {
         children: [
           SizedBox(
               width: MediaQuery.sizeOf(context).width * 0.8,
-              height: MediaQuery.sizeOf(context).height * 0.3,
+              height: MediaQuery.sizeOf(context).height * 0.6,
               child: CameraPreview(cameraController!)),
           Center(
             child: TextButton(

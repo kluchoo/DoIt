@@ -25,7 +25,7 @@ class _HomeState extends ConsumerState<Home> {
   @override
   Widget build(BuildContext context) {
     final title = ref.watch(titleProvider).title;
-
+    ref.read(appUserProvider).uid = "BuAn4rNn57gOkLu0MqgrImjgAMk1";
     return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: PreferredSize(
@@ -57,7 +57,21 @@ class _HomeState extends ConsumerState<Home> {
                       color: const Color.fromARGB(255, 0, 0, 0),
                       fontWeight: FontWeight.w800,
                     ),
-                  ))
+                  )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                          onPressed: () {},
+                          child: Container(
+                            width: MediaQuery.of(context).size.height * 0.1,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          )),
+                    ],
+                  )
                 ],
               )),
         ),

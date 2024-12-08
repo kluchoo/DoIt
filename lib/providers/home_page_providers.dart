@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final appUserProvider = ChangeNotifierProvider((ref) {
-  return AppUser(
-      email: "tester@gmail.com",
-      uid: "BuAn4rNn57gOkLu0MqgrImjgAMk1",
-      name: "Tester");
+  String uid = "null";
+
+  return AppUser(uid: uid);
 });
 
 final quotesProvider = ChangeNotifierProvider((ref) {

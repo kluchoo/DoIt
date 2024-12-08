@@ -1,9 +1,12 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 
 class AppUser extends ChangeNotifier {
-  AppUser({required this.uid, required this.email, required this.name});
+  String uid;
+  final String email = "null";
+  final String name = "null";
+  final Uint8List? photo = null;
 
-  final String uid;
-  final String email;
-  final String name;
+  AppUser({required this.uid});
 }

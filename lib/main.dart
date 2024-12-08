@@ -21,7 +21,7 @@ void main() async {
     ProviderScope(
         child: MaterialApp(
       theme: primaryTheme,
-      home: Testy(),
+      home: Home(),
     )),
   );
 }
