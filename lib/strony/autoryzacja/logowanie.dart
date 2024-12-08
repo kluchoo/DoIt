@@ -1,5 +1,6 @@
 import 'package:do_it/komponenty/styled_button.dart';
 import 'package:do_it/komponenty/styled_text.dart';
+import 'package:do_it/services/auth_service.dart';
 import 'package:do_it/strony/aplikacja/home.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
@@ -106,8 +107,9 @@ class _SignUpFormState extends State<SignUpForm> {
                 if (_formKey.currentState!.validate()) {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
-                  print(email);
-                  print(password);
+                  final user = await AuthService.signUp(email, password);
+
+                  // error feedback
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (ctx) => const Home()));
                 }

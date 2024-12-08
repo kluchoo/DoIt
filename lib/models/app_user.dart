@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-class AppUser extends ChangeNotifier {
+class AppUser {
   AppUser({required this.uid, required this.email});
 
   final String uid;
