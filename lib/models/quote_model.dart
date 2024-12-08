@@ -63,49 +63,70 @@ class QuotesModel extends ChangeNotifier {
       "author": quote.author,
       "date": DateTime.now(),
       "likes": 0,
-      "ownerId": "",
+      "ownerId": quote.ownerId,
       "quote": quote.quote,
     });
   }
 
-  Future<void> fetchQuotes(WidgetRef ref) async {
+  Future<bool> fetchQuotes(WidgetRef ref, BuildContext context) async {
     // Number of documents to skip
     int skipCount = ref.watch(currentQuoteProvider).skipped;
     int displayCount = ref.watch(currentQuoteProvider).displayed;
 
-    // Fetch all documents ordered by date descending
+    // Fetch all documents ordered by date ascending
     final QuerySnapshot snapshot = await FirebaseFirestore.instance
         .collection('quotes')
         .orderBy('date', descending: false)
         .get();
 
-    if (snapshot.docs.isEmpty) {
-      debugPrint("No quotes found");
-      return;
+    final List<DocumentSnapshot> docs = snapshot.docs.toList();
+
+    // Logowanie wartości
+    debugPrint(
+        'Total docs: ${docs.length}, skipCount: $skipCount, displayCount: $displayCount');
+
+    if (skipCount + displayCount > docs.length) {
+      // Brak więcej cytatów do załadowania
+      debugPrint('No more quotes to load. Restarting...');
+      // ref.read(currentQuoteProvider.notifier).restart();
+      // _quotesData.clear();
+      notifyListeners();
+      return false;
     } else {
-      final String userId = ref.watch(AppUserProvider).uid;
+      final String userId = ref.watch(appUserProvider).uid;
       await FirebaseFirestore.instance.collection('users').doc(userId).update({
         'watchedQuotes': FieldValue.increment(2),
       });
-    }
+      final documents = docs.skip(skipCount).take(displayCount);
+      _quotesData.clear();
 
-    // Skip the desired number of documents and take the next two
-    final documents = snapshot.docs.skip(skipCount).take(displayCount);
-    _quotesData.clear();
-    for (var doc in documents) {
-      _quotesData.add(Quote(
-        ownerId: doc.id,
-        date: doc['date'].toDate(),
-        quote: doc['quote'],
-        author: doc['author'],
-        likes: doc['likes'],
-      ));
+      // Dodanie cytatów do listy
+      for (var doc in documents) {
+        _quotesData.add(Quote(
+          ownerId: doc.id,
+          date: doc['date'].toDate(),
+          quote: doc['quote'],
+          author: doc['author'],
+          likes: doc['likes'],
+        ));
+      }
+
+      // Logowanie długości listy
+      debugPrint('Quotes loaded: ${_quotesData.length}');
+
+      if (hasListeners) {
+        notifyListeners();
+      }
+
+      // Zwiększenie skipCount o liczbę pobranych cytatów
+      ref.read(currentQuoteProvider.notifier).increment();
+
+      return true;
     }
-    notifyListeners();
   }
 
-  Future<void> fetchAndAddQuote(Quote quote, WidgetRef ref) async {
+  Future<void> fetchAndAddQuote(Quote quote, WidgetRef ref, context) async {
     toFirestore(quote);
-    fetchQuotes(ref);
+    fetchQuotes(ref, context);
   }
 }

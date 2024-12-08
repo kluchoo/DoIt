@@ -1,7 +1,14 @@
+import 'dart:typed_data';
+
+import 'package:camera/camera.dart';
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
+import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:do_it/strony/aplikacja/zakladki/camera.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
+import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +22,24 @@ class Home extends ConsumerStatefulWidget {
 
 class _HomeState extends ConsumerState<Home> {
   int index = 0;
+  Uint8List? profileImage;
+
+  @override
+  void initState() {
+    super.initState();
+    // Opóźniamy inicjalizację do następnej klatki
+    Future.microtask(() async {
+      debugPrint('Inicjalizacja w Home...');
+      final user = ref.read(appUserProvider);
+      user.uid = "BuAn4rNn57gOkLu0MqgrImjgAMk1";
+      try {
+        await user.fetchUserData();
+        debugPrint('Zakończono ładowanie danych użytkownika');
+      } catch (e) {
+        debugPrint('Błąd podczas inicjalizacji: $e');
+      }
+    });
+  }
 
   void updateIndex(int newIndex) {
     setState(() {
@@ -25,6 +50,15 @@ class _HomeState extends ConsumerState<Home> {
   @override
   Widget build(BuildContext context) {
     final title = ref.watch(titleProvider).title;
+    final user = ref.watch(appUserProvider);
+    final profileImage = user.photo;
+
+    // Debugowanie
+    if (profileImage != null) {
+      debugPrint('Zdjęcie jest dostępne, długość: ${profileImage}');
+    } else {
+      debugPrint('Brak zdjęcia profilowego');
+    }
 
     return Scaffold(
         resizeToAvoidBottomInset: true,
@@ -57,7 +91,51 @@ class _HomeState extends ConsumerState<Home> {
                       color: const Color.fromARGB(255, 0, 0, 0),
                       fontWeight: FontWeight.w800,
                     ),
-                  ))
+                  )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProfileSettingsPage()));
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.height * 0.1,
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: ClipOval(
+                            child: profileImage != null
+                                ? Image.memory(
+                                    profileImage,
+                                    fit: BoxFit.cover,
+                                    scale: 0.5,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      debugPrint(
+                                          'Błąd ładowania zdjęcia: $error');
+                                      return const Icon(
+                                        Icons.person,
+                                        size: 65,
+                                        color: Colors.white,
+                                      );
+                                    },
+                                  )
+                                : const Icon(
+                                    Icons.person,
+                                    size: 65,
+                                    color: Colors.white,
+                                  ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               )),
         ),
