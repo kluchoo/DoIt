@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
 import 'package:do_it/providers/home_page_providers.dart';
@@ -15,6 +17,24 @@ class Home extends ConsumerStatefulWidget {
 
 class _HomeState extends ConsumerState<Home> {
   int index = 0;
+  Uint8List? profileImage;
+
+  @override
+  void initState() {
+    super.initState();
+    // Opóźniamy inicjalizację do następnej klatki
+    Future.microtask(() async {
+      debugPrint('Inicjalizacja w Home...');
+      final user = ref.read(appUserProvider);
+      user.uid = "BuAn4rNn57gOkLu0MqgrImjgAMk1";
+      try {
+        await user.fetchUserData();
+        debugPrint('Zakończono ładowanie danych użytkownika');
+      } catch (e) {
+        debugPrint('Błąd podczas inicjalizacji: $e');
+      }
+    });
+  }
 
   void updateIndex(int newIndex) {
     setState(() {
@@ -25,7 +45,16 @@ class _HomeState extends ConsumerState<Home> {
   @override
   Widget build(BuildContext context) {
     final title = ref.watch(titleProvider).title;
-    ref.read(appUserProvider).uid = "BuAn4rNn57gOkLu0MqgrImjgAMk1";
+    final user = ref.watch(appUserProvider);
+    final profileImage = user.photo;
+
+    // Debugowanie
+    if (profileImage != null) {
+      debugPrint('Zdjęcie jest dostępne, długość: ${profileImage}');
+    } else {
+      debugPrint('Brak zdjęcia profilowego');
+    }
+
     return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: PreferredSize(
@@ -62,14 +91,37 @@ class _HomeState extends ConsumerState<Home> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                          onPressed: () {},
-                          child: Container(
-                            width: MediaQuery.of(context).size.height * 0.1,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          )),
+                        onPressed: () {},
+                        child: Container(
+                          width: MediaQuery.of(context).size.height * 0.1,
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: ClipOval(
+                            child: profileImage != null
+                                ? Image.memory(
+                                    profileImage,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      debugPrint(
+                                          'Błąd ładowania zdjęcia: $error');
+                                      return const Icon(
+                                        Icons.person,
+                                        size: 65,
+                                        color: Colors.white,
+                                      );
+                                    },
+                                  )
+                                : const Icon(
+                                    Icons.person,
+                                    size: 65,
+                                    color: Colors.white,
+                                  ),
+                          ),
+                        ),
+                      ),
                     ],
                   )
                 ],
