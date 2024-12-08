@@ -10,7 +10,7 @@ class AppUser extends ChangeNotifier {
   String name = "null";
   Uint8List? photo;
 
-  AppUser({required this.uid}) {
+  AppUser({required this.uid, required this.email}) {
     // pobierz dane użytkownika z bazy danych
     fetchUserData();
   }
