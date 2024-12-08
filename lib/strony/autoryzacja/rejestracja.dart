@@ -1,5 +1,6 @@
 import 'package:do_it/komponenty/styled_button.dart';
 import 'package:do_it/komponenty/styled_text.dart';
+import 'package:do_it/services/auth_service.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -135,7 +136,7 @@ class _SignInFormState extends State<SignInForm> {
                 if (_formKey.currentState!.validate()) {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
-                  print(email);
+                  final user = await AuthService.signUp(email, password);
                 }
               },
               child: const StyledButtonText('Zarejestruj się'),

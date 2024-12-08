@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_it/models/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -20,6 +21,12 @@ class AuthService {
           email: credential.user!.email!,
         );
       }
+
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc("${credential.user!.uid}")
+          .set({"profileImg": "", "watchedQuotes": 0});
+
       return null;
     } catch (e) {
       return null;

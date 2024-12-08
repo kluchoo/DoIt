@@ -107,9 +107,9 @@ class _SignUpFormState extends State<SignUpForm> {
                 if (_formKey.currentState!.validate()) {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
-                  final user = await AuthService.signUp(email, password);
-
+                  print(email);
                   // error feedback
+
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (ctx) => const Home()));
                 }
