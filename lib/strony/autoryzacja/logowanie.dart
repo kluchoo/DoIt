@@ -107,7 +107,8 @@ class _SignUpFormState extends State<SignUpForm> {
                 if (_formKey.currentState!.validate()) {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
-                  print(email);
+                  final user = await AuthService.signIn(email, password);
+
                   // error feedback
 
                   Navigator.pushReplacement(context,
