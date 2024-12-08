@@ -18,10 +18,7 @@ class AppUser extends ChangeNotifier {
   Future<void> fetchUserData() async {
     try {
       final DocumentSnapshot<Map<String, dynamic>> snapshot =
-          await FirebaseFirestore.instance
-              .collection('users')
-              .doc("BuAn4rNn57gOkLu0MqgrImjgAMk1")
-              .get();
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
 
       if (snapshot.data() == null) {
         // Brak dokumentu użytkownika

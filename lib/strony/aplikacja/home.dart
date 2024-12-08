@@ -1,9 +1,14 @@
 import 'dart:typed_data';
 
+import 'package:camera/camera.dart';
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
+import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:do_it/strony/aplikacja/zakladki/camera.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
+import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -91,7 +96,13 @@ class _HomeState extends ConsumerState<Home> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProfileSettingsPage()));
+                        },
                         child: Container(
                           width: MediaQuery.of(context).size.height * 0.1,
                           height: MediaQuery.of(context).size.height * 0.1,
@@ -104,6 +115,7 @@ class _HomeState extends ConsumerState<Home> {
                                 ? Image.memory(
                                     profileImage,
                                     fit: BoxFit.cover,
+                                    scale: 0.5,
                                     errorBuilder: (context, error, stackTrace) {
                                       debugPrint(
                                           'Błąd ładowania zdjęcia: $error');
