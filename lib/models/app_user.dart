@@ -2,17 +2,27 @@ import 'dart:typed_data';
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:do_it/services/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppUser extends ChangeNotifier {
   String uid;
-  String email = "null";
-  String name = "null";
+  String email;
+  String name;
   Uint8List? photo;
 
-  AppUser({required this.uid, required this.email}) {
+  AppUser({required this.uid, required this.email, required this.name}) {
     // pobierz dane użytkownika z bazy danych
+  }
+
+  Future<void> fetchUserAuthData() async {
+    // pobierz dane użytkownika z autoryzacji
+    final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    final User? user = _firebaseAuth.currentUser;
+    name = user!.displayName!;
+    email = user.email!;
   }
 
   Future<void> fetchUserData() async {
@@ -37,14 +47,12 @@ class AppUser extends ChangeNotifier {
           photo = null;
         }
       }
+
+      // Bezpieczne przypisanie name
     } catch (e) {
       debugPrint('Błąd podczas pobierania danych użytkownika: $e');
       rethrow;
     }
-  }
-
-  Future<void> fetchUserAuthData() async {
-    // pobierz dane użytkownika z bazy autentykacji danych
   }
 
   Future<String> encode(String img) async {

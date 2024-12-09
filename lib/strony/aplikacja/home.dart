@@ -30,6 +30,7 @@ class _HomeState extends ConsumerState<Home> {
       final user = ref.watch(appUserProvider);
       try {
         await user.fetchUserData();
+        await user.fetchUserAuthData();
         debugPrint('Zakończono ładowanie danych użytkownika');
       } catch (e) {
         debugPrint('Błąd podczas inicjalizacji: $e');

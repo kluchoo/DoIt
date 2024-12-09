@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_it/models/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class AuthService {
   static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -16,16 +17,16 @@ class AuthService {
       );
 
       if (credential.user != null) {
+        String displayName = email.split('@')[0];
+        debugPrint('Display name: $displayName');
+        await credential.user!.updateDisplayName(displayName);
+        await credential.user!.reload();
         return AppUser(
           uid: credential.user!.uid,
           email: credential.user!.email!,
+          name: credential.user!.displayName!,
         );
       }
-
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc("${credential.user!.uid}")
-          .set({"profileImg": "", "watchedQuotes": 0});
 
       return null;
     } catch (e) {
@@ -44,7 +45,9 @@ class AuthService {
 
       if (credential.user != null) {
         return AppUser(
-            uid: credential.user!.uid, email: credential.user!.email!);
+            uid: credential.user!.uid,
+            email: credential.user!.email!,
+            name: credential.user!.displayName!);
       }
       return null;
     } catch (e) {

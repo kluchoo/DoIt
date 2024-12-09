@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final appUserProvider = ChangeNotifierProvider((ref) {
-  return AppUser(uid: "null", email: "null");
+  return AppUser(uid: "null", email: "null", name: "null");
 });
 
 final quotesProvider = ChangeNotifierProvider((ref) {

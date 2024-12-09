@@ -124,14 +124,15 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                   final password = _passwordController.text.trim();
 
                   final user = await AuthService.signIn(email, password);
-                  ref.read(appUserProvider).uid = user!.uid;
-                  debugPrint('User: ${ref.watch(appUserProvider).uid}');
+
                   // error feedback
                   if (user == null) {
                     setState(() {
                       _errorFeedback = 'Nieprawidłowe dane logowania';
                     });
                   } else {
+                    ref.read(appUserProvider).uid = user!.uid;
+                    debugPrint('User: ${ref.watch(appUserProvider).uid}');
                     // debugPrint('Zalogowano jako ${user.uid}');
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (ctx) => const Home()));
