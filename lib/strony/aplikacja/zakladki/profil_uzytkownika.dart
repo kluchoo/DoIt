@@ -75,26 +75,67 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(150),
                       ),
-                      child: ClipOval(
-                        child: profileImage != null
-                            ? Image.memory(
-                                profileImage!,
-                                fit: BoxFit.fitWidth,
-                                scale: 1,
-                                errorBuilder: (context, error, stackTrace) {
-                                  debugPrint('Błąd ładowania zdjęcia: $error');
-                                  return const Icon(
-                                    Icons.person,
-                                    size: 85,
-                                    color: Colors.white,
-                                  );
-                                },
-                              )
-                            : const Icon(
-                                Icons.person,
-                                size: 85,
-                                color: Colors.white,
-                              ),
+                      child: GestureDetector(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => Dialog(
+                                    backgroundColor: AppColors.secondaryAccent,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Image.memory(
+                                          width: 400,
+                                          profileImage!,
+                                          fit: BoxFit.fitWidth,
+                                          scale: 1,
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            debugPrint(
+                                                'Błąd ładowania zdjęcia: $error');
+                                            return const Icon(
+                                              Icons.person,
+                                              size: 85,
+                                              color: Colors.white,
+                                            );
+                                          },
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const StylizowanyText(
+                                            'Zamknij',
+                                            color: Color.fromARGB(
+                                                255, 255, 0, 149),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ));
+                        },
+                        child: ClipOval(
+                          child: profileImage != null
+                              ? Image.memory(
+                                  profileImage!,
+                                  fit: BoxFit.fitWidth,
+                                  scale: 1,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    debugPrint(
+                                        'Błąd ładowania zdjęcia: $error');
+                                    return const Icon(
+                                      Icons.person,
+                                      size: 85,
+                                      color: Colors.white,
+                                    );
+                                  },
+                                )
+                              : const Icon(
+                                  Icons.person,
+                                  size: 85,
+                                  color: Colors.white,
+                                ),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -106,16 +147,18 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                       ),
                       child: Column(
                         children: [
-                          const StylizowanyNaglowek('Zmień',
-                              color: Colors.white),
                           const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               TextButton(
+                                style: ButtonStyle(
+                                  backgroundColor: WidgetStateProperty.all(
+                                      Colors.black.withOpacity(0.1)),
+                                ),
                                 child: const StylizowanyText(
                                   'Zrób zdjęcie',
-                                  color: Color.fromARGB(255, 255, 0, 149),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
                                 onPressed: () async {
                                   final XFile? picture =
@@ -137,9 +180,13 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                               ),
                               const SizedBox(width: 16),
                               TextButton(
+                                style: ButtonStyle(
+                                  backgroundColor: WidgetStateProperty.all(
+                                      Colors.black.withOpacity(0.1)),
+                                ),
                                 child: const StylizowanyText(
                                   'Wybierz plik',
-                                  color: Color.fromARGB(255, 255, 0, 149),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
                                 onPressed: () async {
                                   try {
