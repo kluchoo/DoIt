@@ -78,6 +78,7 @@ class AppUser extends ChangeNotifier {
 
   Future<void> logOut() async {
     // wyloguj użytkownika
+    await AuthService.signOut();
     uid = "";
     email = "";
     name = "";
