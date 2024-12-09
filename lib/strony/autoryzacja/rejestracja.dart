@@ -18,6 +18,8 @@ class _SignInFormState extends State<SignInForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  String? _errorFeedback;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -97,36 +99,41 @@ class _SignInFormState extends State<SignInForm> {
                 }),
             const SizedBox(height: 16.0),
 
-            // password again
+            if (_errorFeedback != null)
+              Text(
+                _errorFeedback!,
+                style: const TextStyle(color: Colors.red),
+              ),
 
-            TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: AppColors.titleColor,
-                    prefixIcon: Icon(
-                      Icons.key,
-                      color: Colors.black,
-                    ),
-                    border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                        borderSide: BorderSide(color: Colors.black)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(50)),
-                        borderSide: BorderSide(
-                            color: AppColors.primaryColor, width: 2))),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Powtórz hasło';
-                  }
-                  if (value.length < 8) {
-                    return 'Hasło musi mieć co najmniej 8 znaków';
-                  }
-                  return null;
-                }),
-            const SizedBox(height: 16.0),
+            // password again
+            // TextFormField(
+            //     controller: _passwordController,
+            //     obscureText: true,
+            //     decoration: InputDecoration(
+            //         filled: true,
+            //         fillColor: AppColors.titleColor,
+            //         prefixIcon: Icon(
+            //           Icons.key,
+            //           color: Colors.black,
+            //         ),
+            //         border: const OutlineInputBorder(
+            //             borderRadius: BorderRadius.all(Radius.circular(50)),
+            //             borderSide: BorderSide(color: Colors.black)),
+            //         focusedBorder: OutlineInputBorder(
+            //             borderRadius:
+            //                 const BorderRadius.all(Radius.circular(50)),
+            //             borderSide: BorderSide(
+            //                 color: AppColors.primaryColor, width: 2))),
+            //     validator: (value) {
+            //       if (value == null || value.isEmpty) {
+            //         return 'Powtórz hasło';
+            //       }
+            //       if (value.length < 8) {
+            //         return 'Hasło musi mieć co najmniej 8 znaków';
+            //       }
+            //       return null;
+            //     }),
+            // const SizedBox(height: 16.0),
 
             // error feedback
 
@@ -134,9 +141,20 @@ class _SignInFormState extends State<SignInForm> {
             StyledButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
+                  setState(() {
+                    _errorFeedback = null;
+                  });
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
+
                   final user = await AuthService.signUp(email, password);
+
+                  // error feedback here later
+                  if (user == null) {
+                    setState(() {
+                      _errorFeedback = 'Nie poprawne dane logowania .';
+                    });
+                  }
                 }
               },
               child: const StyledButtonText('Zarejestruj się'),
