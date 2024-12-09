@@ -70,19 +70,6 @@ class _HomeState extends ConsumerState<Home> {
                 ])),
                 child: Stack(
                   children: [
-                    OverflowBox(
-                      maxWidth: 135,
-                      maxHeight: 135,
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryAccent,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(100),
-                          ),
-                        ),
-                      ),
-                    ),
                     AppBar(
                       backgroundColor: Colors.transparent,
                       centerTitle: false,
@@ -96,51 +83,66 @@ class _HomeState extends ConsumerState<Home> {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ProfileSettingsPage()));
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.height * 0.1,
-                            height: MediaQuery.of(context).size.height * 0.4,
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(100),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ProfileSettingsPage()));
+                      },
+                      child: OverflowBox(
+                        maxWidth: 135,
+                        maxHeight: 150,
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryAccent,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(100),
                             ),
-                            child: ClipOval(
-                              child: profileImage != null
-                                  ? Image.memory(
-                                      profileImage,
-                                      fit: BoxFit.cover,
-                                      scale: 0.5,
-                                      errorBuilder:
-                                          (context, error, stackTrace) {
-                                        debugPrint(
-                                            'Błąd ładowania zdjęcia: $error');
-                                        return const Icon(
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(50, 35, 25, 25),
+                            child: OverflowBox(
+                              maxHeight: 90,
+                              maxWidth: 90,
+                              child: Container(
+                                width: 100,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: ClipOval(
+                                  child: profileImage != null
+                                      ? Image.memory(
+                                          profileImage,
+                                          fit: BoxFit.cover,
+                                          scale: 0.5,
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            debugPrint(
+                                                'Błąd ładowania zdjęcia: $error');
+                                            return const Icon(
+                                              Icons.person,
+                                              size: 65,
+                                              color: Colors.white,
+                                            );
+                                          },
+                                        )
+                                      : const Icon(
                                           Icons.person,
                                           size: 65,
                                           color: Colors.white,
-                                        );
-                                      },
-                                    )
-                                  : const Icon(
-                                      Icons.person,
-                                      size: 65,
-                                      color: Colors.white,
-                                    ),
+                                        ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ],
-                    )
+                      ),
+                    ),
                   ],
                 )),
           ]),
