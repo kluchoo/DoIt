@@ -147,17 +147,16 @@ class _SignInFormState extends State<SignInForm> {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
 
-                  final user = await AuthService.signUp(email, password);
+                  final authService = AuthService();
+                  final user = await authService.signUp(email, password);
                   debugPrint('User: $user');
 
                   // error feedback here later
                   if (user == null) {
                     setState(() {
-                      _errorFeedback = 'Nie poprawne dane logowania .';
+                      _errorFeedback = 'Niepoprawne dane logowania .';
                     });
-                  } else {
-                    user?.addNewUsersDocument();
-                  }
+                  } else {}
                 }
               },
               child: const StyledButtonText('Zarejestruj się'),
