@@ -104,10 +104,10 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
-                                          child: const StylizowanyText(
+                                          child: const StylizowanyNaglowek(
                                             'Zamknij',
                                             color: Color.fromARGB(
-                                                255, 255, 0, 149),
+                                                255, 255, 255, 255),
                                           ),
                                         ),
                                       ],

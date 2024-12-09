@@ -98,6 +98,15 @@ class _HomeState extends ConsumerState<Home> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: AppColors.primaryAccent,
+                            gradient: const LinearGradient(colors: [
+                              Color(0xFFc6e9ed),
+                              Color.fromARGB(255, 144, 184, 189),
+                              Color(0xFFc6e9ed)
+                            ], stops: [
+                              0,
+                              0.5,
+                              1
+                            ]),
                             borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(100),
                             ),
@@ -113,6 +122,13 @@ class _HomeState extends ConsumerState<Home> {
                                 decoration: BoxDecoration(
                                   color: Colors.black.withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(100),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.3),
+                                      blurRadius: 10,
+                                      spreadRadius: 3,
+                                    ),
+                                  ],
                                 ),
                                 child: ClipOval(
                                   child: profileImage != null
