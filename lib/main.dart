@@ -1,7 +1,4 @@
-import 'package:do_it/strony/aplikacja/home.dart';
-import 'package:do_it/strony/aplikacja/zakladki/camera.dart';
 import 'package:do_it/strony/autoryzacja/welcome.dart';
-import 'package:do_it/strony/testowy.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,7 +19,7 @@ void main() async {
     ProviderScope(
         child: MaterialApp(
       theme: primaryTheme,
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     )),
   );
 }

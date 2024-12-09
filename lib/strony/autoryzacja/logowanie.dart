@@ -1,19 +1,20 @@
 import 'package:do_it/komponenty/styled_button.dart';
-import 'package:do_it/komponenty/styled_text.dart';
+import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/services/auth_service.dart';
 import 'package:do_it/strony/aplikacja/home.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUpForm extends StatefulWidget {
+class SignUpForm extends ConsumerStatefulWidget {
   const SignUpForm({super.key});
 
   @override
-  State<SignUpForm> createState() => _SignUpFormState();
+  ConsumerState<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _SignUpFormState extends ConsumerState<SignUpForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
@@ -123,13 +124,15 @@ class _SignUpFormState extends State<SignUpForm> {
                   final password = _passwordController.text.trim();
 
                   final user = await AuthService.signIn(email, password);
-
+                  ref.read(appUserProvider).uid = user!.uid;
+                  debugPrint('User: ${ref.watch(appUserProvider).uid}');
                   // error feedback
                   if (user == null) {
                     setState(() {
                       _errorFeedback = 'Nieprawidłowe dane logowania';
                     });
                   } else {
+                    // debugPrint('Zalogowano jako ${user.uid}');
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (ctx) => const Home()));
 

@@ -1,9 +1,11 @@
 import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:do_it/komponenty/styled_button.dart';
 import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/zakladki/camera.dart';
+import 'package:do_it/strony/autoryzacja/welcome.dart';
 import 'package:do_it/strony/testowy.dart';
 import 'package:do_it/theme.dart';
 import 'package:file_picker/file_picker.dart';
@@ -229,7 +231,16 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                     ),
                   ],
                 ),
-              )
+              ),
+              StyledButton(
+                  onPressed: () {
+                    ref.read(appUserProvider).logOut();
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WelcomeScreen()));
+                  },
+                  child: StylizowanyNaglowek('Wyloguj', color: Colors.white)),
             ],
           ),
         ),

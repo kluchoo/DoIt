@@ -27,8 +27,7 @@ class _HomeState extends ConsumerState<Home> {
     // Opóźniamy inicjalizację do następnej klatki
     Future.microtask(() async {
       debugPrint('Inicjalizacja w Home...');
-      final user = ref.read(appUserProvider);
-      user.uid = "BuAn4rNn57gOkLu0MqgrImjgAMk1";
+      final user = ref.watch(appUserProvider);
       try {
         await user.fetchUserData();
         debugPrint('Zakończono ładowanie danych użytkownika');

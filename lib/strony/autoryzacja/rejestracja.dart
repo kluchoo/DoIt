@@ -148,12 +148,15 @@ class _SignInFormState extends State<SignInForm> {
                   final password = _passwordController.text.trim();
 
                   final user = await AuthService.signUp(email, password);
+                  debugPrint('User: $user');
 
                   // error feedback here later
                   if (user == null) {
                     setState(() {
                       _errorFeedback = 'Nie poprawne dane logowania .';
                     });
+                  } else {
+                    user?.addNewUsersDocument();
                   }
                 }
               },
