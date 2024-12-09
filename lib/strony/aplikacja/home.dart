@@ -6,6 +6,7 @@ import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
 import 'package:do_it/theme.dart';
+import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
