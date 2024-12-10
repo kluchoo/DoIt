@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 
+//  klasa obsługująca czujnik odcisku palca
 class LocalAuth {
   static final _auth = LocalAuthentication();
 
