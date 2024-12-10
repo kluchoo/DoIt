@@ -1,4 +1,5 @@
 import 'package:do_it/komponenty/text.dart';
+import 'package:do_it/services/local_auth_service.dart';
 import 'package:do_it/strony/autoryzacja/logowanie.dart';
 import 'package:do_it/strony/autoryzacja/rejestracja.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,6 @@ class WelcomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isSignUpForm = ref.watch(isSignUpFormProvider);
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
