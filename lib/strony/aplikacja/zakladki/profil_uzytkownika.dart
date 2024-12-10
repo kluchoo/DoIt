@@ -22,10 +22,12 @@ class ProfileSettingsPage extends ConsumerStatefulWidget {
 
 class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
   late Uint8List? profileImage;
+  TextEditingController nameController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+    nameController.text = ref.read(appUserProvider).name;
     profileImage = ref.read(appUserProvider).photo;
   }
 
@@ -232,6 +234,47 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                   ],
                 ),
               ),
+              const SizedBox(height: 16),
+              Container(
+                  color: Colors.grey.withOpacity(0.1),
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      StylizowanyTytul('Nazwa konta', color: Colors.white),
+                      const SizedBox(height: 16),
+                      TextField(
+                        onTap: () {
+                          nameController.text = '';
+                        },
+                        controller: nameController,
+                        style: const TextStyle(color: Colors.white),
+                        cursorColor: Colors.white,
+                        onTapOutside: (event) => {
+                          FocusScope.of(context).unfocus(),
+                          if (nameController.text == '')
+                            nameController.text = ref.read(appUserProvider).name
+                        },
+                        decoration: const InputDecoration(
+                          prefixStyle:
+                              TextStyle(color: Colors.white, fontSize: 12),
+                          hintStyle: TextStyle(color: Colors.white),
+                          floatingLabelStyle: TextStyle(color: Colors.white),
+                          fillColor: Colors.white,
+                          labelText: "Nazwa konta:",
+                          labelStyle: TextStyle(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 210, 32, 255)),
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                        ),
+                        onChanged: (value) {},
+                      )
+                    ],
+                  )),
               StyledButton(
                   onPressed: () {
                     ref.read(appUserProvider).logOut();
@@ -240,7 +283,8 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                         MaterialPageRoute(
                             builder: (context) => const WelcomeScreen()));
                   },
-                  child: StylizowanyNaglowek('Wyloguj', color: Colors.white)),
+                  child: const StylizowanyNaglowek('Wyloguj',
+                      color: Colors.white)),
             ],
           ),
         ),

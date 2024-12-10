@@ -1,5 +1,4 @@
 import 'package:do_it/komponenty/text.dart';
-import 'package:do_it/services/local_auth_service.dart';
 import 'package:do_it/strony/autoryzacja/logowanie.dart';
 import 'package:do_it/strony/autoryzacja/rejestracja.dart';
 import 'package:flutter/material.dart';
