@@ -3,19 +3,16 @@ import 'package:do_it/strony/autoryzacja/logowanie.dart';
 import 'package:do_it/strony/autoryzacja/rejestracja.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:do_it/providers.dart';
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends ConsumerWidget {
   const WelcomeScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isSignUpForm = ref.watch(isSignUpFormProvider);
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  bool isSignUpForm = false;
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -35,13 +32,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   // sign up screen
                   if (isSignUpForm)
                     Column(children: [
-                      const SignInForm(),
+                      SignInForm(),
                       const StylizowanyText('Masz już konto?'),
                       TextButton(
                         onPressed: () {
-                          setState(() {
-                            isSignUpForm = false;
-                          });
+                          ref.read(isSignUpFormProvider.notifier).state = false;
                         },
                         child:
                             Text('Zaloguj się', style: GoogleFonts.poppins()),
@@ -64,9 +59,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          setState(() {
-                            isSignUpForm = true;
-                          });
+                          ref.read(isSignUpFormProvider.notifier).state = true;
                         },
                         child: Text('Zarejestruj się',
                             style: GoogleFonts.poppins(

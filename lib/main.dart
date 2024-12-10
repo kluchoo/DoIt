@@ -6,8 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-// ...
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -17,9 +15,17 @@ void main() async {
 
   runApp(
     ProviderScope(
-        child: MaterialApp(
+      child: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       theme: primaryTheme,
       home: const WelcomeScreen(),
-    )),
-  );
+    );
+  }
 }

@@ -34,18 +34,26 @@ class AuthService {
             .doc(credential.user!.uid)
             .set({"profileImg": profileImg, "watchedQuotes": 0});
         String displayName = email.split('@')[0];
-        debugPrint('Display name: $displayName');
         await credential.user!.updateDisplayName(displayName);
         await credential.user!.reload();
-        return AppUser(
+
+        // Debugging statements to check for null values
+        debugPrint('User UID: ${credential.user!.uid}');
+        debugPrint('User Email: ${credential.user!.email}');
+        debugPrint('User Display Name: ${credential.user!.displayName}');
+
+        final appUser = AppUser(
           uid: credential.user!.uid,
           email: credential.user!.email!,
-          name: credential.user!.displayName!,
+          name: displayName,
         );
+
+        return appUser;
       }
 
       return null;
     } catch (e) {
+      debugPrint('Error during sign up: $e');
       return null;
     }
   }
