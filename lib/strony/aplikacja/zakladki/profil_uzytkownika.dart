@@ -243,6 +243,7 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                       StylizowanyTytul('Nazwa konta', color: Colors.white),
                       const SizedBox(height: 16),
                       TextField(
+                        enabled: false,
                         onTap: () {
                           nameController.text = '';
                         },
@@ -255,11 +256,12 @@ class _ProfileSettingsPageState extends ConsumerState<ProfileSettingsPage> {
                             nameController.text = ref.read(appUserProvider).name
                         },
                         decoration: const InputDecoration(
+                          filled: true,
                           prefixStyle:
                               TextStyle(color: Colors.white, fontSize: 12),
                           hintStyle: TextStyle(color: Colors.white),
                           floatingLabelStyle: TextStyle(color: Colors.white),
-                          fillColor: Colors.white,
+                          fillColor: Color.fromARGB(17, 255, 255, 255),
                           labelText: "Nazwa konta:",
                           labelStyle: TextStyle(color: Colors.white),
                           enabledBorder: OutlineInputBorder(

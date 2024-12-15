@@ -1,3 +1,5 @@
+import 'package:do_it/models/app_user.dart';
+import 'package:do_it/services/auth_service.dart';
 import 'package:do_it/strony/autoryzacja/welcome.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  AppUser user = AuthService.getCurrentUser()!;
+  if (user != null) {
+    debugPrint('User is already logged in ' + user.email);
+  }
 
   runApp(
     ProviderScope(
