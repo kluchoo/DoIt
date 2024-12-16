@@ -52,7 +52,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: AppColors.titleColor,
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.mail,
                       color: Colors.black,
                     ),
@@ -80,7 +80,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: AppColors.titleColor,
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.key,
                       color: Colors.black,
                     ),
@@ -147,7 +147,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                       _errorFeedback = 'Nieprawidłowe dane logowania';
                     });
                   } else {
-                    ref.read(appUserProvider).uid = user!.uid;
+                    ref.read(appUserProvider).uid = user.uid;
                     debugPrint('User: ${ref.watch(appUserProvider).uid}');
                     // debugPrint('Zalogowano jako ${user.uid}');
                     Navigator.pushReplacement(context,

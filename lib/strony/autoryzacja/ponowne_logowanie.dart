@@ -48,9 +48,6 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
 
     final TextEditingController _passwordController = TextEditingController();
 
-    String? _errorFeedback;
-    bool authenticated = false;
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -129,9 +126,7 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
                         if (value == null || value.isEmpty) {
                           return 'Podaj hasło';
                         }
-                        if (value.length < 8) {
-                          return 'Nieprawidłowe hasło';
-                        }
+
                         return null;
                       },
                     ),
@@ -139,10 +134,6 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
                     StyledButton(
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          setState(() {
-                            _errorFeedback = null;
-                          });
-
                           final email = user.email;
                           final password = _passwordController.text.trim();
 
@@ -151,9 +142,15 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
 
                           // error feedback
                           if (signedInUser == null) {
-                            setState(() {
-                              _errorFeedback = 'Nieprawidłowe dane logowania';
-                            });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'Nieprawidłowe dane logowania',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
                           } else {
                             ref.read(appUserProvider).uid = signedInUser.uid;
                             Navigator.pushReplacement(
@@ -196,15 +193,13 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
               TextButton(
                 onPressed: () async {
                   final authenticate = await LocalAuth.authenticate();
-                  setState(() {
-                    authenticated = authenticate;
-                  });
-                  if (authenticated) {
+
+                  if (authenticate) {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => const Home()));
                   }
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.fingerprint,
                   size: 75,
                   color: Colors.white,
@@ -213,10 +208,10 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
               const SizedBox(
                 height: 45.0,
               ),
-              const StylizowanyText('Chcesz zmienić konto?'),
+              const StylizowanyText('Chcesz zalogować się na inne konto?'),
               TextButton(
                 onPressed: () => changeAccount(context, ref),
-                child: Text('Zmień', style: GoogleFonts.poppins()),
+                child: Text('Zmień konto', style: GoogleFonts.poppins()),
               )
             ],
           ),
