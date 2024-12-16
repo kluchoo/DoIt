@@ -17,6 +17,14 @@ class AppUser extends ChangeNotifier {
     // pobierz dane użytkownika z bazy danych
   }
 
+  void update(AppUser user) {
+    uid = user.uid;
+    email = user.email;
+    name = user.name;
+    photo = user.photo;
+    notifyListeners();
+  }
+
   Future<void> fetchUserAuthData() async {
     // pobierz dane użytkownika z autoryzacji
     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
