@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class Quotes extends ConsumerStatefulWidget {
   const Quotes({
@@ -65,9 +66,11 @@ class _QuotesState extends ConsumerState<Quotes> {
           ]),
           Flexible(
             child: quotesModel.quotesData.isEmpty
-                ? const Center(
-                    child: CircularProgressIndicator(),
-                  )
+                ? Center(
+                    child: LoadingAnimationWidget.threeRotatingDots(
+                    color: Colors.black,
+                    size: 50,
+                  ))
                 : CardSwiper(
                     duration: const Duration(milliseconds: 150),
                     numberOfCardsDisplayed: 1,

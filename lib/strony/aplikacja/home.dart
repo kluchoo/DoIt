@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
 import 'package:do_it/providers/home_page_providers.dart';
+import 'package:do_it/strony/aplikacja/progressDocumentations.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
 import 'package:do_it/theme.dart';
@@ -172,7 +173,7 @@ class _HomeState extends ConsumerState<Home> {
                 children: const [
                   Quotes(), // Widok dla index == 0
                   Center(
-                    child: Text('data2'),
+                    child: Progressdocumentations(),
                   ), // Widok dla index == 1
                   Center(
                     child: Text('data3'),

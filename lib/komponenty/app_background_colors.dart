@@ -42,21 +42,6 @@ class MainAppBackground extends StatelessWidget {
             const SizedBox(
               height: 0,
             ),
-            // Container(
-            //   height: 45,
-            //   decoration: const BoxDecoration(
-            //       gradient: LinearGradient(colors: [
-            //     Color(0xFFFF914d),
-            //     Color(0xFFFFde59),
-            //     Color(0xFFFFde59),
-            //     Color(0xFFFF914d)
-            //   ], stops: [
-            //     0,
-            //     0.4,
-            //     0.6,
-            //     1
-            //   ])),
-            // ),
             const Expanded(child: SizedBox()),
             Container(
               height: 60,

@@ -9,6 +9,7 @@ import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class ReLogIn extends ConsumerStatefulWidget {
   const ReLogIn({super.key});
@@ -43,7 +44,6 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
   @override
   Widget build(BuildContext context) {
     final user = ref.watch(appUserProvider);
-    debugPrint('User: ${user.photo}');
     final _formKey = GlobalKey<FormState>();
 
     final TextEditingController _passwordController = TextEditingController();
@@ -64,9 +64,13 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
                 ),
               ),
               Center(
-                child: ClipOval(
-                  child: user.photo != null
-                      ? Image.memory(
+                child: user.photo == null
+                    ? LoadingAnimationWidget.threeRotatingDots(
+                        color: Colors.white,
+                        size: 50,
+                      )
+                    : ClipOval(
+                        child: Image.memory(
                           user.photo!,
                           width: 130,
                           height: 130,
@@ -80,13 +84,8 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
                               color: Colors.white,
                             );
                           },
-                        )
-                      : const Icon(
-                          Icons.person,
-                          size: 65,
-                          color: Colors.white,
                         ),
-                ),
+                      ),
               ),
               const SizedBox(height: 20),
               Row(
@@ -210,9 +209,15 @@ class _ReLogInState extends ConsumerState<ReLogIn> {
               ),
               const StylizowanyText('Chcesz zalogować się na inne konto?'),
               TextButton(
-                onPressed: () => changeAccount(context, ref),
-                child: Text('Zmień konto', style: GoogleFonts.poppins()),
-              )
+                  onPressed: () => changeAccount(context, ref),
+                  child: Text(
+                    'Zmień konto',
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                      fontWeight: FontWeight.w800,
+                      color: Color.fromARGB(255, 78, 174, 253),
+                    )),
+                  ))
             ],
           ),
         ),

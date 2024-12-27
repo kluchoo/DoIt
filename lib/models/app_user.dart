@@ -25,6 +25,70 @@ class AppUser extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<int> dayStrikeUpdate() async {
+    try {
+      // pobierz aktualną datę
+      final lastSignIn = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .get()
+          .then((value) => value.get('LastSignIn'));
+      final lastSignInDateTime = (lastSignIn as Timestamp).toDate();
+
+      // sprawdź czy dzisiaj jest dniem większym o jeden od ostatniego logowania
+      final now = DateTime.now();
+      final lastSignInDate = DateTime(lastSignInDateTime.year,
+          lastSignInDateTime.month, lastSignInDateTime.day);
+      final today = DateTime(now.year, now.month, now.day);
+      final difference = today.difference(lastSignInDate).inDays;
+
+      if (difference == 1) {
+        // jeśli tak to zwiększ licznik dni
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .update({"dayStrike": FieldValue.increment(1)});
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .update({"LastSignIn": DateTime.now()});
+      } else if (difference > 1) {
+        // jeśli nie to zresetuj licznik dni
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .update({"dayStrike": 1});
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .update({"LastSignIn": DateTime.now()});
+      }
+
+      // pobierz aktualny licznik dni
+      final dayStrike = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .get()
+          .then((value) => value.get('dayStrike'));
+
+      return dayStrike as int;
+    } catch (e) {
+      debugPrint('Błąd podczas aktualizacji dayStrike: $e');
+      if (e is StateError &&
+          e.message.contains('field "LastSignIn" does not exist')) {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .set({"LastSignIn": DateTime.now()});
+      } else {
+        rethrow;
+      }
+    }
+    return 0;
+  }
+
   Future<void> fetchUserAuthData() async {
     // pobierz dane użytkownika z autoryzacji
     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
