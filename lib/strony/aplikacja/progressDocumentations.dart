@@ -3,6 +3,7 @@ import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gif/gif.dart';
 
 class Progressdocumentations extends ConsumerStatefulWidget {
   const Progressdocumentations({super.key});
@@ -12,18 +13,21 @@ class Progressdocumentations extends ConsumerStatefulWidget {
       _ProgressdocumentationsState();
 }
 
-class _ProgressdocumentationsState
-    extends ConsumerState<Progressdocumentations> {
+class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
+    with TickerProviderStateMixin {
   int seria = 0;
+  late GifController controller;
+
   @override
   void initState() {
+    controller = GifController(vsync: this);
     super.initState();
     _initializeSeria();
   }
 
   Future<void> _initializeSeria() async {
     seria = await ref.read(appUserProvider).dayStrikeUpdate();
-    ref.read(progressProvider).updateProgress(progressData);
+    // ref.read(progressProvider).updateProgress(progressData);
     setState(() {});
   }
 
@@ -35,37 +39,90 @@ class _ProgressdocumentationsState
       children: [
         Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.local_fire_department_sharp,
-                size: 200,
-                color: Colors.red,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(seria.toString(),
-                      style: TextStyle(
-                          fontSize: 35,
-                          color: seria < 10
-                              ? Colors.white
-                              : seria < 20
-                                  ? Colors.yellow
-                                  : seria < 30
-                                      ? Colors.orange
-                                      : Colors.purple,
-                          fontWeight: FontWeight.bold)),
-                  const Text(
-                    " Dzień serii",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(children: [
+                  Center(
+                    child: Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        boxShadow: List.from([
+                          BoxShadow(
+                            color: const Color.fromARGB(255, 255, 98, 36)
+                                .withOpacity(0.5),
+                            spreadRadius: 0,
+                            blurRadius: 1000,
+                            offset: Offset.fromDirection(5),
+                          ),
+                        ]),
+                      ),
+                      child: Center(
+                        child: Gif(
+                          controller: controller,
+                          image: const AssetImage("assets/img/fire.gif"),
+                          autostart: Autostart.loop,
+                          duration: const Duration(milliseconds: 3000),
+                          width: 200,
+                          height: 200,
+                        ),
+                      ),
                     ),
-                  )
-                ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 170, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(seria.toString(),
+                            style: TextStyle(
+                                fontSize: 35,
+                                color: seria < 10
+                                    ? Colors.white
+                                    : seria < 20
+                                        ? Colors.yellow
+                                        : seria < 30
+                                            ? Colors.orange
+                                            : seria < 40
+                                                ? Colors.red
+                                                : Colors.purple,
+                                fontWeight: FontWeight.bold)),
+                        const Text(
+                          " Dzień serii",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Color.fromARGB(255, 255, 44, 16),
+                            decorationColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
               ),
               const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                children: [
+                  Expanded(
+                    child: const Divider(
+                      color: Color.fromARGB(255, 255, 72, 0),
+                      thickness: 2,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
                 height: 20,
               ),
               const Row(
@@ -75,7 +132,7 @@ class _ProgressdocumentationsState
                     "Twój postęp",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Colors.blue,
                     ),
                   ),
                   SizedBox(
@@ -83,11 +140,11 @@ class _ProgressdocumentationsState
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.white,
+                    color: Colors.blue,
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.white,
+                    color: Colors.blue,
                   )
                 ],
               ),
@@ -95,8 +152,6 @@ class _ProgressdocumentationsState
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    // for (var progress
-                    //     in ref.watch(progressProvider).progressData)
                     for (var progress in progressNotifier.progressData)
                       Container(
                         margin: const EdgeInsets.all(8.0),
@@ -138,12 +193,12 @@ class _ProgressdocumentationsState
                         image: null,
                         icon: null));
                   },
-                  child: Text('test')),
+                  child: const Text('test')),
               TextButton(
                   onPressed: () {
                     debugPrint(progressNotifier.serializeProgress().toString());
                   },
-                  child: Text('serialize')),
+                  child: const Text('serialize')),
             ],
           ),
         )
