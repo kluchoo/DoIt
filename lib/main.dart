@@ -18,7 +18,6 @@ void main() async {
 
   AppUser? user = AuthService.getCurrentUser();
   if (user != null) {
-    debugPrint('User is already logged in ' + user.email);
     runApp(
       const ProviderScope(
         child: SessionLogin(),

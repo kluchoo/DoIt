@@ -1,4 +1,5 @@
 import 'package:do_it/models/app_user.dart';
+import 'package:do_it/models/progress_model.dart';
 import 'package:do_it/models/quote_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,6 +14,10 @@ final quotesProvider = ChangeNotifierProvider((ref) {
 
 final titleProvider = ChangeNotifierProvider((ref) {
   return TitleProvider();
+});
+
+final progressProvider = ChangeNotifierProvider((ref) {
+  return ProgressNotifier();
 });
 
 class TitleProvider extends ChangeNotifier {
