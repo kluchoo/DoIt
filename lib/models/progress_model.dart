@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -23,6 +24,18 @@ class ProgressNotifier extends ChangeNotifier {
   void addProgress(Progress newProgress) {
     progressData.add(newProgress);
     notifyListeners();
+  }
+
+  List<Map> serializeProgress() {
+    List<Map<String, dynamic>> serializedData = progressData.map((progress) {
+      return {
+        'title': progress.title,
+        'description': progress.description,
+        'image': progress.image != null ? base64Encode(progress.image!) : null,
+        'icon': progress.icon != null ? progress.icon!.codePoint : null,
+      };
+    }).toList();
+    return serializedData;
   }
 }
 

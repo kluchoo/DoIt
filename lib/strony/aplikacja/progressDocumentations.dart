@@ -139,6 +139,11 @@ class _ProgressdocumentationsState
                         icon: null));
                   },
                   child: Text('test')),
+              TextButton(
+                  onPressed: () {
+                    debugPrint(progressNotifier.serializeProgress().toString());
+                  },
+                  child: Text('serialize')),
             ],
           ),
         )
