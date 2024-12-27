@@ -110,78 +110,98 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
               const SizedBox(
                 height: 20,
               ),
-              const Row(
-                children: [
-                  Expanded(
-                    child: const Divider(
-                      color: Color.fromARGB(255, 255, 72, 0),
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Twój postęp",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.blue,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.blue,
-                  )
-                ],
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
                 child: Row(
                   children: [
-                    for (var progress in progressNotifier.progressData)
-                      Container(
-                        margin: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.all(16.0),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(10.0),
+                    Expanded(
+                      child: Divider(
+                        color: Color.fromARGB(255, 255, 72, 0),
+                        thickness: 2,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: const EdgeInsets.all(20.0),
+                margin: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.primaryColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 10.0,
+                      spreadRadius: 5.0,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Twój postęp",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              progress.title,
-                              style: const TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const SizedBox(height: 8.0),
-                            Text(
-                              progress.description,
-                              style: const TextStyle(
-                                fontSize: 14.0,
-                                color: Colors.white70,
-                              ),
-                            ),
-                          ],
+                        SizedBox(
+                          width: 10,
                         ),
-                      )
+                        Icon(
+                          Icons.keyboard_double_arrow_right_sharp,
+                          size: 30,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ],
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          for (var progress in progressNotifier.progressData)
+                            Container(
+                              margin: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(16.0),
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    progress.title,
+                                    style: const TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8.0),
+                                  Text(
+                                    progress.description,
+                                    style: const TextStyle(
+                                      fontSize: 14.0,
+                                      color: Colors.white70,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
