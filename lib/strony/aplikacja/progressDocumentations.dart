@@ -137,17 +137,6 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                   height: MediaQuery.of(context).size.height * 0.3,
                   width: MediaQuery.of(context).size.width * 0.9,
                   margin: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(48, 0, 0, 0),
-                    borderRadius: BorderRadius.circular(10.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 10.0,
-                        spreadRadius: 5.0,
-                      ),
-                    ],
-                  ),
                   child: Column(
                     children: [
                       const Row(
@@ -276,7 +265,7 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                                           ),
                                         ),
                                         if (progress.category !=
-                                            Category.postanowienie)
+                                            Category.postanowienie) ...[
                                           Text(
                                             '${progress.date!.day}-${progress.date!.month}-${progress.date!.year}',
                                             style: const TextStyle(
@@ -285,8 +274,17 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                                               color:
                                                   Color.fromARGB(179, 0, 0, 0),
                                             ),
-                                          )
-                                        else
+                                          ),
+                                          const SizedBox(height: 8.0),
+                                          Text(
+                                              '${progress.date!.difference(DateTime.now()).inDays.abs()} dni temu',
+                                              style: const TextStyle(
+                                                fontSize: 14.0,
+                                                color: Color.fromARGB(
+                                                    179, 247, 0, 255),
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                        ] else
                                           TimeCounter(date: progress.date)
                                       ],
                                     ),
