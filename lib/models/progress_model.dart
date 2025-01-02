@@ -12,7 +12,6 @@ class Progress extends ChangeNotifier {
   Category category;
   final String description;
   final Uint8List? image;
-  final IconData? icon;
   DateTime? date;
 
   Progress({
@@ -20,10 +19,8 @@ class Progress extends ChangeNotifier {
     required this.category,
     required this.description,
     this.image,
-    this.icon,
-  }) {
-    date.toString().isEmpty ? date = DateTime.now() : date = date;
-  }
+    this.date,
+  });
 }
 
 enum Category {
@@ -101,7 +98,7 @@ class ProgressNotifier extends ChangeNotifier {
         'description': progress.description,
         'Category': progress.category.toString().split('.').last,
         'image': progress.image != null ? base64Encode(progress.image!) : null,
-        'icon': progress.icon != null ? progress.icon!.codePoint : null,
+        'date': progress.date?.toIso8601String(),
       };
     }).toList();
     return serializedData;
@@ -138,12 +135,18 @@ class ProgressNotifier extends ChangeNotifier {
         category: Category.fromString(progress['Category'] as String),
         image:
             progress['image'] != null ? base64Decode(progress['image']) : null,
-        icon: progress['icon'] != null
-            ? IconData(progress['icon'], fontFamily: 'MaterialIcons')
-            : null,
+        date:
+            progress['date'] != null ? DateTime.parse(progress['date']) : null,
       );
     }).toList();
     progressData = deserializedData;
+    notifyListeners();
+  }
+
+  void removeProgress(int index, WidgetRef ref) {
+    progressData.removeAt(index);
+
+    saveProgress(ref);
     notifyListeners();
   }
 }

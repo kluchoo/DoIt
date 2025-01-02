@@ -81,7 +81,13 @@ class AppUser extends ChangeNotifier {
         await FirebaseFirestore.instance
             .collection('users')
             .doc(uid)
-            .set({"LastSignIn": DateTime.now()});
+            .update({"LastSignIn": DateTime.now()});
+      } else if (e is StateError &&
+          e.message.contains('field "dayStrike" does not exist')) {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .update({"dayStrike": 1});
       } else {
         rethrow;
       }

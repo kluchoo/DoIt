@@ -49,6 +49,7 @@ class _HomeState extends ConsumerState<Home> {
   Widget build(BuildContext context) {
     final title = ref.watch(titleProvider).title;
     final user = ref.watch(appUserProvider);
+    ref.read(progressProvider).fetchProgress(ref);
     final profileImage = user.photo;
 
     return Scaffold(

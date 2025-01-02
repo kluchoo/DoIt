@@ -25,15 +25,15 @@ class MainAppBackground extends StatelessWidget {
         Row(
           children: [
             const Expanded(child: SizedBox()),
-            Container(
-              width: 40,
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Color(0x20FFde59), Color(0x20FF914d)])),
-            ),
+            // Container(
+            //   width: 40,
+            //   margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+            //   decoration: const BoxDecoration(
+            //       gradient: LinearGradient(
+            //           begin: Alignment.centerLeft,
+            //           end: Alignment.centerRight,
+            //           colors: [Color(0x20FFde59), Color(0x20FF914d)])),
+            // ),
             const Expanded(child: SizedBox()),
           ],
         ),
