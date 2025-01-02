@@ -175,70 +175,118 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                       child: Row(
                         children: [
                           for (var progress in progressNotifier.progressData)
-                            Container(
-                              height: MediaQuery.of(context).size.height * 0.2,
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              margin: const EdgeInsets.all(8.0),
-                              padding: const EdgeInsets.all(16.0),
-                              decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(255, 21, 122, 114),
-                                    Color.fromARGB(255, 167, 255, 251),
-                                    Color.fromARGB(255, 21, 122, 114),
-                                  ],
-                                  stops: [0.0, 0.7, 1],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
+                            GestureDetector(
+                              onLongPress: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: AppColors.secondaryColor,
+                                      title: const Text('Usuń postęp',
+                                          style:
+                                              TextStyle(color: Colors.white)),
+                                      content: Text(
+                                          'Czy na pewno chcesz usunąć postęp: ${progress.title}?'),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          child: const Text('Anuluj'),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                        TextButton(
+                                          child: const Text('Usuń'),
+                                          onPressed: () {
+                                            ref
+                                                .read(progressProvider)
+                                                .removeProgress(
+                                                    progressNotifier
+                                                        .progressData
+                                                        .indexOf(progress),
+                                                    ref);
+                                            ref
+                                                .read(progressProvider)
+                                                .saveProgress(ref);
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.2,
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                margin: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(16.0),
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color.fromARGB(255, 21, 122, 114),
+                                      Color.fromARGB(255, 167, 255, 251),
+                                      Color.fromARGB(255, 21, 122, 114),
+                                    ],
+                                    stops: [0.0, 0.7, 1],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
+                                child: SingleChildScrollView(
+                                  child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                        CrossAxisAlignment.start,
                                     children: [
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              progress.title,
+                                              style: const TextStyle(
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                              overflow: TextOverflow.visible,
+                                            ),
+                                          ),
+                                          Icon(
+                                            progress.category.icon,
+                                            color: const Color.fromARGB(
+                                                255, 0, 0, 0),
+                                            size: 30.0,
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 8.0),
                                       Text(
-                                        progress.title,
+                                        progress.description,
                                         style: const TextStyle(
-                                          fontSize: 18.0,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
+                                          fontSize: 14.0,
+                                          color: Colors.white70,
                                         ),
                                       ),
-                                      Icon(
-                                        progress.category.icon,
-                                        color:
-                                            const Color.fromARGB(255, 0, 0, 0),
-                                        size: 30.0,
-                                      ),
+                                      if (progress.category !=
+                                          Category.postanowienie)
+                                        Text(
+                                          '${progress.date!.day}-${progress.date!.month}-${progress.date!.year}',
+                                          style: const TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromARGB(179, 0, 0, 0),
+                                          ),
+                                        )
+                                      else
+                                        TimeCounter(date: progress.date)
                                     ],
                                   ),
-                                  const SizedBox(height: 8.0),
-                                  Text(
-                                    progress.description,
-                                    style: const TextStyle(
-                                      fontSize: 14.0,
-                                      color: Colors.white70,
-                                    ),
-                                  ),
-                                  if (progress.category !=
-                                      Category.postanowienie)
-                                    Text(
-                                      '${progress.date!.day}-${progress.date!.month}-${progress.date!.year}',
-                                      style: const TextStyle(
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(179, 0, 0, 0),
-                                      ),
-                                    )
-                                  else
-                                    TimeCounter(date: progress.date)
-                                ],
+                                ),
                               ),
                             )
                         ],
@@ -259,7 +307,9 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: const Text('Dodaj postęp'),
+                          backgroundColor: AppColors.secondaryColor,
+                          title: const Text('Dodaj postęp',
+                              style: TextStyle(color: Colors.white)),
                           content: const ProgressForm(),
                           actions: <Widget>[
                             TextButton(
@@ -303,7 +353,6 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                       fontWeight: FontWeight.bold,
                     ),
                   )),
-              TextButton(onPressed: () {}, child: const Text('serialize')),
             ],
           ),
         )
@@ -356,8 +405,7 @@ class _TimeCounterState extends State<TimeCounter> {
     setState(() {
       _timeString = '${difference.inDays.abs()} dni '
           '${difference.inHours.abs() % 24} godzin '
-          '${difference.inMinutes.abs() % 60} minut '
-          '${difference.inSeconds.abs() % 60} sekund';
+          '${difference.inMinutes.abs() % 60} minut ';
     });
   }
 
@@ -380,33 +428,44 @@ class ProgressForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final formState = ref.watch(progressFormProvider);
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        TextField(
-          onChanged: (value) => formState.updateTitle(value),
-          decoration: const InputDecoration(hintText: "Tytuł"),
-        ),
-        TextField(
-          onChanged: (value) => formState.updateDescription(value),
-          decoration: const InputDecoration(hintText: "Opis"),
-        ),
-        DropdownButton<Category>(
-          hint: Text(formState.chosenCategory),
-          value: formState.selectedCategory,
-          onChanged: (Category? newValue) {
-            if (newValue != null) {
-              formState.updateCategory(newValue);
-            }
-          },
-          items: Category.values.map((Category category) {
-            return DropdownMenuItem<Category>(
-              value: category,
-              child: Text(category.name),
-            );
-          }).toList(),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            onChanged: (value) => formState.updateTitle(value),
+            style: TextStyle(color: Colors.white),
+            decoration: const InputDecoration(
+                hintText: "Tytuł", hintStyle: TextStyle(color: Colors.white)),
+          ),
+          TextField(
+            onChanged: (value) => formState.updateDescription(value),
+            style: TextStyle(color: Colors.white),
+            decoration: const InputDecoration(
+              hintText: "Opis",
+              hintStyle: TextStyle(color: Colors.white),
+              labelStyle: TextStyle(color: Colors.white),
+            ),
+          ),
+          DropdownButton<Category>(
+            hint: Text(formState.chosenCategory,
+                style: const TextStyle(color: Colors.white)),
+            value: formState.selectedCategory,
+            onChanged: (Category? newValue) {
+              if (newValue != null) {
+                formState.updateCategory(newValue);
+              }
+            },
+            dropdownColor: Color(0xFF333333),
+            items: Category.values.map((Category category) {
+              return DropdownMenuItem<Category>(
+                value: category,
+                child: Text(category.name),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
     );
   }
 }
