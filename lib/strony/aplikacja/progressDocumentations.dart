@@ -132,7 +132,7 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                 padding: const EdgeInsets.all(20.0),
                 margin: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryColor,
+                  color: const Color.fromARGB(78, 255, 255, 255),
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: const [
                     BoxShadow(
@@ -148,7 +148,7 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Twój postęp",
+                          "Postępy:",
                           style: TextStyle(
                             fontSize: 20,
                             color: Color.fromARGB(255, 0, 0, 0),
@@ -210,13 +210,22 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                     ref.read(progressProvider).addProgress(Progress(
                         title: 'tifsafasasftle',
                         description: 'dasdasda',
+                        category: Category.postanowienie,
                         image: null,
                         icon: null));
                   },
                   child: const Text('test')),
               TextButton(
                   onPressed: () {
-                    debugPrint(progressNotifier.serializeProgress().toString());
+                    ref.read(progressProvider).deserializeProgress([
+                      {
+                        'title': 'tifsafasasftle',
+                        'description': 'dasdasda',
+                        'Category': Category.postanowienie.name,
+                        'image': null,
+                        'icon': null
+                      }
+                    ]);
                   },
                   child: const Text('serialize')),
             ],
