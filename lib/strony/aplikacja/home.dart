@@ -53,7 +53,7 @@ class _HomeState extends ConsumerState<Home> {
     final profileImage = user.photo;
 
     return Scaffold(
-        resizeToAvoidBottomInset: true,
+        resizeToAvoidBottomInset: false,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(65.0),
           child: Stack(children: [
