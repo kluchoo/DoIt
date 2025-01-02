@@ -50,6 +50,13 @@ enum Category {
     description:
         'Postanowienie to zobowiązanie, które podejmujemy wobec siebie samego. Postanowienie może dotyczyć takich obszarów jak zdrowie, kariera, czy życie osobiste. Postanowienie może pomóc w osiągnięciu celów i poprawie jakości życia.',
     icon: Icons.assignment,
+  ),
+
+  detoks(
+    title: 'Detoks',
+    description:
+        'Postanowienie to zobowiązanie, które podejmujemy wobec siebie samego. Postanowienie może dotyczyć takich obszarów jak zdrowie, kariera, czy życie osobiste. Postanowienie może pomóc w osiągnięciu celów i poprawie jakości życia.',
+    icon: Icons.assignment,
   );
 
   const Category({
@@ -72,6 +79,8 @@ enum Category {
         return Category.trening_kardio;
       case 'rozwoj_osobisty':
         return Category.rozwoj_osobisty;
+      case 'detoks':
+        return Category.detoks;
       default:
         throw ArgumentError('Nieprawidłowa kategoria: $value');
     }
