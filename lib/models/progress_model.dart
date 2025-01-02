@@ -1,6 +1,10 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:do_it/providers/home_page_providers.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 class Progress extends ChangeNotifier {
@@ -95,7 +99,7 @@ class ProgressNotifier extends ChangeNotifier {
       return {
         'title': progress.title,
         'description': progress.description,
-        'Category': progress.category,
+        'Category': progress.category.toString().split('.').last,
         'image': progress.image != null ? base64Encode(progress.image!) : null,
         'icon': progress.icon != null ? progress.icon!.codePoint : null,
       };
@@ -103,12 +107,35 @@ class ProgressNotifier extends ChangeNotifier {
     return serializedData;
   }
 
+  Future<void> fetchProgress(WidgetRef ref) async {
+    // Pobieranie danych z serwera
+    final uid = ref.read(appUserProvider).uid;
+    debugPrint(uid);
+    final docSnapshot =
+        await FirebaseFirestore.instance.collection('users').doc(uid).get();
+    final data = docSnapshot.data()?['progress'];
+    if (data != null) {
+      deserializeProgress(List<Map>.from(data));
+    }
+  } // Add this line to define ref
+
+  Future<void> saveProgress(WidgetRef ref) async {
+    // Zapisywanie danych na serwerze
+    final uid = ref.read(appUserProvider).uid;
+    debugPrint(uid);
+    await FirebaseFirestore.instance.collection('users').doc(uid).update(
+      {
+        'progress': serializeProgress(),
+      },
+    );
+  }
+
   void deserializeProgress(List<Map> data) {
     List<Progress> deserializedData = data.map((progress) {
       return Progress(
         title: progress['title'],
         description: progress['description'],
-        category: Category.fromString(progress['Category']),
+        category: Category.fromString(progress['Category'] as String),
         image:
             progress['image'] != null ? base64Decode(progress['image']) : null,
         icon: progress['icon'] != null

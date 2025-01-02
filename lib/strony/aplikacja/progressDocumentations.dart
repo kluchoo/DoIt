@@ -217,17 +217,14 @@ class _ProgressdocumentationsState extends ConsumerState<Progressdocumentations>
                   child: const Text('test')),
               TextButton(
                   onPressed: () {
-                    ref.read(progressProvider).deserializeProgress([
-                      {
-                        'title': 'tifsafasasftle',
-                        'description': 'dasdasda',
-                        'Category': Category.postanowienie.name,
-                        'image': null,
-                        'icon': null
-                      }
-                    ]);
+                    ref.read(progressProvider).saveProgress(ref);
                   },
                   child: const Text('serialize')),
+              TextButton(
+                  onPressed: () {
+                    ref.read(progressProvider).fetchProgress(ref);
+                  },
+                  child: Text('deserialize')),
             ],
           ),
         )

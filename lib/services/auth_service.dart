@@ -38,9 +38,9 @@ class AuthService {
         await credential.user!.reload();
 
         // Debugging statements to check for null values
-        debugPrint('User UID: ${credential.user!.uid}');
-        debugPrint('User Email: ${credential.user!.email}');
-        debugPrint('User Display Name: ${credential.user!.displayName}');
+        // debugPrint('User UID: ${credential.user!.uid}');
+        // debugPrint('User Email: ${credential.user!.email}');
+        // debugPrint('User Display Name: ${credential.user!.displayName}');
 
         final appUser = AppUser(
           uid: credential.user!.uid,
