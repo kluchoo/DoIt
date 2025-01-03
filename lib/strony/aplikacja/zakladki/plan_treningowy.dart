@@ -31,6 +31,115 @@ class PlanTreningowy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+      //pierwszy przycisk
+      //Lorem
+      // Ipsum
+      // is
+      //simply
+      //dummy
+      // text
+      //of
+      //he
+      // printing
+      //and
+      // typesetting i
+      //ndustry.
+      // Lorem
+      // Ipsum
+      // h
+      //as
+      // been
+      // the
+      //ndustry's
+      // standard
+      //dummy
+      //text
+      // ever
+      // since
+      // th
+      //e
+      //1500s,
+      //when an
+      // unknown
+      //printer
+      // took
+      //a
+      // galley
+      // of
+      // type
+      //and
+      // s
+      //crambled
+      // it
+      // to
+      // make
+      // a
+      // type
+      // specimen
+      // book.
+      //It
+      // has
+      //survived
+      // not
+      // o
+      //nly
+      //five
+      //centuries,
+      // but
+      // als
+      //o
+      //the
+      // leap i
+      //nto
+      // e
+      //lectronic
+      //typesetti
+      //ng,
+      // remaining
+      //essentially
+      // unchanged
+      //.
+      //It
+      // was
+      //popularised
+      // in
+      // the
+      // 19
+      //60s
+      // with
+      // the
+      // releas
+      //e
+      //of
+      //Letraset
+      // sheets
+      // containin
+      //g
+      //Lorem
+      // Ipsum
+      // pa
+      //ssages
+      //, and
+      // more
+      // r
+      //ecentl
+      //y
+      // wit
+      //h
+      // deskt
+      //op
+      // publishing s
+      //oftware
+      //like
+      // A
+      //ldus P
+      //ageMaker
+      // including
+      //versions
+      // of
+      //Lorem
+      // I
+      // psum.
       StyledButton(
           onPressed: () {
             Navigator.push(
@@ -81,6 +190,117 @@ class PlanTreningowy extends StatelessWidget {
               ),
             ),
           )),
+
+      //drugi przycisk
+      //Lorem
+      // Ipsum
+      // is
+      //simply
+      //dummy
+      // text
+      //of
+      //he
+      // printing
+      //and
+      // typesetting i
+      //ndustry.
+      // Lorem
+      // Ipsum
+      // h
+      //as
+      // been
+      // the
+      //ndustry's
+      // standard
+      //dummy
+      //text
+      // ever
+      // since
+      // th
+      //e
+      //1500s,
+      //when an
+      // unknown
+      //printer
+      // took
+      //a
+      // galley
+      // of
+      // type
+      //and
+      // s
+      //crambled
+      // it
+      // to
+      // make
+      // a
+      // type
+      // specimen
+      // book.
+      //It
+      // has
+      //survived
+      // not
+      // o
+      //nly
+      //five
+      //centuries,
+      // but
+      // als
+      //o
+      //the
+      // leap i
+      //nto
+      // e
+      //lectronic
+      //typesetti
+      //ng,
+      // remaining
+      //essentially
+      // unchanged
+      //.
+      //It
+      // was
+      //popularised
+      // in
+      // the
+      // 19
+      //60s
+      // with
+      // the
+      // releas
+      //e
+      //of
+      //Letraset
+      // sheets
+      // containin
+      //g
+      //Lorem
+      // Ipsum
+      // pa
+      //ssages
+      //, and
+      // more
+      // r
+      //ecentl
+      //y
+      // wit
+      //h
+      // deskt
+      //op
+      // publishing s
+      //oftware
+      //like
+      // A
+      //ldus P
+      //ageMaker
+      // including
+      //versions
+      // of
+      //Lorem
+      // I
+      // psum.
+
       StyledButton(
           onPressed: () {
             Navigator.push(
@@ -164,57 +384,82 @@ class PlanTreningowy extends StatelessWidget {
       // unknown
       //printer
       // took
-      //a galley
-      // of type
-      //and s
+      //a
+      // galley
+      // of
+      // type
+      //and
+      // s
       //crambled
-      // it to
-      // make a
+      // it
+      // to
+      // make
+      // a
       // type
       // specimen
       // book.
-      //It has
+      //It
+      // has
       //survived
       // not
       // o
       //nly
-      //five centuries,
-      // but als
+      //five
+      //centuries,
+      // but
+      // als
       //o
       //the
       // leap i
-      //nto e
+      //nto
+      // e
       //lectronic
       //typesetti
       //ng,
       // remaining
       //essentially
       // unchanged
-      //. It was
+      //.
+      //It
+      // was
       //popularised
-      // in the 19
-      //60s with
+      // in
+      // the
+      // 19
+      //60s
+      // with
       // the
       // releas
-      //e of
+      //e
+      //of
       //Letraset
       // sheets
       // containin
-      //g Lorem
-      // Ipsum pa
-
+      //g
+      //Lorem
+      // Ipsum
+      // pa
       //ssages
-      //, and more r
+      //, and
+      // more
+      // r
       //ecentl
-      //y wit
-      //h deskt
-      //op publishing s
-      //oftware like A
+      //y
+      // wit
+      //h
+      // deskt
+      //op
+      // publishing s
+      //oftware
+      //like
+      // A
       //ldus P
       //ageMaker
       // including
       //versions
-      // of Lorem I
+      // of
+      //Lorem
+      // I
       // psum.
 
       StyledButton(
