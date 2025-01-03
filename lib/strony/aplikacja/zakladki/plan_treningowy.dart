@@ -1,3 +1,4 @@
+import 'package:do_it/strony/aplikacja/zakladki/aystent.dart';
 import 'package:do_it/strony/aplikacja/zakladki/plan.dart';
 import 'package:do_it/strony/aplikacja/zakladki/pomiary.dart';
 import 'package:flutter/material.dart';
@@ -218,7 +219,8 @@ class PlanTreningowy extends StatelessWidget {
 
       StyledButton(
           onPressed: () {
-            // Navigator pozostaw pusty
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Aystent()));
           },
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.transparent),
