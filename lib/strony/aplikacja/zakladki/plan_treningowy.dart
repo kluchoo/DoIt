@@ -130,6 +130,92 @@ class PlanTreningowy extends StatelessWidget {
               ),
             ),
           )),
+
+//trzeci przycisk
+      //Lorem
+      // Ipsum
+      // is
+      //simply
+      //dummy
+      // text
+      //of
+      //he
+      // printing
+      //and
+      // typesetting i
+      //ndustry.
+      // Lorem
+      // Ipsum
+      // h
+      //as
+      // been
+      // the
+      //ndustry's
+      // standard
+      //dummy
+      //text
+      // ever
+      // since
+      // th
+      //e
+      //1500s,
+      //when an
+      // unknown
+      //printer
+      // took
+      //a galley
+      // of type
+      //and s
+      //crambled
+      // it to
+      // make a
+      // type
+      // specimen
+      // book.
+      //It has
+      //survived
+      // not
+      // o
+      //nly
+      //five centuries,
+      // but als
+      //o
+      //the
+      // leap i
+      //nto e
+      //lectronic
+      //typesetti
+      //ng,
+      // remaining
+      //essentially
+      // unchanged
+      //. It was
+      //popularised
+      // in the 19
+      //60s with
+      // the
+      // releas
+      //e of
+      //Letraset
+      // sheets
+      // containin
+      //g Lorem
+      // Ipsum pa
+
+      //ssages
+      //, and more r
+      //ecentl
+      //y wit
+      //h deskt
+      //op publishing s
+      //oftware like A
+      //ldus P
+      //ageMaker
+      // including
+      //versions
+      // of Lorem I
+      // psum.
+
       StyledButton(
           onPressed: () {
             // Navigator pozostaw pusty
