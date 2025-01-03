@@ -71,7 +71,7 @@ class PlanTreningowy extends StatelessWidget {
             ),
             child: Center(
               child: const Text(
-                "adam gej",
+                "Plan treningowy",
                 style: TextStyle(
                   fontWeight: FontWeight.bold, // Pogrubienie tekstu
                   color: Colors.black, // Czarny kolor czcionki
@@ -121,7 +121,56 @@ class PlanTreningowy extends StatelessWidget {
             ),
             child: Center(
               child: const Text(
-                "buldog gej",
+                "Pomiary Ciała",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold, // Pogrubienie tekstu
+                  color: Colors.black, // Czarny kolor czcionki
+                  fontSize: 20, // Powiększenie czcionki
+                ),
+              ),
+            ),
+          )),
+      StyledButton(
+          onPressed: () {
+            // Navigator pozostaw pusty
+          },
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            shadowColor:
+                MaterialStateProperty.all(Colors.black.withOpacity(0.2)),
+            elevation: MaterialStateProperty.all(5),
+            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            )),
+            padding: MaterialStateProperty.all(EdgeInsets.zero),
+            minimumSize: MaterialStateProperty.all(
+                Size(200, 70)), // Zwiększ rozmiar przycisku
+            maximumSize: MaterialStateProperty.all(
+                Size(250, 70)), // Ogranicz długość przycisku
+          ),
+          child: Ink(
+            decoration: BoxDecoration(
+              color: Theme.of(context)
+                  .scaffoldBackgroundColor, // Jednolite tło zgodne z tłem strony
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 5,
+                  blurRadius: 10,
+                  offset: const Offset(0, 5),
+                )
+              ],
+              gradient: const SweepGradient(
+                colors: [Color(0xffffde59), Color(0xfffc466b)],
+                stops: [0.2, 0.7],
+                center: Alignment.topRight,
+              ),
+              borderRadius:
+                  BorderRadius.circular(30), // Gładkie rogi z obu stron
+            ),
+            child: Center(
+              child: const Text(
+                "Asystent sylwetki",
                 style: TextStyle(
                   fontWeight: FontWeight.bold, // Pogrubienie tekstu
                   color: Colors.black, // Czarny kolor czcionki
