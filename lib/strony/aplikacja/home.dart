@@ -5,6 +5,7 @@ import 'package:do_it/komponenty/botom_navigation_bar.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/progressDocumentations.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
+import 'package:do_it/strony/aplikacja/zakladki/plan_treningowy.dart';
 import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
@@ -177,7 +178,7 @@ class _HomeState extends ConsumerState<Home> {
                     child: Progressdocumentations(),
                   ), // Widok dla index == 1
                   Center(
-                    child: Text('data3'),
+                    child: PlanTreningowy(),
                   ), // Widok dla index == 2
                 ],
               ),
