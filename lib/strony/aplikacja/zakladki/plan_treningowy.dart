@@ -43,11 +43,15 @@ class PlanTreningowy extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             )),
             padding: MaterialStateProperty.all(EdgeInsets.zero),
-            minimumSize:
-                MaterialStateProperty.all(Size(150, 50)), // Zmniejsz szerokość
+            minimumSize: MaterialStateProperty.all(
+                Size(200, 70)), // Zwiększ rozmiar przycisku
+            maximumSize: MaterialStateProperty.all(
+                Size(250, 70)), // Ogranicz długość przycisku
           ),
           child: Ink(
             decoration: BoxDecoration(
+              color: Theme.of(context)
+                  .scaffoldBackgroundColor, // Jednolite tło zgodne z tłem strony
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.2),
@@ -61,16 +65,17 @@ class PlanTreningowy extends StatelessWidget {
                 stops: [0.2, 0.7],
                 center: Alignment.topRight,
               ),
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
+              borderRadius:
+                  BorderRadius.circular(30), // Gładkie rogi z obu stron
             ),
             child: Center(
               child: const Text(
                 "adam gej",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold), // Pogrubienie tekstu
+                  fontWeight: FontWeight.bold, // Pogrubienie tekstu
+                  color: Colors.black, // Czarny kolor czcionki
+                  fontSize: 20, // Powiększenie czcionki
+                ),
               ),
             ),
           )),
