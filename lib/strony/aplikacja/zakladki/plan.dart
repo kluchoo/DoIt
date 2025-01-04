@@ -10,9 +10,63 @@ class _PlanState extends State<Plan> {
   List<Workout> workouts = [];
 
   void _addWorkout() {
-    setState(() {
-      workouts.add(Workout(date: DateTime.now(), exercises: []));
-    });
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String workoutName = '';
+        DateTime selectedDate = DateTime.now();
+
+        return AlertDialog(
+          title: const Text('Dodaj Trening'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                decoration: const InputDecoration(labelText: 'Nazwa Treningu'),
+                onChanged: (value) {
+                  workoutName = value;
+                },
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () async {
+                  final DateTime? picked = await showDatePicker(
+                    context: context,
+                    initialDate: selectedDate,
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime(2101),
+                  );
+                  if (picked != null && picked != selectedDate) {
+                    setState(() {
+                      selectedDate = picked;
+                    });
+                  }
+                },
+                child: Text('Wybierz Datę'),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Anuluj'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  workouts.add(Workout(
+                      name: workoutName, date: selectedDate, exercises: []));
+                });
+                Navigator.of(context).pop();
+              },
+              child: const Text('Dodaj'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void _addExercise(int index) {
@@ -54,6 +108,10 @@ class _PlanState extends State<Plan> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    'Nazwa: ${workouts[index].name}',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                   Text(
                     'Data: ${workouts[index].date.toLocal()}'.split(' ')[0],
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -110,11 +168,11 @@ class _PlanState extends State<Plan> {
         margin: const EdgeInsets.fromLTRB(0, 0, 16, 16),
         child: IconButton.filled(
           style: ButtonStyle(
-            iconSize: const WidgetStatePropertyAll(40),
+            iconSize: const MaterialStatePropertyAll(40),
             backgroundColor: WidgetStatePropertyAll(
                 AppColors.primaryColor), // Replace with your desired color
-            iconColor: const WidgetStatePropertyAll(Colors.black),
-            elevation: const WidgetStatePropertyAll(0),
+            iconColor: const MaterialStatePropertyAll(Colors.black),
+            elevation: const MaterialStatePropertyAll(0),
           ),
           onPressed: _addWorkout,
           icon: const Icon(Icons.add),
@@ -125,10 +183,11 @@ class _PlanState extends State<Plan> {
 }
 
 class Workout {
+  String name;
   DateTime date;
   List<Exercise> exercises;
 
-  Workout({required this.date, required this.exercises});
+  Workout({required this.name, required this.date, required this.exercises});
 }
 
 class Exercise {
