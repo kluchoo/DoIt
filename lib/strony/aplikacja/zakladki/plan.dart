@@ -56,8 +56,12 @@ class _PlanState extends State<Plan> {
             TextButton(
               onPressed: () {
                 setState(() {
-                  workouts.add(Workout(
-                      name: workoutName, date: selectedDate, exercises: []));
+                  workouts.insert(
+                      0,
+                      Workout(
+                          name: workoutName,
+                          date: selectedDate,
+                          exercises: []));
                 });
                 Navigator.of(context).pop();
               },
@@ -70,9 +74,62 @@ class _PlanState extends State<Plan> {
   }
 
   void _addExercise(int index) {
-    setState(() {
-      workouts[index].exercises.add(Exercise(name: 'Nowe ćwiczenie'));
-    });
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        String exerciseName = '';
+        String weight = '';
+        String repetitions = '';
+
+        return AlertDialog(
+          title: const Text('Dodaj Ćwiczenie'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                decoration: const InputDecoration(labelText: 'Nazwa Ćwiczenia'),
+                onChanged: (value) {
+                  exerciseName = value;
+                },
+              ),
+              TextField(
+                decoration: const InputDecoration(labelText: 'Ciężar'),
+                onChanged: (value) {
+                  weight = value;
+                },
+              ),
+              TextField(
+                decoration: const InputDecoration(labelText: 'Ilość Powtórzeń'),
+                onChanged: (value) {
+                  repetitions = value;
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Anuluj'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  workouts[index].exercises.add(Exercise(
+                        name: exerciseName,
+                        weight: weight,
+                        repetitions: repetitions,
+                      ));
+                });
+                Navigator.of(context).pop();
+              },
+              child: const Text('Dodaj'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -110,11 +167,17 @@ class _PlanState extends State<Plan> {
                 children: [
                   Text(
                     'Nazwa: ${workouts[index].name}',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   Text(
                     'Data: ${workouts[index].date.toLocal()}'.split(' ')[0],
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   SizedBox(height: 10),
                   ListView.builder(
@@ -122,9 +185,11 @@ class _PlanState extends State<Plan> {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: workouts[index].exercises.length,
                     itemBuilder: (context, exerciseIndex) {
+                      final exercise = workouts[index].exercises[exerciseIndex];
                       return ListTile(
-                        title:
-                            Text(workouts[index].exercises[exerciseIndex].name),
+                        title: Text(exercise.name),
+                        subtitle: Text(
+                            'Ciężar: ${exercise.weight}, Powtórzenia: ${exercise.repetitions}'),
                       );
                     },
                   ),
@@ -164,19 +229,10 @@ class _PlanState extends State<Plan> {
           );
         },
       ),
-      floatingActionButton: Container(
-        margin: const EdgeInsets.fromLTRB(0, 0, 16, 16),
-        child: IconButton.filled(
-          style: ButtonStyle(
-            iconSize: const MaterialStatePropertyAll(40),
-            backgroundColor: WidgetStatePropertyAll(
-                AppColors.primaryColor), // Replace with your desired color
-            iconColor: const MaterialStatePropertyAll(Colors.black),
-            elevation: const MaterialStatePropertyAll(0),
-          ),
-          onPressed: _addWorkout,
-          icon: const Icon(Icons.add),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addWorkout,
+        backgroundColor: AppColors.primaryColor,
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -192,6 +248,9 @@ class Workout {
 
 class Exercise {
   String name;
+  String weight;
+  String repetitions;
 
-  Exercise({required this.name});
+  Exercise(
+      {required this.name, required this.weight, required this.repetitions});
 }
