@@ -24,7 +24,24 @@ class _PlanState extends State<Plan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Plan Treningowy'),
+        title: Container(
+          decoration: BoxDecoration(
+            gradient: const SweepGradient(
+              colors: [Color(0xffffde59), Color(0xfffc466b)],
+              stops: [0.2, 0.7],
+              center: Alignment.topRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: const Text(
+            'Twój Plan',
+            style: TextStyle(
+              color: Colors.black, // Czarny kolor tekstu
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: workouts.length,
