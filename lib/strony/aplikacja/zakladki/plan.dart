@@ -14,7 +14,7 @@ class _PlanState extends State<Plan> {
       context: context,
       builder: (BuildContext context) {
         String workoutName = '';
-        DateTime selectedDate = DateTime.now();
+        String workoutDate = '';
 
         return AlertDialog(
           title: const Text('Dodaj Trening'),
@@ -27,22 +27,12 @@ class _PlanState extends State<Plan> {
                   workoutName = value;
                 },
               ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () async {
-                  final DateTime? picked = await showDatePicker(
-                    context: context,
-                    initialDate: selectedDate,
-                    firstDate: DateTime(2000),
-                    lastDate: DateTime(2101),
-                  );
-                  if (picked != null && picked != selectedDate) {
-                    setState(() {
-                      selectedDate = picked;
-                    });
-                  }
+              TextField(
+                decoration: const InputDecoration(
+                    labelText: 'Data Treningu (YYYY-MM-DD)'),
+                onChanged: (value) {
+                  workoutDate = value;
                 },
-                child: Text('Wybierz Datę'),
               ),
             ],
           ),
@@ -60,7 +50,8 @@ class _PlanState extends State<Plan> {
                       0,
                       Workout(
                           name: workoutName,
-                          date: selectedDate,
+                          date: DateTime.parse(workoutDate),
+                          dateString: workoutDate,
                           exercises: []));
                 });
                 Navigator.of(context).pop();
@@ -185,11 +176,12 @@ class _PlanState extends State<Plan> {
                         color: Colors.black),
                   ),
                   Text(
-                    'Data: ${workouts[index].date.toLocal()}'.split(' ')[0],
+                    'Data: ${workouts[index].dateString}',
                     style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black, // Czarny kolor tekstu
+                    ),
                   ),
                   SizedBox(height: 10),
                   ListView.builder(
@@ -262,9 +254,14 @@ class _PlanState extends State<Plan> {
 class Workout {
   String name;
   DateTime date;
+  String dateString;
   List<Exercise> exercises;
 
-  Workout({required this.name, required this.date, required this.exercises});
+  Workout(
+      {required this.name,
+      required this.date,
+      required this.dateString,
+      required this.exercises});
 }
 
 class Exercise {
