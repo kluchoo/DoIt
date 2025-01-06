@@ -141,7 +141,10 @@ class _PlanState extends State<Plan> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Usuń Trening'),
-          content: const Text('Czy na pewno chcesz usunąć ten trening?'),
+          content: const Text(
+            'Czy na pewno chcesz usunąć ten trening?',
+            style: TextStyle(color: Colors.black),
+          ),
           actions: [
             TextButton(
               onPressed: () {
@@ -170,7 +173,10 @@ class _PlanState extends State<Plan> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Usuń Ćwiczenie'),
-          content: const Text('Czy na pewno chcesz usunąć to ćwiczenie?'),
+          content: const Text(
+            'Czy na pewno chcesz usunąć to ćwiczenie?',
+            style: TextStyle(color: Colors.black),
+          ),
           actions: [
             TextButton(
               onPressed: () {
