@@ -80,31 +80,42 @@ class _PlanState extends State<Plan> {
         String exerciseName = '';
         String weight = '';
         String repetitions = '';
+        String sets = '';
 
         return AlertDialog(
           title: const Text('Dodaj Ćwiczenie'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                decoration: const InputDecoration(labelText: 'Nazwa Ćwiczenia'),
-                onChanged: (value) {
-                  exerciseName = value;
-                },
-              ),
-              TextField(
-                decoration: const InputDecoration(labelText: 'Ciężar'),
-                onChanged: (value) {
-                  weight = value;
-                },
-              ),
-              TextField(
-                decoration: const InputDecoration(labelText: 'Ilość Powtórzeń'),
-                onChanged: (value) {
-                  repetitions = value;
-                },
-              ),
-            ],
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  decoration:
+                      const InputDecoration(labelText: 'Nazwa Ćwiczenia'),
+                  onChanged: (value) {
+                    exerciseName = value;
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(labelText: 'Ciężar'),
+                  onChanged: (value) {
+                    weight = value;
+                  },
+                ),
+                TextField(
+                  decoration:
+                      const InputDecoration(labelText: 'Ilość Powtórzeń'),
+                  onChanged: (value) {
+                    repetitions = value;
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(labelText: 'Ilość Serii'),
+                  onChanged: (value) {
+                    sets = value;
+                  },
+                ),
+              ],
+            ),
           ),
           actions: [
             TextButton(
@@ -120,6 +131,7 @@ class _PlanState extends State<Plan> {
                         name: exerciseName,
                         weight: weight,
                         repetitions: repetitions,
+                        sets: sets,
                       ));
                 });
                 Navigator.of(context).pop();
@@ -188,8 +200,17 @@ class _PlanState extends State<Plan> {
                       final exercise = workouts[index].exercises[exerciseIndex];
                       return ListTile(
                         title: Text(exercise.name),
-                        subtitle: Text(
-                            'Ciężar: ${exercise.weight}, Powtórzenia: ${exercise.repetitions}'),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (exercise.weight.isNotEmpty)
+                              Text('Ciężar: ${exercise.weight}'),
+                            if (exercise.repetitions.isNotEmpty)
+                              Text('Powtórzenia: ${exercise.repetitions}'),
+                            if (exercise.sets.isNotEmpty)
+                              Text('Serii: ${exercise.sets}'),
+                          ],
+                        ),
                       );
                     },
                   ),
@@ -250,7 +271,11 @@ class Exercise {
   String name;
   String weight;
   String repetitions;
+  String sets;
 
   Exercise(
-      {required this.name, required this.weight, required this.repetitions});
+      {required this.name,
+      required this.weight,
+      required this.repetitions,
+      required this.sets});
 }
