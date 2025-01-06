@@ -135,6 +135,64 @@ class _PlanState extends State<Plan> {
     );
   }
 
+  void _removeWorkout(int index) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Usuń Trening'),
+          content: const Text('Czy na pewno chcesz usunąć ten trening?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Anuluj'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  workouts.removeAt(index);
+                });
+                Navigator.of(context).pop();
+              },
+              child: const Text('Usuń'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _removeExercise(int workoutIndex, int exerciseIndex) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Usuń Ćwiczenie'),
+          content: const Text('Czy na pewno chcesz usunąć to ćwiczenie?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Anuluj'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  workouts[workoutIndex].exercises.removeAt(exerciseIndex);
+                });
+                Navigator.of(context).pop();
+              },
+              child: const Text('Usuń'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,82 +219,90 @@ class _PlanState extends State<Plan> {
       body: ListView.builder(
         itemCount: workouts.length,
         itemBuilder: (context, index) {
-          return Card(
-            margin: EdgeInsets.all(10),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Nazwa: ${workouts[index].name}',
-                    style: TextStyle(
+          return GestureDetector(
+            onLongPress: () => _removeWorkout(index),
+            child: Card(
+              margin: EdgeInsets.all(10),
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Nazwa: ${workouts[index].name}',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Text(
+                      'Data: ${workouts[index].dateString}',
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                  Text(
-                    'Data: ${workouts[index].dateString}',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black, // Czarny kolor tekstu
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: workouts[index].exercises.length,
-                    itemBuilder: (context, exerciseIndex) {
-                      final exercise = workouts[index].exercises[exerciseIndex];
-                      return ListTile(
-                        title: Text(exercise.name),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (exercise.weight.isNotEmpty)
-                              Text('Ciężar: ${exercise.weight}'),
-                            if (exercise.repetitions.isNotEmpty)
-                              Text('Powtórzenia: ${exercise.repetitions}'),
-                            if (exercise.sets.isNotEmpty)
-                              Text('Serii: ${exercise.sets}'),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () => _addExercise(index),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        gradient: const SweepGradient(
-                          colors: [Color(0xffffde59), Color(0xfffc466b)],
-                          stops: [0.2, 0.7],
-                          center: Alignment.topRight,
-                        ),
-                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black, // Czarny kolor tekstu
                       ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          'Dodaj ćwiczenie',
-                          style: TextStyle(
-                            color: Colors.black, // Czarny kolor tekstu
-                            fontWeight: FontWeight.bold,
+                    ),
+                    SizedBox(height: 10),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: workouts[index].exercises.length,
+                      itemBuilder: (context, exerciseIndex) {
+                        final exercise =
+                            workouts[index].exercises[exerciseIndex];
+                        return GestureDetector(
+                          onLongPress: () =>
+                              _removeExercise(index, exerciseIndex),
+                          child: ListTile(
+                            title: Text(exercise.name),
+                            subtitle: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (exercise.weight.isNotEmpty)
+                                  Text('Ciężar: ${exercise.weight}'),
+                                if (exercise.repetitions.isNotEmpty)
+                                  Text('Powtórzenia: ${exercise.repetitions}'),
+                                if (exercise.sets.isNotEmpty)
+                                  Text('Serii: ${exercise.sets}'),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () => _addExercise(index),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          gradient: const SweepGradient(
+                            colors: [Color(0xffffde59), Color(0xfffc466b)],
+                            stops: [0.2, 0.7],
+                            center: Alignment.topRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            'Dodaj ćwiczenie',
+                            style: TextStyle(
+                              color: Colors.black, // Czarny kolor tekstu
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
