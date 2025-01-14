@@ -114,26 +114,42 @@ class ProgressNotifier extends ChangeNotifier {
   }
 
   Future<void> fetchProgress(WidgetRef ref) async {
-    // Pobieranie danych z serwera
     final uid = ref.read(appUserProvider).uid;
-    debugPrint(uid);
-    final docSnapshot =
-        await FirebaseFirestore.instance.collection('users').doc(uid).get();
-    final data = docSnapshot.data()?['progress'];
-    if (data != null) {
-      deserializeProgress(List<Map>.from(data));
+    debugPrint('UID: $uid'); // Dodaj debugowanie UID
+    if (uid == null) {
+      debugPrint('Użytkownik nie jest zalogowany');
+      return;
     }
-  } // Add this line to define ref
+
+    try {
+      final docSnapshot =
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
+      final data = docSnapshot.data()?['progress'];
+      if (data != null) {
+        deserializeProgress(List<Map>.from(data));
+      }
+    } catch (e) {
+      debugPrint('Błąd podczas pobierania postępów: $e');
+    }
+  }
 
   Future<void> saveProgress(WidgetRef ref) async {
-    // Zapisywanie danych na serwerze
     final uid = ref.read(appUserProvider).uid;
-    debugPrint(uid);
-    await FirebaseFirestore.instance.collection('users').doc(uid).update(
-      {
-        'progress': serializeProgress(),
-      },
-    );
+    debugPrint('UID: $uid'); // Dodaj debugowanie UID
+    if (uid == null) {
+      debugPrint('Użytkownik nie jest zalogowany');
+      return;
+    }
+
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(uid).update(
+        {
+          'progress': serializeProgress(),
+        },
+      );
+    } catch (e) {
+      debugPrint('Błąd podczas zapisywania postępów: $e');
+    }
   }
 
   void deserializeProgress(List<Map> data) {

@@ -1,15 +1,112 @@
+import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Plan extends StatefulWidget {
+class Plan extends ConsumerStatefulWidget {
   @override
   _PlanState createState() => _PlanState();
+  Map<String, dynamic> serializeProgress(
+      String name, String dateString, List<Exercise> exercises) {
+    return {
+      'name': name,
+      'date': dateString,
+      'exercises': exercises.map((exercise) => exercise.toMap()).toList(),
+    };
+  }
 }
 
-class _PlanState extends State<Plan> {
+class _PlanState extends ConsumerState<Plan> {
   List<Workout> workouts = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _fetchWorkouts();
+  }
+
+  Future<void> _fetchWorkouts() async {
+    final uid = ref.read(appUserProvider).uid;
+    debugPrint('UID: $uid'); // Dodaj debugowanie UID
+    try {
+      final docSnapshot =
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
+      final data = docSnapshot.data()?['workouts'];
+      if (data != null && data is List) {
+        deserializeWorkouts(List<Map<String, dynamic>>.from(data));
+      }
+    } catch (e) {
+      debugPrint('Błąd podczas pobierania treningów: $e');
+    }
+  }
+
+  void deserializeWorkouts(List<Map<String, dynamic>> data) {
+    workouts = data.map((workoutData) {
+      return Workout(
+        id: workoutData['id'] ?? '',
+        name: workoutData['name'] ?? '',
+        date: DateTime.parse(workoutData['date']),
+        dateString: workoutData['date'],
+        exercises:
+            (workoutData['exercises'] as List<dynamic>).map((exerciseData) {
+          return Exercise(
+            name: exerciseData['name'] ?? '',
+            weight: exerciseData['weight'] ?? '',
+            repetitions: exerciseData['repetitions'] ?? '',
+            sets: exerciseData['sets'] ?? '',
+          );
+        }).toList(),
+      );
+    }).toList();
+    setState(() {});
+  }
+
+  Future<void> _saveWorkout(Workout workout) async {
+    final uid = ref.read(appUserProvider).uid;
+    debugPrint('UID: $uid'); // Dodaj debugowanie UID
+    if (uid == null) {
+      debugPrint('Użytkownik nie jest zalogowany');
+      return;
+    }
+
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(uid).update(
+        {
+          'workouts': workouts
+              .map((workout) => widget.serializeProgress(
+                  workout.name, workout.dateString, workout.exercises))
+              .toList(),
+        },
+      );
+    } catch (e) {
+      debugPrint('Błąd podczas zapisywania treningu: $e');
+    }
+  }
+
+  Future<void> _deleteWorkout(int index) async {
+    final uid = ref.read(appUserProvider).uid;
+    debugPrint('UID: $uid'); // Dodaj debugowanie UID
+    if (uid == null) {
+      debugPrint('Użytkownik nie jest zalogowany');
+      return;
+    }
+
+    try {
+      final docRef = FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .collection('workouts')
+          .doc(workouts[index].id);
+
+      await docRef.delete();
+    } catch (e) {
+      debugPrint('Błąd podczas usuwania treningu: $e');
+    }
+  }
+
   void _addWorkout() {
+    _fetchWorkouts();
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -44,16 +141,18 @@ class _PlanState extends State<Plan> {
               child: const Text('Anuluj'),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
+                final newWorkout = Workout(
+                  id: DateTime.now().millisecondsSinceEpoch.toString(),
+                  name: workoutName,
+                  date: DateTime.parse(workoutDate),
+                  dateString: workoutDate,
+                  exercises: [],
+                );
                 setState(() {
-                  workouts.insert(
-                      0,
-                      Workout(
-                          name: workoutName,
-                          date: DateTime.parse(workoutDate),
-                          dateString: workoutDate,
-                          exercises: []));
+                  workouts.insert(0, newWorkout);
                 });
+                await _saveWorkout(newWorkout);
                 Navigator.of(context).pop();
               },
               child: const Text('Dodaj'),
@@ -116,7 +215,7 @@ class _PlanState extends State<Plan> {
               child: const Text('Anuluj'),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
                 setState(() {
                   workouts[index].exercises.add(Exercise(
                         name: exerciseName,
@@ -125,6 +224,7 @@ class _PlanState extends State<Plan> {
                         sets: sets,
                       ));
                 });
+                await _saveWorkout(workouts[index]);
                 Navigator.of(context).pop();
               },
               child: const Text('Dodaj'),
@@ -153,7 +253,8 @@ class _PlanState extends State<Plan> {
               child: const Text('Anuluj'),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
+                await _deleteWorkout(index);
                 setState(() {
                   workouts.removeAt(index);
                 });
@@ -185,10 +286,11 @@ class _PlanState extends State<Plan> {
               child: const Text('Anuluj'),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
                 setState(() {
                   workouts[workoutIndex].exercises.removeAt(exerciseIndex);
                 });
+                await _saveWorkout(workouts[workoutIndex]);
                 Navigator.of(context).pop();
               },
               child: const Text('Usuń'),
@@ -324,16 +426,19 @@ class _PlanState extends State<Plan> {
 }
 
 class Workout {
+  String id;
   String name;
   DateTime date;
   String dateString;
   List<Exercise> exercises;
 
-  Workout(
-      {required this.name,
-      required this.date,
-      required this.dateString,
-      required this.exercises});
+  Workout({
+    required this.id,
+    required this.name,
+    required this.date,
+    required this.dateString,
+    required this.exercises,
+  });
 }
 
 class Exercise {
@@ -342,9 +447,19 @@ class Exercise {
   String repetitions;
   String sets;
 
-  Exercise(
-      {required this.name,
-      required this.weight,
-      required this.repetitions,
-      required this.sets});
+  Exercise({
+    required this.name,
+    required this.weight,
+    required this.repetitions,
+    required this.sets,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'weight': weight,
+      'repetitions': repetitions,
+      'sets': sets,
+    };
+  }
 }
