@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:do_it/komponenty/app_background_colors.dart';
 import 'package:do_it/komponenty/botom_navigation_bar.dart';
+import 'package:do_it/komponenty/text.dart';
 import 'package:do_it/providers/home_page_providers.dart';
 import 'package:do_it/strony/aplikacja/progressDocumentations.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
@@ -22,6 +23,7 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home> {
   int index = 0;
   Uint8List? profileImage;
+  bool isScreenDimmed = false;
 
   @override
   void initState() {
@@ -86,75 +88,75 @@ class _HomeState extends ConsumerState<Home> {
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const ProfileSettingsPage()));
-                      },
-                      child: OverflowBox(
-                        maxWidth: 135,
-                        maxHeight: 150,
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryAccent,
-                            gradient: const LinearGradient(colors: [
-                              Color(0xFFc6e9ed),
-                              Color.fromARGB(255, 144, 184, 189),
-                              Color(0xFFc6e9ed)
-                            ], stops: [
-                              0,
-                              0.5,
-                              1
-                            ]),
-                            borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(100),
+                    Builder(
+                      builder: (context) => GestureDetector(
+                        onTap: () {
+                          debugPrint('Otwieranie szuflady');
+                          Scaffold.of(context).openEndDrawer();
+                        },
+                        child: OverflowBox(
+                          maxWidth: 135,
+                          maxHeight: 150,
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryAccent,
+                              gradient: const LinearGradient(colors: [
+                                Color(0xFFc6e9ed),
+                                Color.fromARGB(255, 144, 184, 189),
+                                Color(0xFFc6e9ed)
+                              ], stops: [
+                                0,
+                                0.5,
+                                1
+                              ]),
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(100),
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(50, 35, 25, 25),
-                            child: OverflowBox(
-                              maxHeight: 90,
-                              maxWidth: 90,
-                              child: Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.black.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(100),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.3),
-                                      blurRadius: 10,
-                                      spreadRadius: 3,
-                                    ),
-                                  ],
-                                ),
-                                child: ClipOval(
-                                  child: profileImage != null
-                                      ? Image.memory(
-                                          profileImage,
-                                          fit: BoxFit.cover,
-                                          scale: 0.5,
-                                          errorBuilder:
-                                              (context, error, stackTrace) {
-                                            debugPrint(
-                                                'Błąd ładowania zdjęcia: $error');
-                                            return const Icon(
-                                              Icons.person,
-                                              size: 65,
-                                              color: Colors.white,
-                                            );
-                                          },
-                                        )
-                                      : const Icon(
-                                          Icons.person,
-                                          size: 65,
-                                          color: Colors.white,
-                                        ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(50, 35, 25, 25),
+                              child: OverflowBox(
+                                maxHeight: 90,
+                                maxWidth: 90,
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(100),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.3),
+                                        blurRadius: 10,
+                                        spreadRadius: 3,
+                                      ),
+                                    ],
+                                  ),
+                                  child: ClipOval(
+                                    child: profileImage != null
+                                        ? Image.memory(
+                                            profileImage,
+                                            fit: BoxFit.cover,
+                                            scale: 0.5,
+                                            errorBuilder:
+                                                (context, error, stackTrace) {
+                                              debugPrint(
+                                                  'Błąd ładowania zdjęcia: $error');
+                                              return const Icon(
+                                                Icons.person,
+                                                size: 65,
+                                                color: Colors.white,
+                                              );
+                                            },
+                                          )
+                                        : const Icon(
+                                            Icons.person,
+                                            size: 65,
+                                            color: Colors.white,
+                                          ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -166,6 +168,40 @@ class _HomeState extends ConsumerState<Home> {
                 )),
           ]),
         ),
+        endDrawer: Drawer(
+            backgroundColor: AppColors.secondaryAccent.withOpacity(0.9),
+            child: Column(
+              children: [
+                const SizedBox(height: 50),
+                ListTile(
+                  title: const StylizowanyNaglowek('Profil użytkownika'),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ProfileSettingsPage()));
+                  },
+                ),
+                ListTile(
+                  title:
+                      const StylizowanyNaglowek('Automatyczne przyciemnianie'),
+                  trailing: Switch(
+                    value: isScreenDimmed,
+                    onChanged: (value) {
+                      setState(() {
+                        isScreenDimmed = value;
+                      });
+                    },
+                  ),
+                ),
+                ListTile(
+                  title: StylizowanyNaglowek(
+                    'Wyloguj',
+                  ),
+                  onTap: () {
+                    ref.read(appUserProvider).logOut();
+                  },
+                ),
+              ],
+            )),
         body: MainAppBackground(Stack(
           children: [
             Padding(
