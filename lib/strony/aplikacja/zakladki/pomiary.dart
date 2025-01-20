@@ -37,7 +37,24 @@ class _PomiaryState extends State<Pomiary> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pomiary Ciała'),
+        title: Container(
+          decoration: BoxDecoration(
+            gradient: const SweepGradient(
+              colors: [Color(0xffffde59), Color(0xfffc466b)],
+              stops: [0.2, 0.7],
+              center: Alignment.topRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: const Text(
+            'Pomiary Ciała',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -82,7 +99,32 @@ class _PomiaryState extends State<Pomiary> {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ElevatedButton(
                     onPressed: _submitForm,
-                    child: Text('Zapisz Pomiary'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        gradient: const SweepGradient(
+                          colors: [Color(0xffffde59), Color(0xfffc466b)],
+                          stops: [0.2, 0.7],
+                          center: Alignment.topRight,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Zapisz Pomiary',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
