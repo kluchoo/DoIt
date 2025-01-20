@@ -47,25 +47,33 @@ class _PomiaryState extends State<Pomiary> {
             children: _measurements.keys.map((key) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: key,
-                    labelStyle: TextStyle(color: Colors.black87),
-                    border: OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.white70,
-                  ),
-                  style: TextStyle(color: Colors.black),
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Proszę wprowadzić wartość';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    _measurements[key] = value!;
-                  },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      key,
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white70,
+                      ),
+                      style: TextStyle(color: Colors.black),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Proszę wprowadzić wartość';
+                        }
+                        return null;
+                      },
+                      onSaved: (value) {
+                        _measurements[key] = value!;
+                      },
+                    ),
+                  ],
                 ),
               );
             }).toList()
