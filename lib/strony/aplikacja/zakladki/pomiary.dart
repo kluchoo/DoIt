@@ -33,6 +33,26 @@ class _PomiaryState extends State<Pomiary> {
     }
   }
 
+  void _showMeasurementGuide() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Jak się mierzyć'),
+          content: Image.asset('assets/images/measurement_guide.png'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Zamknij'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,6 +145,15 @@ class _PomiaryState extends State<Pomiary> {
                         ),
                       ),
                     ),
+                  ),
+                ),
+              )
+              ..add(
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: ElevatedButton(
+                    onPressed: _showMeasurementGuide,
+                    child: const Text('Jak się mierzyć'),
                   ),
                 ),
               ),
