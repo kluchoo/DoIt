@@ -12,6 +12,7 @@ import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:light_sensor/light_sensor.dart';
 
 class Home extends ConsumerStatefulWidget {
   const Home({super.key});
@@ -54,6 +55,7 @@ class _HomeState extends ConsumerState<Home> {
     final user = ref.watch(appUserProvider);
     ref.read(progressProvider).fetchProgress(ref);
     final profileImage = user.photo;
+    final brightnessModel = ref.watch(brightnessProvider);
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -185,7 +187,8 @@ class _HomeState extends ConsumerState<Home> {
                       const StylizowanyNaglowek('Automatyczne przyciemnianie'),
                   trailing: Switch(
                     value: isScreenDimmed,
-                    onChanged: (value) {
+                    onChanged: (value) async {
+                      ref.read(brightnessProvider).toggleAutoBrightness(value);
                       setState(() {
                         isScreenDimmed = value;
                       });

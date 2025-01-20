@@ -1,4 +1,5 @@
 import 'package:do_it/models/app_user.dart';
+import 'package:do_it/models/brightness.dart';
 import 'package:do_it/models/progress_model.dart';
 import 'package:do_it/models/quote_model.dart';
 import 'package:flutter/material.dart';
@@ -48,4 +49,8 @@ class CurrentQuoteNotifier extends ChangeNotifier {
 
 final currentQuoteProvider = ChangeNotifierProvider((ref) {
   return CurrentQuoteNotifier();
+});
+
+final brightnessProvider = ChangeNotifierProvider((ref) {
+  return AutoBrightnessViewModel();
 });
