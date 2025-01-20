@@ -81,82 +81,107 @@ class _PomiaryState extends State<Pomiary> {
         child: Form(
           key: _formKey,
           child: ListView(
-            children: _measurements.keys.map((key) {
-              return Padding(
+            children: [
+              Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      key,
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        filled: true,
-                        fillColor: Colors.white70,
+                child: ElevatedButton(
+                  onPressed: _showMeasurementGuide,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    padding: EdgeInsets.zero,
+                  ),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                      gradient: const SweepGradient(
+                        colors: [Color(0xffffde59), Color(0xfffc466b)],
+                        stops: [0.2, 0.7],
+                        center: Alignment.topRight,
                       ),
-                      style: TextStyle(color: Colors.black),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Proszę wprowadzić wartość';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _measurements[key] = value!;
-                      },
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  ],
-                ),
-              );
-            }).toList()
-              ..add(
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: ElevatedButton(
-                    onPressed: _submitForm,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        gradient: const SweepGradient(
-                          colors: [Color(0xffffde59), Color(0xfffc466b)],
-                          stops: [0.2, 0.7],
-                          center: Alignment.topRight,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: const Text(
+                        'Jak się mierzyć',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
-                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: const Text(
-                          'Zapisz Pomiary',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              ..._measurements.keys.map((key) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        key,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white70,
+                        ),
+                        style: TextStyle(color: Colors.black),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Proszę wprowadzić wartość';
+                          }
+                          return null;
+                        },
+                        onSaved: (value) {
+                          _measurements[key] = value!;
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              }).toList()
+                ..add(
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ElevatedButton(
+                      onPressed: _submitForm,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          gradient: const SweepGradient(
+                            colors: [Color(0xffffde59), Color(0xfffc466b)],
+                            stops: [0.2, 0.7],
+                            center: Alignment.topRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: const Text(
+                            'Zapisz Pomiary',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              )
-              ..add(
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: ElevatedButton(
-                    onPressed: _showMeasurementGuide,
-                    child: const Text('Jak się mierzyć'),
-                  ),
-                ),
-              ),
+            ],
           ),
         ),
       ),
