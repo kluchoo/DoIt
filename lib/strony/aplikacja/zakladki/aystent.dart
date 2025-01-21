@@ -107,7 +107,32 @@ class _AystentState extends State<Aystent> {
                   ),
                   ElevatedButton(
                     onPressed: _calculateBMI,
-                    child: const Text('Oblicz BMI'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        gradient: const SweepGradient(
+                          colors: [Color(0xffffde59), Color(0xfffc466b)],
+                          stops: [0.2, 0.7],
+                          center: Alignment.topRight,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Oblicz BMI',
+                          style: TextStyle(
+                            color: Colors.black, // Czarny kolor tekstu
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                   Text('Twoje BMI: $_bmiResult'),
                 ],
@@ -166,7 +191,32 @@ class _AystentState extends State<Aystent> {
                   ),
                   ElevatedButton(
                     onPressed: _calculateCalories,
-                    child: const Text('Oblicz zapotrzebowanie kaloryczne'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        gradient: const SweepGradient(
+                          colors: [Color(0xffffde59), Color(0xfffc466b)],
+                          stops: [0.2, 0.7],
+                          center: Alignment.topRight,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Oblicz zapotrzebowanie kaloryczne',
+                          style: TextStyle(
+                            color: Colors.black, // Czarny kolor tekstu
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                   Text(
                       'Twoje zapotrzebowanie kaloryczne: $_calorieResult kcal'),
