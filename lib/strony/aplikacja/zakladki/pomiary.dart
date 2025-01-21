@@ -38,7 +38,7 @@ class _PomiaryState extends State<Pomiary> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Jak się mierzyć'),
+          title: const Text('Jak się mierzyć?'),
           content: Image.asset('assets/images/measurement_guide.png'),
           actions: [
             TextButton(
@@ -82,38 +82,6 @@ class _PomiaryState extends State<Pomiary> {
           key: _formKey,
           child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: ElevatedButton(
-                  onPressed: _showMeasurementGuide,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    padding: EdgeInsets.zero,
-                  ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      gradient: const SweepGradient(
-                        colors: [Color(0xffffde59), Color(0xfffc466b)],
-                        stops: [0.2, 0.7],
-                        center: Alignment.topRight,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: const Text(
-                        'Jak się mierzyć',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
               ..._measurements.keys.map((key) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -147,6 +115,31 @@ class _PomiaryState extends State<Pomiary> {
                   ),
                 );
               }).toList()
+                ..add(
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ElevatedButton(
+                      onPressed: _showMeasurementGuide,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Jak się mierzyć',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18, // Zwiększ rozmiar czcionki
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
                 ..add(
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
