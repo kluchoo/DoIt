@@ -16,29 +16,49 @@ class _AystentState extends State<Aystent> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _activityController = TextEditingController();
+  final TextEditingController _activityLevelController =
+      TextEditingController();
 
   void _calculateBMI() {
     if (_bmiFormKey.currentState!.validate()) {
-      double height = double.parse(_heightController.text) / 100;
-      double weight = double.parse(_weightController.text);
-      setState(() {
-        _bmiResult = weight / (height * height);
-      });
+      try {
+        double height = double.parse(_heightController.text) / 100;
+        double weight = double.parse(_weightController.text);
+        setState(() {
+          _bmiResult = weight / (height * height);
+        });
+      } catch (e) {
+        debugPrint('Błąd podczas obliczania BMI: $e');
+      }
+    }
+  }
+
+  String _bmiCategory(double bmi) {
+    if (bmi < 18.5) {
+      return 'Niedowaga';
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+      return 'Prawidłowa waga';
+    } else if (bmi >= 25.0 && bmi <= 29.9) {
+      return 'Nadwaga';
+    } else {
+      return 'Otyłość';
     }
   }
 
   void _calculateCalories() {
     if (_calorieFormKey.currentState!.validate()) {
-      double weight = double.parse(_weightController.text);
-      int age = int.parse(_ageController.text);
-      double activity = double.parse(_activityController.text);
-      double height =
-          double.parse(_heightController.text) / 100; // Dodano tę linijkę
-      setState(() {
-        _calorieResult =
-            (10 * weight + 6.25 * (height * 100) - 5 * age + 5) * activity;
-      });
+      try {
+        double weight = double.parse(_weightController.text);
+        int age = int.parse(_ageController.text);
+        double height = double.parse(_heightController.text) / 100;
+        double activityLevel = double.parse(_activityLevelController.text);
+        setState(() {
+          _calorieResult = (10 * weight + 6.25 * (height * 100) - 5 * age + 5) *
+              activityLevel;
+        });
+      } catch (e) {
+        debugPrint('Błąd podczas obliczania zapotrzebowania kalorycznego: $e');
+      }
     }
   }
 
@@ -135,6 +155,7 @@ class _AystentState extends State<Aystent> {
                     ),
                   ),
                   Text('Twoje BMI: $_bmiResult'),
+                  Text('Kategoria BMI: ${_bmiCategory(_bmiResult)}'),
                 ],
               ),
             ),
@@ -163,6 +184,19 @@ class _AystentState extends State<Aystent> {
                     },
                   ),
                   TextFormField(
+                    controller: _heightController,
+                    decoration: const InputDecoration(labelText: 'Wzrost (cm)'),
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Proszę wprowadzić wzrost';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFormField(
                     controller: _ageController,
                     decoration: const InputDecoration(labelText: 'Wiek (lata)'),
                     keyboardType: TextInputType.number,
@@ -176,9 +210,9 @@ class _AystentState extends State<Aystent> {
                     },
                   ),
                   TextFormField(
-                    controller: _activityController,
+                    controller: _activityLevelController,
                     decoration: const InputDecoration(
-                        labelText: 'Poziom aktywności (1-5)'),
+                        labelText: 'Poziom aktywności (1-3)'),
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                         color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
@@ -233,10 +267,23 @@ class _AystentState extends State<Aystent> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF8B4513), // Dodano kolor jasnobrązowy
+                    color: Colors.white, // Zmieniono kolor na biały
                   ),
                 ),
-                // Funkcjonalność do dodania później
+                SizedBox(height: 10),
+                Text('1. Kładź się spać i wstawaj zawsze o tej samej porze'),
+                Text(
+                    '2. Przed snem zajmij się czymś, co pozwoli ci się zrelaksować'),
+                Text('3. Zjedz przed snem pełnowartościowy posiłek'),
+                Text(
+                    '4. Przed snem wypij gorący napój, który nie zawiera kofeiny'),
+                Text('5. Unikaj kofeiny i alkoholu (szczególnie wieczorem)'),
+                Text(
+                    '6. Śpij w znajomym, ciemnym i cichym pomieszczeniu, które jest dobrze przewietrzone i ma odpowiednią temperaturę'),
+                Text(
+                    '7. Jeśli sen nie nadchodzi, postaraj się nie denerwować i nie zmuszać do spania'),
+                Text('8. Ćwicz regularnie'),
+                Text('9. Zredukuj poziom codziennego stresu'),
               ],
             ),
           ],
