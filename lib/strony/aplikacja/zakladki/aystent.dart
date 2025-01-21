@@ -46,7 +46,24 @@ class _AystentState extends State<Aystent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Asystent Treningowy'),
+        title: Container(
+          decoration: BoxDecoration(
+            gradient: const SweepGradient(
+              colors: [Color(0xffffde59), Color(0xfffc466b)],
+              stops: [0.2, 0.7],
+              center: Alignment.topRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: const Text(
+            'Asystent Treningowy',
+            style: TextStyle(
+              color: Colors.black, // Czarny kolor tekstu
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
