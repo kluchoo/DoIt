@@ -46,7 +46,7 @@ class _AystentState extends State<Aystent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Asystent Zdrowia'),
+        title: const Text('Asystent Treningowy'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -66,6 +66,8 @@ class _AystentState extends State<Aystent> {
                     controller: _heightController,
                     decoration: const InputDecoration(labelText: 'Wzrost (cm)'),
                     keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić wzrost';
@@ -77,6 +79,8 @@ class _AystentState extends State<Aystent> {
                     controller: _weightController,
                     decoration: const InputDecoration(labelText: 'Waga (kg)'),
                     keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić wagę';
@@ -107,6 +111,8 @@ class _AystentState extends State<Aystent> {
                     controller: _weightController,
                     decoration: const InputDecoration(labelText: 'Waga (kg)'),
                     keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić wagę';
@@ -118,6 +124,8 @@ class _AystentState extends State<Aystent> {
                     controller: _ageController,
                     decoration: const InputDecoration(labelText: 'Wiek (lata)'),
                     keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić wiek';
@@ -128,8 +136,10 @@ class _AystentState extends State<Aystent> {
                   TextFormField(
                     controller: _activityController,
                     decoration: const InputDecoration(
-                        labelText: 'Poziom aktywności (1.2 - 2.5)'),
+                        labelText: 'Poziom aktywności (1-5)'),
                     keyboardType: TextInputType.number,
+                    style: TextStyle(
+                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić poziom aktywności';
@@ -153,7 +163,11 @@ class _AystentState extends State<Aystent> {
               children: const [
                 Text(
                   'Asystent snu',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF8B4513), // Dodano kolor jasnobrązowy
+                  ),
                 ),
                 // Funkcjonalność do dodania później
               ],
