@@ -39,7 +39,7 @@ class _PomiaryState extends State<Pomiary> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Jak się mierzyć?'),
-          content: Image.asset('assets/images/measurement_guide.png'),
+          content: Image.asset('assets/img/measurement_guide.png'),
           actions: [
             TextButton(
               onPressed: () {

@@ -1,0 +1,144 @@
+\doxysection{lib/providers/home\+\_\+page\+\_\+providers.dart File Reference}
+\hypertarget{home__page__providers_8dart}{}\label{home__page__providers_8dart}\index{lib/providers/home\_page\_providers.dart@{lib/providers/home\_page\_providers.dart}}
+{\ttfamily import package;}\newline
+Include dependency graph for home\+\_\+page\+\_\+providers.\+dart\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_change_notifier}{Change\+Notifier}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{home__page__providers_8dart_aeb2624c7a86b765725fd80cd426e147d}{increment}} ()
+\item 
+void \mbox{\hyperlink{home__page__providers_8dart_a22ee094ca3f45aa4156b97d34fe678bf}{restart}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_a98225098edb8b7aff5d22bb8be64a317}{app\+User\+Provider}}
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_a66f76b9e12dbd6362e3ab8d96db66719}{quotes\+Provider}}
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_ae11a19c790e2b944744aa3ffc379b3a2}{title\+Provider}}
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_a3114fc0ca906b65babb6df9fe20a7594}{progress\+Provider}}
+\item 
+class Title\+Provider extends \mbox{\hyperlink{class_change_notifier}{Change\+Notifier}} \mbox{\hyperlink{home__page__providers_8dart_a1723e91bd81f5400bf4eab9f10398d15}{skipped}} = 0
+\item 
+int \mbox{\hyperlink{home__page__providers_8dart_ab8b7245c70b492dce6bf3f69cdbaea2d}{displayed}} = 2
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_ad656e49db80c2eb5311726462f75d462}{current\+Quote\+Provider}}
+\item 
+final \mbox{\hyperlink{home__page__providers_8dart_a35b7093f15d03c79e8c2ed8e515730fc}{brightness\+Provider}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{home__page__providers_8dart_aeb2624c7a86b765725fd80cd426e147d}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!increment@{increment}}
+\index{increment@{increment}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{increment()}{increment()}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_aeb2624c7a86b765725fd80cd426e147d} 
+void increment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{home__page__providers_8dart_a22ee094ca3f45aa4156b97d34fe678bf}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!restart@{restart}}
+\index{restart@{restart}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a22ee094ca3f45aa4156b97d34fe678bf} 
+void restart (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{home__page__providers_8dart_a98225098edb8b7aff5d22bb8be64a317}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!appUserProvider@{appUserProvider}}
+\index{appUserProvider@{appUserProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{appUserProvider}{appUserProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a98225098edb8b7aff5d22bb8be64a317} 
+final app\+User\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ AppUser(uid:\ \textcolor{stringliteral}{"{}null"{}},\ email:\ \textcolor{stringliteral}{"{}null"{}},\ \mbox{\hyperlink{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}{name}}:\ \textcolor{stringliteral}{"{}null"{}});}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\Hypertarget{home__page__providers_8dart_a35b7093f15d03c79e8c2ed8e515730fc}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!brightnessProvider@{brightnessProvider}}
+\index{brightnessProvider@{brightnessProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{brightnessProvider}{brightnessProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a35b7093f15d03c79e8c2ed8e515730fc} 
+final brightness\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ AutoBrightnessViewModel();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\Hypertarget{home__page__providers_8dart_ad656e49db80c2eb5311726462f75d462}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!currentQuoteProvider@{currentQuoteProvider}}
+\index{currentQuoteProvider@{currentQuoteProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{currentQuoteProvider}{currentQuoteProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_ad656e49db80c2eb5311726462f75d462} 
+final current\+Quote\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ CurrentQuoteNotifier();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\Hypertarget{home__page__providers_8dart_ab8b7245c70b492dce6bf3f69cdbaea2d}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!displayed@{displayed}}
+\index{displayed@{displayed}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{displayed}{displayed}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_ab8b7245c70b492dce6bf3f69cdbaea2d} 
+int displayed = 2}
+
+\Hypertarget{home__page__providers_8dart_a3114fc0ca906b65babb6df9fe20a7594}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!progressProvider@{progressProvider}}
+\index{progressProvider@{progressProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{progressProvider}{progressProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a3114fc0ca906b65babb6df9fe20a7594} 
+final progress\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ ProgressNotifier();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\Hypertarget{home__page__providers_8dart_a66f76b9e12dbd6362e3ab8d96db66719}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!quotesProvider@{quotesProvider}}
+\index{quotesProvider@{quotesProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{quotesProvider}{quotesProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a66f76b9e12dbd6362e3ab8d96db66719} 
+final quotes\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ QuotesModel();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+\Hypertarget{home__page__providers_8dart_a1723e91bd81f5400bf4eab9f10398d15}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!skipped@{skipped}}
+\index{skipped@{skipped}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{skipped}{skipped}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_a1723e91bd81f5400bf4eab9f10398d15} 
+class Title\+Provider extends \mbox{\hyperlink{class_change_notifier}{Change\+Notifier}} skipped = 0}
+
+\Hypertarget{home__page__providers_8dart_ae11a19c790e2b944744aa3ffc379b3a2}\index{home\_page\_providers.dart@{home\_page\_providers.dart}!titleProvider@{titleProvider}}
+\index{titleProvider@{titleProvider}!home\_page\_providers.dart@{home\_page\_providers.dart}}
+\doxysubsubsection{\texorpdfstring{titleProvider}{titleProvider}}
+{\footnotesize\ttfamily \label{home__page__providers_8dart_ae11a19c790e2b944744aa3ffc379b3a2} 
+final title\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ChangeNotifierProvider((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ TitleProvider();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}

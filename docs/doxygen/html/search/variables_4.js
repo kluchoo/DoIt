@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['date_0',['date',['../class_change_notifier.html#a2b2c21fb1ab2922378342178e3e5ccdd',1,'ChangeNotifier::date'],['../class_quote.html#aa1b29f84828c4485b12e0585822aabbd',1,'Quote::date'],['../class_stateful_widget.html#a66f6e9d48b0a87d2f645db3b1ccaaf6b',1,'StatefulWidget::date'],['../class_workout.html#a3adb5b6102b6a02397dd51167b6f7cec',1,'Workout::date'],['../progress__model_8dart.html#ab3e6893a0c65b33a73f4a5cb350b9841',1,'date:&#160;progress_model.dart'],['../quote__model_8dart.html#ab3e6893a0c65b33a73f4a5cb350b9841',1,'date:&#160;quote_model.dart'],['../tworzenie__cytatu_8dart.html#a230fe7ba9136a22b732a10a85e65a956',1,'date:&#160;tworzenie_cytatu.dart']]],
+  ['datestring_1',['dateString',['../class_workout.html#ae3979b77ea7d8f7c4f86a90df77f1175',1,'Workout']]],
+  ['description_2',['description',['../class_change_notifier.html#ab176a276854afd6824da1b2a622547b6',1,'ChangeNotifier::description'],['../class_change_notifier.html#a5b55cf3de5bcef75a678d13c3b5cc73b',1,'ChangeNotifier::description'],['../progress__model_8dart.html#ab64918f8c1480972c11828a0ab8a25e8',1,'description:&#160;progress_model.dart']]],
+  ['displayed_3',['displayed',['../current__quote__provider_8dart.html#a1308ffe6186f07a3dc9dce84cd8f609b',1,'displayed:&#160;current_quote_provider.dart'],['../home__page__providers_8dart.html#ab8b7245c70b492dce6bf3f69cdbaea2d',1,'displayed:&#160;home_page_providers.dart']]]
+];

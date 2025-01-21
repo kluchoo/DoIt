@@ -178,7 +178,7 @@ class PlanTreningowy extends StatelessWidget {
             ),
             child: Center(
               child: const Text(
-                "Asystent sylwetki",
+                "Asystent Sylwetki",
                 style: TextStyle(
                   fontWeight: FontWeight.bold, // Pogrubienie tekstu
                   color: Colors.black, // Czarny kolor czcionki

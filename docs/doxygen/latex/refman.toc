@@ -1,0 +1,449 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}do\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}it}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Getting Started}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}App\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Colors Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Member Data Documentation}{7}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}element}{7}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}highlightColor}{7}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}primaryAccent}{7}{subsubsection.4.1.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.1.4}primaryColor}{7}{subsubsection.4.1.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.1.5}secondaryAccent}{8}{subsubsection.4.1.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.1.6}secondaryColor}{8}{subsubsection.4.1.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.1.7}successColor}{8}{subsubsection.4.1.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.1.8}textColor}{8}{subsubsection.4.1.1.8}%
+\contentsline {subsubsection}{\numberline {4.1.1.9}titleColor}{8}{subsubsection.4.1.1.9}%
+\contentsline {section}{\numberline {4.2}Auth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service Class Reference}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Member Function Documentation}{9}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}encode()}{9}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}getCurrentUser()}{9}{subsubsection.4.2.1.2}%
+\contentsline {subsubsection}{\numberline {4.2.1.3}signIn()}{9}{subsubsection.4.2.1.3}%
+\contentsline {subsubsection}{\numberline {4.2.1.4}signOut()}{9}{subsubsection.4.2.1.4}%
+\contentsline {subsubsection}{\numberline {4.2.1.5}signUp()}{9}{subsubsection.4.2.1.5}%
+\contentsline {subsection}{\numberline {4.2.2}Member Data Documentation}{9}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}\_firebaseAuth}{9}{subsubsection.4.2.2.1}%
+\contentsline {section}{\numberline {4.3}Change\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Notifier Class Reference}{10}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Member Function Documentation}{11}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}\_disableAutoBrightness()}{11}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}\_enableAutoBrightness()}{11}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {4.3.1.3}\_observeSystemBrightness()}{11}{subsubsection.4.3.1.3}%
+\contentsline {subsubsection}{\numberline {4.3.1.4}addNewUsersDocument()}{11}{subsubsection.4.3.1.4}%
+\contentsline {subsubsection}{\numberline {4.3.1.5}addProgress()}{11}{subsubsection.4.3.1.5}%
+\contentsline {subsubsection}{\numberline {4.3.1.6}addQuote()}{11}{subsubsection.4.3.1.6}%
+\contentsline {subsubsection}{\numberline {4.3.1.7}AppUser()}{11}{subsubsection.4.3.1.7}%
+\contentsline {subsubsection}{\numberline {4.3.1.8}AutoBrightnessViewModel()}{11}{subsubsection.4.3.1.8}%
+\contentsline {subsubsection}{\numberline {4.3.1.9}changeTitle()}{12}{subsubsection.4.3.1.9}%
+\contentsline {subsubsection}{\numberline {4.3.1.10}dayStrikeUpdate()}{12}{subsubsection.4.3.1.10}%
+\contentsline {subsubsection}{\numberline {4.3.1.11}deserializeProgress()}{12}{subsubsection.4.3.1.11}%
+\contentsline {subsubsection}{\numberline {4.3.1.12}dispose()}{12}{subsubsection.4.3.1.12}%
+\contentsline {subsubsection}{\numberline {4.3.1.13}encode()}{12}{subsubsection.4.3.1.13}%
+\contentsline {subsubsection}{\numberline {4.3.1.14}fetchAndAddQuote()}{12}{subsubsection.4.3.1.14}%
+\contentsline {subsubsection}{\numberline {4.3.1.15}fetchProgress()}{12}{subsubsection.4.3.1.15}%
+\contentsline {subsubsection}{\numberline {4.3.1.16}fetchQuotes()}{12}{subsubsection.4.3.1.16}%
+\contentsline {subsubsection}{\numberline {4.3.1.17}fetchUserAuthData()}{12}{subsubsection.4.3.1.17}%
+\contentsline {subsubsection}{\numberline {4.3.1.18}fetchUserData()}{13}{subsubsection.4.3.1.18}%
+\contentsline {subsubsection}{\numberline {4.3.1.19}logOut()}{13}{subsubsection.4.3.1.19}%
+\contentsline {subsubsection}{\numberline {4.3.1.20}Progress()}{13}{subsubsection.4.3.1.20}%
+\contentsline {subsubsection}{\numberline {4.3.1.21}removeProgress()}{13}{subsubsection.4.3.1.21}%
+\contentsline {subsubsection}{\numberline {4.3.1.22}saveProgress()}{13}{subsubsection.4.3.1.22}%
+\contentsline {subsubsection}{\numberline {4.3.1.23}serializeProgress()}{13}{subsubsection.4.3.1.23}%
+\contentsline {subsubsection}{\numberline {4.3.1.24}TitleProvider()}{13}{subsubsection.4.3.1.24}%
+\contentsline {subsubsection}{\numberline {4.3.1.25}toFirestore()}{13}{subsubsection.4.3.1.25}%
+\contentsline {subsubsection}{\numberline {4.3.1.26}toggleAutoBrightness()}{13}{subsubsection.4.3.1.26}%
+\contentsline {subsubsection}{\numberline {4.3.1.27}update()}{14}{subsubsection.4.3.1.27}%
+\contentsline {subsubsection}{\numberline {4.3.1.28}updateCategory()}{14}{subsubsection.4.3.1.28}%
+\contentsline {subsubsection}{\numberline {4.3.1.29}updateDescription()}{14}{subsubsection.4.3.1.29}%
+\contentsline {subsubsection}{\numberline {4.3.1.30}updateProgress()}{14}{subsubsection.4.3.1.30}%
+\contentsline {subsubsection}{\numberline {4.3.1.31}updateTitle()}{14}{subsubsection.4.3.1.31}%
+\contentsline {subsection}{\numberline {4.3.2}Member Data Documentation}{14}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}\_brightness}{14}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}\_isAutoBrightnessEnabled}{14}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}\_lightSubscription}{14}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}\_quotesData}{15}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}\_systemBrightnessSubscription}{15}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}brightness}{15}{subsubsection.4.3.2.6}%
+\contentsline {subsubsection}{\numberline {4.3.2.7}category}{15}{subsubsection.4.3.2.7}%
+\contentsline {subsubsection}{\numberline {4.3.2.8}chosenCategory}{15}{subsubsection.4.3.2.8}%
+\contentsline {subsubsection}{\numberline {4.3.2.9}date}{15}{subsubsection.4.3.2.9}%
+\contentsline {subsubsection}{\numberline {4.3.2.10}description\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.4.3.2.10}%
+\contentsline {subsubsection}{\numberline {4.3.2.11}description\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.4.3.2.11}%
+\contentsline {subsubsection}{\numberline {4.3.2.12}email}{15}{subsubsection.4.3.2.12}%
+\contentsline {subsubsection}{\numberline {4.3.2.13}image}{16}{subsubsection.4.3.2.13}%
+\contentsline {subsubsection}{\numberline {4.3.2.14}isAutoBrightnessEnabled}{16}{subsubsection.4.3.2.14}%
+\contentsline {subsubsection}{\numberline {4.3.2.15}name}{16}{subsubsection.4.3.2.15}%
+\contentsline {subsubsection}{\numberline {4.3.2.16}photo}{16}{subsubsection.4.3.2.16}%
+\contentsline {subsubsection}{\numberline {4.3.2.17}progressData}{16}{subsubsection.4.3.2.17}%
+\contentsline {subsubsection}{\numberline {4.3.2.18}quotesData}{16}{subsubsection.4.3.2.18}%
+\contentsline {subsubsection}{\numberline {4.3.2.19}selectedCategory}{16}{subsubsection.4.3.2.19}%
+\contentsline {subsubsection}{\numberline {4.3.2.20}title\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.4.3.2.20}%
+\contentsline {subsubsection}{\numberline {4.3.2.21}title\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.4.3.2.21}%
+\contentsline {subsubsection}{\numberline {4.3.2.22}uid}{17}{subsubsection.4.3.2.22}%
+\contentsline {section}{\numberline {4.4}Consumer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State$<$ Re\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Log\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In $>$ Class Reference}{17}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Member Function Documentation}{17}{subsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}build()}{17}{subsubsection.4.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.2}initState()}{17}{subsubsection.4.4.1.2}%
+\contentsline {section}{\numberline {4.5}Consumer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stateful\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Widget Class Reference}{18}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Member Function Documentation}{18}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}createState()\hspace {0.1cm}{\footnotesize \ttfamily [1/11]}}{18}{subsubsection.4.5.1.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.2}createState()\hspace {0.1cm}{\footnotesize \ttfamily [2/11]}}{18}{subsubsection.4.5.1.2}%
+\contentsline {subsubsection}{\numberline {4.5.1.3}createState()\hspace {0.1cm}{\footnotesize \ttfamily [3/11]}}{18}{subsubsection.4.5.1.3}%
+\contentsline {subsubsection}{\numberline {4.5.1.4}createState()\hspace {0.1cm}{\footnotesize \ttfamily [4/11]}}{19}{subsubsection.4.5.1.4}%
+\contentsline {subsubsection}{\numberline {4.5.1.5}createState()\hspace {0.1cm}{\footnotesize \ttfamily [5/11]}}{19}{subsubsection.4.5.1.5}%
+\contentsline {subsubsection}{\numberline {4.5.1.6}createState()\hspace {0.1cm}{\footnotesize \ttfamily [6/11]}}{19}{subsubsection.4.5.1.6}%
+\contentsline {subsubsection}{\numberline {4.5.1.7}createState()\hspace {0.1cm}{\footnotesize \ttfamily [7/11]}}{19}{subsubsection.4.5.1.7}%
+\contentsline {subsubsection}{\numberline {4.5.1.8}createState()\hspace {0.1cm}{\footnotesize \ttfamily [8/11]}}{19}{subsubsection.4.5.1.8}%
+\contentsline {subsubsection}{\numberline {4.5.1.9}createState()\hspace {0.1cm}{\footnotesize \ttfamily [9/11]}}{19}{subsubsection.4.5.1.9}%
+\contentsline {subsubsection}{\numberline {4.5.1.10}createState()\hspace {0.1cm}{\footnotesize \ttfamily [10/11]}}{19}{subsubsection.4.5.1.10}%
+\contentsline {subsubsection}{\numberline {4.5.1.11}createState()\hspace {0.1cm}{\footnotesize \ttfamily [11/11]}}{19}{subsubsection.4.5.1.11}%
+\contentsline {subsubsection}{\numberline {4.5.1.12}CustomBottomNavigationBar()}{19}{subsubsection.4.5.1.12}%
+\contentsline {subsubsection}{\numberline {4.5.1.13}Home()}{19}{subsubsection.4.5.1.13}%
+\contentsline {subsubsection}{\numberline {4.5.1.14}ProfileSettingsPage()}{20}{subsubsection.4.5.1.14}%
+\contentsline {subsubsection}{\numberline {4.5.1.15}Progressdocumentations()}{20}{subsubsection.4.5.1.15}%
+\contentsline {subsubsection}{\numberline {4.5.1.16}Quotes()}{20}{subsubsection.4.5.1.16}%
+\contentsline {subsubsection}{\numberline {4.5.1.17}ReLogIn()}{20}{subsubsection.4.5.1.17}%
+\contentsline {subsubsection}{\numberline {4.5.1.18}serializeProgress()}{20}{subsubsection.4.5.1.18}%
+\contentsline {subsubsection}{\numberline {4.5.1.19}SignInForm()}{20}{subsubsection.4.5.1.19}%
+\contentsline {subsubsection}{\numberline {4.5.1.20}SignUpForm()}{20}{subsubsection.4.5.1.20}%
+\contentsline {subsubsection}{\numberline {4.5.1.21}Testy()}{20}{subsubsection.4.5.1.21}%
+\contentsline {subsubsection}{\numberline {4.5.1.22}TworzenieCytatu()}{21}{subsubsection.4.5.1.22}%
+\contentsline {subsection}{\numberline {4.5.2}Member Data Documentation}{21}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}chosenIndex}{21}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}onItemSelected}{21}{subsubsection.4.5.2.2}%
+\contentsline {section}{\numberline {4.6}Consumer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Widget Class Reference}{21}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Member Function Documentation}{21}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}build()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.2}build()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.4.6.1.2}%
+\contentsline {subsubsection}{\numberline {4.6.1.3}WelcomeScreen()}{22}{subsubsection.4.6.1.3}%
+\contentsline {section}{\numberline {4.7}Default\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Firebase\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Options Class Reference}{22}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{22}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Member Data Documentation}{22}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}currentPlatform}{22}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}ios}{22}{subsubsection.4.7.2.2}%
+\contentsline {section}{\numberline {4.8}Local\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Auth Class Reference}{23}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Member Function Documentation}{23}{subsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.1.1}\_canAuthenticate()}{23}{subsubsection.4.8.1.1}%
+\contentsline {subsubsection}{\numberline {4.8.1.2}authenticate()}{23}{subsubsection.4.8.1.2}%
+\contentsline {subsection}{\numberline {4.8.2}Member Data Documentation}{23}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}\_auth}{23}{subsubsection.4.8.2.1}%
+\contentsline {section}{\numberline {4.9}Quote Class Reference}{23}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Constructor \& Destructor Documentation}{24}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}Quote()}{24}{subsubsection.4.9.1.1}%
+\contentsline {subsection}{\numberline {4.9.2}Member Data Documentation}{24}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}author}{24}{subsubsection.4.9.2.1}%
+\contentsline {subsubsection}{\numberline {4.9.2.2}date}{24}{subsubsection.4.9.2.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.3}likes}{24}{subsubsection.4.9.2.3}%
+\contentsline {subsubsection}{\numberline {4.9.2.4}ownerId}{24}{subsubsection.4.9.2.4}%
+\contentsline {subsubsection}{\numberline {4.9.2.5}quote}{24}{subsubsection.4.9.2.5}%
+\contentsline {section}{\numberline {4.10}Stateful\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Widget Class Reference}{24}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Member Function Documentation}{25}{subsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.1}Camera()}{25}{subsubsection.4.10.1.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.2}createState()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{25}{subsubsection.4.10.1.2}%
+\contentsline {subsubsection}{\numberline {4.10.1.3}createState()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{25}{subsubsection.4.10.1.3}%
+\contentsline {subsubsection}{\numberline {4.10.1.4}createState()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{25}{subsubsection.4.10.1.4}%
+\contentsline {subsubsection}{\numberline {4.10.1.5}QuotesCard()}{25}{subsubsection.4.10.1.5}%
+\contentsline {subsection}{\numberline {4.10.2}Member Data Documentation}{25}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}date}{25}{subsubsection.4.10.2.1}%
+\contentsline {subsubsection}{\numberline {4.10.2.2}quote}{25}{subsubsection.4.10.2.2}%
+\contentsline {section}{\numberline {4.11}Stateless\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Widget Class Reference}{26}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Member Function Documentation}{26}{subsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.1}Aystent()}{26}{subsubsection.4.11.1.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.2}build()\hspace {0.1cm}{\footnotesize \ttfamily [1/13]}}{27}{subsubsection.4.11.1.2}%
+\contentsline {subsubsection}{\numberline {4.11.1.3}build()\hspace {0.1cm}{\footnotesize \ttfamily [2/13]}}{27}{subsubsection.4.11.1.3}%
+\contentsline {subsubsection}{\numberline {4.11.1.4}build()\hspace {0.1cm}{\footnotesize \ttfamily [3/13]}}{27}{subsubsection.4.11.1.4}%
+\contentsline {subsubsection}{\numberline {4.11.1.5}build()\hspace {0.1cm}{\footnotesize \ttfamily [4/13]}}{27}{subsubsection.4.11.1.5}%
+\contentsline {subsubsection}{\numberline {4.11.1.6}build()\hspace {0.1cm}{\footnotesize \ttfamily [5/13]}}{27}{subsubsection.4.11.1.6}%
+\contentsline {subsubsection}{\numberline {4.11.1.7}build()\hspace {0.1cm}{\footnotesize \ttfamily [6/13]}}{27}{subsubsection.4.11.1.7}%
+\contentsline {subsubsection}{\numberline {4.11.1.8}build()\hspace {0.1cm}{\footnotesize \ttfamily [7/13]}}{27}{subsubsection.4.11.1.8}%
+\contentsline {subsubsection}{\numberline {4.11.1.9}build()\hspace {0.1cm}{\footnotesize \ttfamily [8/13]}}{27}{subsubsection.4.11.1.9}%
+\contentsline {subsubsection}{\numberline {4.11.1.10}build()\hspace {0.1cm}{\footnotesize \ttfamily [9/13]}}{27}{subsubsection.4.11.1.10}%
+\contentsline {subsubsection}{\numberline {4.11.1.11}build()\hspace {0.1cm}{\footnotesize \ttfamily [10/13]}}{28}{subsubsection.4.11.1.11}%
+\contentsline {subsubsection}{\numberline {4.11.1.12}build()\hspace {0.1cm}{\footnotesize \ttfamily [11/13]}}{28}{subsubsection.4.11.1.12}%
+\contentsline {subsubsection}{\numberline {4.11.1.13}build()\hspace {0.1cm}{\footnotesize \ttfamily [12/13]}}{28}{subsubsection.4.11.1.13}%
+\contentsline {subsubsection}{\numberline {4.11.1.14}build()\hspace {0.1cm}{\footnotesize \ttfamily [13/13]}}{28}{subsubsection.4.11.1.14}%
+\contentsline {subsubsection}{\numberline {4.11.1.15}Function()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{28}{subsubsection.4.11.1.15}%
+\contentsline {subsubsection}{\numberline {4.11.1.16}Function()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{28}{subsubsection.4.11.1.16}%
+\contentsline {subsubsection}{\numberline {4.11.1.17}MainAppBackground()}{28}{subsubsection.4.11.1.17}%
+\contentsline {subsubsection}{\numberline {4.11.1.18}Pomiary()}{28}{subsubsection.4.11.1.18}%
+\contentsline {subsubsection}{\numberline {4.11.1.19}ProfileScreen()}{28}{subsubsection.4.11.1.19}%
+\contentsline {subsubsection}{\numberline {4.11.1.20}PrzyciskZUkrytymTlem()}{29}{subsubsection.4.11.1.20}%
+\contentsline {subsubsection}{\numberline {4.11.1.21}SessionLogin()}{29}{subsubsection.4.11.1.21}%
+\contentsline {subsubsection}{\numberline {4.11.1.22}StyledAppBarText()}{29}{subsubsection.4.11.1.22}%
+\contentsline {subsubsection}{\numberline {4.11.1.23}StyledBodyText()}{29}{subsubsection.4.11.1.23}%
+\contentsline {subsubsection}{\numberline {4.11.1.24}StyledButton()}{29}{subsubsection.4.11.1.24}%
+\contentsline {subsubsection}{\numberline {4.11.1.25}StylizowanePoleTekstowe()}{29}{subsubsection.4.11.1.25}%
+\contentsline {subsubsection}{\numberline {4.11.1.26}StylizowanyText()}{29}{subsubsection.4.11.1.26}%
+\contentsline {subsubsection}{\numberline {4.11.1.27}StylizowanyTytul()}{30}{subsubsection.4.11.1.27}%
+\contentsline {subsection}{\numberline {4.11.2}Member Data Documentation}{30}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}child}{30}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}color}{30}{subsubsection.4.11.2.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.3}controler}{30}{subsubsection.4.11.2.3}%
+\contentsline {subsubsection}{\numberline {4.11.2.4}icon}{30}{subsubsection.4.11.2.4}%
+\contentsline {subsubsection}{\numberline {4.11.2.5}obscuretxt}{30}{subsubsection.4.11.2.5}%
+\contentsline {subsubsection}{\numberline {4.11.2.6}onPressed}{30}{subsubsection.4.11.2.6}%
+\contentsline {subsubsection}{\numberline {4.11.2.7}style}{30}{subsubsection.4.11.2.7}%
+\contentsline {subsubsection}{\numberline {4.11.2.8}text}{30}{subsubsection.4.11.2.8}%
+\contentsline {subsubsection}{\numberline {4.11.2.9}widget}{31}{subsubsection.4.11.2.9}%
+\contentsline {section}{\numberline {4.12}State\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Notifier$<$ Current\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Quote\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}State $>$ Class Reference}{31}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Member Function Documentation}{31}{subsection.4.12.1}%
+\contentsline {subsubsection}{\numberline {4.12.1.1}increment()}{31}{subsubsection.4.12.1.1}%
+\contentsline {subsubsection}{\numberline {4.12.1.2}restart()}{31}{subsubsection.4.12.1.2}%
+\contentsline {section}{\numberline {4.13}Workout Class Reference}{31}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Constructor \& Destructor Documentation}{32}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}Workout()}{32}{subsubsection.4.13.1.1}%
+\contentsline {subsection}{\numberline {4.13.2}Member Data Documentation}{32}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}date}{32}{subsubsection.4.13.2.1}%
+\contentsline {subsubsection}{\numberline {4.13.2.2}dateString}{32}{subsubsection.4.13.2.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.3}exercises}{32}{subsubsection.4.13.2.3}%
+\contentsline {subsubsection}{\numberline {4.13.2.4}id}{32}{subsubsection.4.13.2.4}%
+\contentsline {subsubsection}{\numberline {4.13.2.5}name}{32}{subsubsection.4.13.2.5}%
+\contentsline {chapter}{\numberline {5}File Documentation}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}lib/firebase\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}options.dart File Reference}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}lib/komponenty/app\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}background\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}colors.dart File Reference}{33}{section.5.2}%
+\contentsline {section}{\numberline {5.3}lib/komponenty/botom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bar.dart File Reference}{33}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Function Documentation}{34}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}build()}{34}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}createState()}{34}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}CustomBottomNavigationBar()}{34}{subsubsection.5.3.1.3}%
+\contentsline {subsection}{\numberline {5.3.2}Variable Documentation}{34}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}chosenIndex}{34}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}onItemSelected}{34}{subsubsection.5.3.2.2}%
+\contentsline {section}{\numberline {5.4}lib/komponenty/buttons.dart File Reference}{34}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Function Documentation}{35}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}build()}{35}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}Function()}{35}{subsubsection.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {5.4.1.3}PrzyciskZUkrytymTlem()}{35}{subsubsection.5.4.1.3}%
+\contentsline {subsubsection}{\numberline {5.4.1.4}StygiButon()}{35}{subsubsection.5.4.1.4}%
+\contentsline {subsection}{\numberline {5.4.2}Variable Documentation}{35}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}text}{35}{subsubsection.5.4.2.1}%
+\contentsline {section}{\numberline {5.5}lib/komponenty/cytat.dart File Reference}{36}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Function Documentation}{36}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}build()}{36}{subsubsection.5.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}createState()}{36}{subsubsection.5.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.3}QuotesCard()}{36}{subsubsection.5.5.1.3}%
+\contentsline {subsection}{\numberline {5.5.2}Variable Documentation}{36}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}quote}{36}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}lib/komponenty/profile.dart File Reference}{37}{section.5.6}%
+\contentsline {section}{\numberline {5.7}lib/komponenty/styled\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}button.dart File Reference}{37}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Function Documentation}{37}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}build()}{37}{subsubsection.5.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.2}Function()}{37}{subsubsection.5.7.1.2}%
+\contentsline {subsubsection}{\numberline {5.7.1.3}StyledButton()}{37}{subsubsection.5.7.1.3}%
+\contentsline {subsubsection}{\numberline {5.7.1.4}StyledButtonText()}{38}{subsubsection.5.7.1.4}%
+\contentsline {subsection}{\numberline {5.7.2}Variable Documentation}{38}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}child}{38}{subsubsection.5.7.2.1}%
+\contentsline {subsubsection}{\numberline {5.7.2.2}text}{38}{subsubsection.5.7.2.2}%
+\contentsline {section}{\numberline {5.8}lib/komponenty/styled\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}text.dart File Reference}{38}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Function Documentation}{38}{subsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.1}build()}{38}{subsubsection.5.8.1.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.2}StyledAppBarText()}{39}{subsubsection.5.8.1.2}%
+\contentsline {subsubsection}{\numberline {5.8.1.3}StyledBodyText()}{39}{subsubsection.5.8.1.3}%
+\contentsline {subsubsection}{\numberline {5.8.1.4}StyledErrorText()}{39}{subsubsection.5.8.1.4}%
+\contentsline {subsubsection}{\numberline {5.8.1.5}StyledHeading()}{39}{subsubsection.5.8.1.5}%
+\contentsline {subsection}{\numberline {5.8.2}Variable Documentation}{39}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}text}{39}{subsubsection.5.8.2.1}%
+\contentsline {section}{\numberline {5.9}lib/komponenty/text.dart File Reference}{39}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Function Documentation}{40}{subsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.1}build()}{40}{subsubsection.5.9.1.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.2}StylizowanyNaglowek()}{40}{subsubsection.5.9.1.2}%
+\contentsline {subsubsection}{\numberline {5.9.1.3}StylizowanyText()}{40}{subsubsection.5.9.1.3}%
+\contentsline {subsection}{\numberline {5.9.2}Variable Documentation}{40}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}color}{40}{subsubsection.5.9.2.1}%
+\contentsline {subsubsection}{\numberline {5.9.2.2}text}{40}{subsubsection.5.9.2.2}%
+\contentsline {section}{\numberline {5.10}lib/komponenty/textfield.dart File Reference}{40}{section.5.10}%
+\contentsline {section}{\numberline {5.11}lib/main.dart File Reference}{41}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Function Documentation}{41}{subsection.5.11.1}%
+\contentsline {subsubsection}{\numberline {5.11.1.1}build()}{41}{subsubsection.5.11.1.1}%
+\contentsline {subsubsection}{\numberline {5.11.1.2}main()}{41}{subsubsection.5.11.1.2}%
+\contentsline {subsubsection}{\numberline {5.11.1.3}NoSessionLogin()}{41}{subsubsection.5.11.1.3}%
+\contentsline {subsubsection}{\numberline {5.11.1.4}SessionLogin()}{41}{subsubsection.5.11.1.4}%
+\contentsline {section}{\numberline {5.12}lib/models/app\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}user.dart File Reference}{41}{section.5.12}%
+\contentsline {section}{\numberline {5.13}lib/models/brightness.dart File Reference}{42}{section.5.13}%
+\contentsline {section}{\numberline {5.14}lib/models/form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}state.dart File Reference}{42}{section.5.14}%
+\contentsline {section}{\numberline {5.15}lib/models/progress\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}model.dart File Reference}{42}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Function Documentation}{43}{subsection.5.15.1}%
+\contentsline {subsubsection}{\numberline {5.15.1.1}Category()}{43}{subsubsection.5.15.1.1}%
+\contentsline {subsubsection}{\numberline {5.15.1.2}detoks()}{43}{subsubsection.5.15.1.2}%
+\contentsline {subsubsection}{\numberline {5.15.1.3}fromString()}{44}{subsubsection.5.15.1.3}%
+\contentsline {subsubsection}{\numberline {5.15.1.4}postanowienie()}{44}{subsubsection.5.15.1.4}%
+\contentsline {subsubsection}{\numberline {5.15.1.5}Progress()}{44}{subsubsection.5.15.1.5}%
+\contentsline {subsubsection}{\numberline {5.15.1.6}rozwoj\_osobisty()}{44}{subsubsection.5.15.1.6}%
+\contentsline {subsubsection}{\numberline {5.15.1.7}trening\_kardio()}{44}{subsubsection.5.15.1.7}%
+\contentsline {subsubsection}{\numberline {5.15.1.8}trening\_silowy()}{45}{subsubsection.5.15.1.8}%
+\contentsline {subsection}{\numberline {5.15.2}Variable Documentation}{45}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}category}{45}{subsubsection.5.15.2.1}%
+\contentsline {subsubsection}{\numberline {5.15.2.2}date}{45}{subsubsection.5.15.2.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.3}description}{45}{subsubsection.5.15.2.3}%
+\contentsline {subsubsection}{\numberline {5.15.2.4}icon}{45}{subsubsection.5.15.2.4}%
+\contentsline {subsubsection}{\numberline {5.15.2.5}image}{45}{subsubsection.5.15.2.5}%
+\contentsline {subsubsection}{\numberline {5.15.2.6}title}{45}{subsubsection.5.15.2.6}%
+\contentsline {section}{\numberline {5.16}lib/models/quote\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}model.dart File Reference}{45}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Function Documentation}{46}{subsection.5.16.1}%
+\contentsline {subsubsection}{\numberline {5.16.1.1}Quote()}{46}{subsubsection.5.16.1.1}%
+\contentsline {subsubsection}{\numberline {5.16.1.2}QuoteToCreate()}{46}{subsubsection.5.16.1.2}%
+\contentsline {subsection}{\numberline {5.16.2}Variable Documentation}{46}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}author}{46}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}date}{46}{subsubsection.5.16.2.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.3}isFav}{46}{subsubsection.5.16.2.3}%
+\contentsline {subsubsection}{\numberline {5.16.2.4}likes}{47}{subsubsection.5.16.2.4}%
+\contentsline {subsubsection}{\numberline {5.16.2.5}ownerId}{47}{subsubsection.5.16.2.5}%
+\contentsline {subsubsection}{\numberline {5.16.2.6}quote}{47}{subsubsection.5.16.2.6}%
+\contentsline {section}{\numberline {5.17}lib/providers/auth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}provider.dart File Reference}{47}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Variable Documentation}{47}{subsection.5.17.1}%
+\contentsline {subsubsection}{\numberline {5.17.1.1}authProvider}{47}{subsubsection.5.17.1.1}%
+\contentsline {section}{\numberline {5.18}lib/providers/current\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quote\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}provider.dart File Reference}{47}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Function Documentation}{48}{subsection.5.18.1}%
+\contentsline {subsubsection}{\numberline {5.18.1.1}copyWith()}{48}{subsubsection.5.18.1.1}%
+\contentsline {subsubsection}{\numberline {5.18.1.2}CurrentQuoteState()}{48}{subsubsection.5.18.1.2}%
+\contentsline {subsection}{\numberline {5.18.2}Variable Documentation}{48}{subsection.5.18.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.1}displayed}{48}{subsubsection.5.18.2.1}%
+\contentsline {subsubsection}{\numberline {5.18.2.2}skipped}{48}{subsubsection.5.18.2.2}%
+\contentsline {section}{\numberline {5.19}lib/providers/home\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}page\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}providers.dart File Reference}{48}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Function Documentation}{49}{subsection.5.19.1}%
+\contentsline {subsubsection}{\numberline {5.19.1.1}increment()}{49}{subsubsection.5.19.1.1}%
+\contentsline {subsubsection}{\numberline {5.19.1.2}restart()}{49}{subsubsection.5.19.1.2}%
+\contentsline {subsection}{\numberline {5.19.2}Variable Documentation}{49}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}appUserProvider}{49}{subsubsection.5.19.2.1}%
+\contentsline {subsubsection}{\numberline {5.19.2.2}brightnessProvider}{49}{subsubsection.5.19.2.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.3}currentQuoteProvider}{50}{subsubsection.5.19.2.3}%
+\contentsline {subsubsection}{\numberline {5.19.2.4}displayed}{50}{subsubsection.5.19.2.4}%
+\contentsline {subsubsection}{\numberline {5.19.2.5}progressProvider}{50}{subsubsection.5.19.2.5}%
+\contentsline {subsubsection}{\numberline {5.19.2.6}quotesProvider}{50}{subsubsection.5.19.2.6}%
+\contentsline {subsubsection}{\numberline {5.19.2.7}skipped}{50}{subsubsection.5.19.2.7}%
+\contentsline {subsubsection}{\numberline {5.19.2.8}titleProvider}{50}{subsubsection.5.19.2.8}%
+\contentsline {section}{\numberline {5.20}lib/providers.dart File Reference}{50}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Variable Documentation}{51}{subsection.5.20.1}%
+\contentsline {subsubsection}{\numberline {5.20.1.1}isSignUpFormProvider}{51}{subsubsection.5.20.1.1}%
+\contentsline {section}{\numberline {5.21}lib/providers/providers.dart File Reference}{51}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Variable Documentation}{51}{subsection.5.21.1}%
+\contentsline {subsubsection}{\numberline {5.21.1.1}progressFormProvider}{51}{subsubsection.5.21.1.1}%
+\contentsline {section}{\numberline {5.22}lib/services/auth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service.dart File Reference}{51}{section.5.22}%
+\contentsline {section}{\numberline {5.23}lib/services/local\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}auth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service.dart File Reference}{51}{section.5.23}%
+\contentsline {section}{\numberline {5.24}lib/strony/aplikacja/home.dart File Reference}{52}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Function Documentation}{52}{subsection.5.24.1}%
+\contentsline {subsubsection}{\numberline {5.24.1.1}build()}{52}{subsubsection.5.24.1.1}%
+\contentsline {subsubsection}{\numberline {5.24.1.2}initState()}{52}{subsubsection.5.24.1.2}%
+\contentsline {subsubsection}{\numberline {5.24.1.3}updateIndex()}{52}{subsubsection.5.24.1.3}%
+\contentsline {subsection}{\numberline {5.24.2}Variable Documentation}{53}{subsection.5.24.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.1}index}{53}{subsubsection.5.24.2.1}%
+\contentsline {subsubsection}{\numberline {5.24.2.2}isScreenDimmed}{53}{subsubsection.5.24.2.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.3}profileImage}{53}{subsubsection.5.24.2.3}%
+\contentsline {section}{\numberline {5.25}lib/strony/aplikacja/progress\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Documentations.dart File Reference}{53}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Function Documentation}{53}{subsection.5.25.1}%
+\contentsline {subsubsection}{\numberline {5.25.1.1}\_initializeSeria()}{53}{subsubsection.5.25.1.1}%
+\contentsline {subsubsection}{\numberline {5.25.1.2}\_updateTime()}{54}{subsubsection.5.25.1.2}%
+\contentsline {subsubsection}{\numberline {5.25.1.3}build()}{54}{subsubsection.5.25.1.3}%
+\contentsline {subsubsection}{\numberline {5.25.1.4}dispose()}{54}{subsubsection.5.25.1.4}%
+\contentsline {subsubsection}{\numberline {5.25.1.5}initState()}{54}{subsubsection.5.25.1.5}%
+\contentsline {subsection}{\numberline {5.25.2}Variable Documentation}{54}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}\_timer}{54}{subsubsection.5.25.2.1}%
+\contentsline {subsubsection}{\numberline {5.25.2.2}\_timeString}{54}{subsubsection.5.25.2.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.3}controller}{54}{subsubsection.5.25.2.3}%
+\contentsline {subsubsection}{\numberline {5.25.2.4}seria}{54}{subsubsection.5.25.2.4}%
+\contentsline {section}{\numberline {5.26}lib/strony/aplikacja/zakladki/aystent.dart File Reference}{54}{section.5.26}%
+\contentsline {section}{\numberline {5.27}lib/strony/aplikacja/zakladki/camera.dart File Reference}{55}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Function Documentation}{55}{subsection.5.27.1}%
+\contentsline {subsubsection}{\numberline {5.27.1.1}\_setupCameraController()}{55}{subsubsection.5.27.1.1}%
+\contentsline {subsubsection}{\numberline {5.27.1.2}build()}{55}{subsubsection.5.27.1.2}%
+\contentsline {subsubsection}{\numberline {5.27.1.3}cameraUI()}{55}{subsubsection.5.27.1.3}%
+\contentsline {subsubsection}{\numberline {5.27.1.4}initState()}{55}{subsubsection.5.27.1.4}%
+\contentsline {subsection}{\numberline {5.27.2}Variable Documentation}{56}{subsection.5.27.2}%
+\contentsline {subsubsection}{\numberline {5.27.2.1}cameraController}{56}{subsubsection.5.27.2.1}%
+\contentsline {subsubsection}{\numberline {5.27.2.2}cameras}{56}{subsubsection.5.27.2.2}%
+\contentsline {section}{\numberline {5.28}lib/strony/aplikacja/zakladki/cytaty.dart File Reference}{56}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Function Documentation}{56}{subsection.5.28.1}%
+\contentsline {subsubsection}{\numberline {5.28.1.1}build()}{56}{subsubsection.5.28.1.1}%
+\contentsline {subsubsection}{\numberline {5.28.1.2}didChangeDependencies()}{56}{subsubsection.5.28.1.2}%
+\contentsline {subsection}{\numberline {5.28.2}Variable Documentation}{57}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}\_isInitialized}{57}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}swiperController}{57}{subsubsection.5.28.2.2}%
+\contentsline {section}{\numberline {5.29}lib/strony/aplikacja/zakladki/plan.dart File Reference}{57}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Function Documentation}{58}{subsection.5.29.1}%
+\contentsline {subsubsection}{\numberline {5.29.1.1}\_addExercise()}{58}{subsubsection.5.29.1.1}%
+\contentsline {subsubsection}{\numberline {5.29.1.2}\_addWorkout()}{58}{subsubsection.5.29.1.2}%
+\contentsline {subsubsection}{\numberline {5.29.1.3}\_deleteWorkout()}{58}{subsubsection.5.29.1.3}%
+\contentsline {subsubsection}{\numberline {5.29.1.4}\_fetchWorkouts()}{58}{subsubsection.5.29.1.4}%
+\contentsline {subsubsection}{\numberline {5.29.1.5}\_removeExercise()}{58}{subsubsection.5.29.1.5}%
+\contentsline {subsubsection}{\numberline {5.29.1.6}\_removeWorkout()}{58}{subsubsection.5.29.1.6}%
+\contentsline {subsubsection}{\numberline {5.29.1.7}\_saveWorkout()}{58}{subsubsection.5.29.1.7}%
+\contentsline {subsubsection}{\numberline {5.29.1.8}build()}{58}{subsubsection.5.29.1.8}%
+\contentsline {subsubsection}{\numberline {5.29.1.9}deserializeWorkouts()}{59}{subsubsection.5.29.1.9}%
+\contentsline {subsubsection}{\numberline {5.29.1.10}Exercise()}{59}{subsubsection.5.29.1.10}%
+\contentsline {subsubsection}{\numberline {5.29.1.11}initState()}{59}{subsubsection.5.29.1.11}%
+\contentsline {subsubsection}{\numberline {5.29.1.12}toMap()}{59}{subsubsection.5.29.1.12}%
+\contentsline {subsection}{\numberline {5.29.2}Variable Documentation}{59}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}name}{59}{subsubsection.5.29.2.1}%
+\contentsline {subsubsection}{\numberline {5.29.2.2}repetitions}{59}{subsubsection.5.29.2.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.3}sets}{59}{subsubsection.5.29.2.3}%
+\contentsline {subsubsection}{\numberline {5.29.2.4}weight}{59}{subsubsection.5.29.2.4}%
+\contentsline {subsubsection}{\numberline {5.29.2.5}workouts}{59}{subsubsection.5.29.2.5}%
+\contentsline {section}{\numberline {5.30}lib/strony/aplikacja/zakladki/plan\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}treningowy.dart File Reference}{60}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Function Documentation}{60}{subsection.5.30.1}%
+\contentsline {subsubsection}{\numberline {5.30.1.1}build()}{60}{subsubsection.5.30.1.1}%
+\contentsline {subsubsection}{\numberline {5.30.1.2}PlanTreningowy()}{60}{subsubsection.5.30.1.2}%
+\contentsline {subsection}{\numberline {5.30.2}Variable Documentation}{60}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}child}{60}{subsubsection.5.30.2.1}%
+\contentsline {subsubsection}{\numberline {5.30.2.2}onPressed}{60}{subsubsection.5.30.2.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.3}style}{61}{subsubsection.5.30.2.3}%
+\contentsline {section}{\numberline {5.31}lib/strony/aplikacja/zakladki/pomiary.dart File Reference}{61}{section.5.31}%
+\contentsline {section}{\numberline {5.32}lib/strony/aplikacja/zakladki/profil\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}uzytkownika.dart File Reference}{61}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Function Documentation}{61}{subsection.5.32.1}%
+\contentsline {subsubsection}{\numberline {5.32.1.1}build()}{61}{subsubsection.5.32.1.1}%
+\contentsline {subsubsection}{\numberline {5.32.1.2}initState()}{61}{subsubsection.5.32.1.2}%
+\contentsline {subsubsection}{\numberline {5.32.1.3}updateProfileImg()}{62}{subsubsection.5.32.1.3}%
+\contentsline {subsection}{\numberline {5.32.2}Variable Documentation}{62}{subsection.5.32.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.1}nameController}{62}{subsubsection.5.32.2.1}%
+\contentsline {subsubsection}{\numberline {5.32.2.2}profileImage}{62}{subsubsection.5.32.2.2}%
+\contentsline {section}{\numberline {5.33}lib/strony/aplikacja/zakladki/tworzenie\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cytatu.dart File Reference}{62}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Function Documentation}{62}{subsection.5.33.1}%
+\contentsline {subsubsection}{\numberline {5.33.1.1}build()}{62}{subsubsection.5.33.1.1}%
+\contentsline {subsection}{\numberline {5.33.2}Variable Documentation}{63}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}autorController}{63}{subsubsection.5.33.2.1}%
+\contentsline {subsubsection}{\numberline {5.33.2.2}date}{63}{subsubsection.5.33.2.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.3}ownerId}{63}{subsubsection.5.33.2.3}%
+\contentsline {subsubsection}{\numberline {5.33.2.4}quoteController}{63}{subsubsection.5.33.2.4}%
+\contentsline {section}{\numberline {5.34}lib/strony/autoryzacja/logowanie.dart File Reference}{63}{section.5.34}%
+\contentsline {subsection}{\numberline {5.34.1}Function Documentation}{63}{subsection.5.34.1}%
+\contentsline {subsubsection}{\numberline {5.34.1.1}build()}{63}{subsubsection.5.34.1.1}%
+\contentsline {subsection}{\numberline {5.34.2}Variable Documentation}{64}{subsection.5.34.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.1}\_emailController}{64}{subsubsection.5.34.2.1}%
+\contentsline {subsubsection}{\numberline {5.34.2.2}\_errorFeedback}{64}{subsubsection.5.34.2.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.3}\_formKey}{64}{subsubsection.5.34.2.3}%
+\contentsline {subsubsection}{\numberline {5.34.2.4}\_passwordController}{64}{subsubsection.5.34.2.4}%
+\contentsline {subsubsection}{\numberline {5.34.2.5}authenticated}{64}{subsubsection.5.34.2.5}%
+\contentsline {section}{\numberline {5.35}lib/strony/autoryzacja/ponowne\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logowanie.dart File Reference}{64}{section.5.35}%
+\contentsline {subsection}{\numberline {5.35.1}Function Documentation}{65}{subsection.5.35.1}%
+\contentsline {subsubsection}{\numberline {5.35.1.1}changeAccount()}{65}{subsubsection.5.35.1.1}%
+\contentsline {subsubsection}{\numberline {5.35.1.2}createState()}{65}{subsubsection.5.35.1.2}%
+\contentsline {subsubsection}{\numberline {5.35.1.3}ReLogIn()}{65}{subsubsection.5.35.1.3}%
+\contentsline {section}{\numberline {5.36}lib/strony/autoryzacja/rejestracja.dart File Reference}{65}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Function Documentation}{65}{subsection.5.36.1}%
+\contentsline {subsubsection}{\numberline {5.36.1.1}build()}{65}{subsubsection.5.36.1.1}%
+\contentsline {subsection}{\numberline {5.36.2}Variable Documentation}{66}{subsection.5.36.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.1}\_emailController}{66}{subsubsection.5.36.2.1}%
+\contentsline {subsubsection}{\numberline {5.36.2.2}\_errorFeedback}{66}{subsubsection.5.36.2.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.3}\_formKey}{66}{subsubsection.5.36.2.3}%
+\contentsline {subsubsection}{\numberline {5.36.2.4}\_passwordController}{66}{subsubsection.5.36.2.4}%
+\contentsline {section}{\numberline {5.37}lib/strony/autoryzacja/welcome.dart File Reference}{66}{section.5.37}%
+\contentsline {section}{\numberline {5.38}lib/strony/testowy.dart File Reference}{66}{section.5.38}%
+\contentsline {subsection}{\numberline {5.38.1}Function Documentation}{67}{subsection.5.38.1}%
+\contentsline {subsubsection}{\numberline {5.38.1.1}build()}{67}{subsubsection.5.38.1.1}%
+\contentsline {subsubsection}{\numberline {5.38.1.2}decode()}{67}{subsubsection.5.38.1.2}%
+\contentsline {subsubsection}{\numberline {5.38.1.3}downloadProfileImg()}{67}{subsubsection.5.38.1.3}%
+\contentsline {subsubsection}{\numberline {5.38.1.4}encode()}{67}{subsubsection.5.38.1.4}%
+\contentsline {subsubsection}{\numberline {5.38.1.5}encodeBytes()}{67}{subsubsection.5.38.1.5}%
+\contentsline {subsubsection}{\numberline {5.38.1.6}updateProfileImg()}{67}{subsubsection.5.38.1.6}%
+\contentsline {subsection}{\numberline {5.38.2}Variable Documentation}{67}{subsection.5.38.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.1}img}{67}{subsubsection.5.38.2.1}%
+\contentsline {subsubsection}{\numberline {5.38.2.2}pickedImageBytes}{68}{subsubsection.5.38.2.2}%
+\contentsline {section}{\numberline {5.39}lib/theme.dart File Reference}{68}{section.5.39}%
+\contentsline {subsection}{\numberline {5.39.1}Variable Documentation}{68}{subsection.5.39.1}%
+\contentsline {subsubsection}{\numberline {5.39.1.1}primaryTheme}{68}{subsubsection.5.39.1.1}%
+\contentsline {section}{\numberline {5.40}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{68}{section.5.40}%
+\contentsline {section}{\numberline {5.41}test/widget\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.dart File Reference}{68}{section.5.41}%
+\contentsline {subsection}{\numberline {5.41.1}Function Documentation}{68}{subsection.5.41.1}%
+\contentsline {subsubsection}{\numberline {5.41.1.1}main()}{68}{subsubsection.5.41.1.1}%
+\contentsline {chapter}{Index}{69}{section*.108}%

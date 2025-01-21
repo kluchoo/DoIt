@@ -1,0 +1,41 @@
+\doxysection{lib/providers/auth\+\_\+provider.dart File Reference}
+\hypertarget{auth__provider_8dart}{}\label{auth__provider_8dart}\index{lib/providers/auth\_provider.dart@{lib/providers/auth\_provider.dart}}
+{\ttfamily import package;}\newline
+Include dependency graph for auth\+\_\+provider.\+dart\+:
+% FIG 0
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{auth__provider_8dart_ac393ff4f88ebc90c6ba5665fa71da8c5}{auth\+Provider}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{auth__provider_8dart_ac393ff4f88ebc90c6ba5665fa71da8c5}\index{auth\_provider.dart@{auth\_provider.dart}!authProvider@{authProvider}}
+\index{authProvider@{authProvider}!auth\_provider.dart@{auth\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{authProvider}{authProvider}}
+{\footnotesize\ttfamily \label{auth__provider_8dart_ac393ff4f88ebc90c6ba5665fa71da8c5} 
+final auth\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ StreamProvider.autoDispose<AppUser?>((ref)\ async*\ \{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keyword}{final}\ Stream<AppUser?>\ userStream\ =}
+\DoxyCodeLine{\ \ \ \ \ \ FirebaseAuth.instance.authStateChanges().map((user)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (user\ !=\ null)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ AppUser(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ uid:\ user.uid,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ email:\ user.email!,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}{name}}:\ user.displayName\ ??\ \textcolor{stringliteral}{'No\ Name'});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ null;}
+\DoxyCodeLine{\ \ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ await\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{final}\ user\ in\ userStream)\ \{}
+\DoxyCodeLine{\ \ \ \ yield\ user;}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}

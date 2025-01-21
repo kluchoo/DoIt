@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['addnewusersdocument_0',['addNewUsersDocument',['../class_change_notifier.html#ab6590890e9e3e47993eaf340f864ded5',1,'ChangeNotifier']]],
+  ['addprogress_1',['addProgress',['../class_change_notifier.html#a65ae3545911b06b4c27409c8f076f5a0',1,'ChangeNotifier']]],
+  ['addquote_2',['addQuote',['../class_change_notifier.html#a49e374175de183bb9e96c6741eb28883',1,'ChangeNotifier']]],
+  ['app_5fbackground_5fcolors_2edart_3',['app_background_colors.dart',['../app__background__colors_8dart.html',1,'']]],
+  ['app_5fuser_2edart_4',['app_user.dart',['../app__user_8dart.html',1,'']]],
+  ['appcolors_5',['AppColors',['../class_app_colors.html',1,'']]],
+  ['appuser_6',['AppUser',['../class_change_notifier.html#a4647d6554dc86001ac9ea3760830c232',1,'ChangeNotifier']]],
+  ['appuserprovider_7',['appUserProvider',['../home__page__providers_8dart.html#a98225098edb8b7aff5d22bb8be64a317',1,'home_page_providers.dart']]],
+  ['auth_5fprovider_2edart_8',['auth_provider.dart',['../auth__provider_8dart.html',1,'']]],
+  ['auth_5fservice_2edart_9',['auth_service.dart',['../auth__service_8dart.html',1,'']]],
+  ['authenticate_10',['authenticate',['../class_local_auth.html#a27c6b5cd33eb745ff4f9361888546e9e',1,'LocalAuth']]],
+  ['authenticated_11',['authenticated',['../logowanie_8dart.html#a3764bd4f6c2a90398f051875278281d9',1,'logowanie.dart']]],
+  ['author_12',['author',['../class_quote.html#a4a2ef84c9c0f6e91d1e5211fa8733f9d',1,'Quote::author'],['../quote__model_8dart.html#a35eb723678af62d46dc98e69d1625f59',1,'author:&#160;quote_model.dart']]],
+  ['authprovider_13',['authProvider',['../auth__provider_8dart.html#ac393ff4f88ebc90c6ba5665fa71da8c5',1,'auth_provider.dart']]],
+  ['authservice_14',['AuthService',['../class_auth_service.html',1,'']]],
+  ['autobrightnessviewmodel_15',['AutoBrightnessViewModel',['../class_change_notifier.html#ad06c3973d870e3444f91ee50ac7d2aa6',1,'ChangeNotifier']]],
+  ['autorcontroller_16',['autorController',['../tworzenie__cytatu_8dart.html#ab84fe0f314a8db280ce30fd6d6343af3',1,'tworzenie_cytatu.dart']]],
+  ['aystent_17',['Aystent',['../class_stateless_widget.html#a2ff284822db57d70172178339c5de4b3',1,'StatelessWidget']]],
+  ['aystent_2edart_18',['aystent.dart',['../aystent_8dart.html',1,'']]]
+];

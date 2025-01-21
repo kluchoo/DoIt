@@ -1,0 +1,160 @@
+\doxysection{lib/strony/aplikacja/zakladki/plan.dart File Reference}
+\hypertarget{plan_8dart}{}\label{plan_8dart}\index{lib/strony/aplikacja/zakladki/plan.dart@{lib/strony/aplikacja/zakladki/plan.dart}}
+{\ttfamily import package;}\newline
+Include dependency graph for plan.\+dart\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}}
+\item 
+class \mbox{\hyperlink{class_workout}{Workout}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{plan_8dart_ab339d53d3945a16dfdd20004616a8ddc}{init\+State}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{plan_8dart_ae733ef33fc123af3fc96809ca1639189}{\+\_\+fetch\+Workouts}} () async
+\item 
+void \mbox{\hyperlink{plan_8dart_adc6a41dae270c3f85099e64cde569a41}{deserialize\+Workouts}} (List$<$ Map$<$ String, dynamic $>$ $>$ data)
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{plan_8dart_a92494c2a63c83d4c7d50e209e78b92d0}{\+\_\+save\+Workout}} (\mbox{\hyperlink{class_workout}{Workout}} workout) async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{plan_8dart_a28a8050f635c489495871c0e22eceb72}{\+\_\+delete\+Workout}} (int \mbox{\hyperlink{home_8dart_a032b8c0bc79c9afb6ca20ec24a48ef5a}{index}}) async
+\item 
+void \mbox{\hyperlink{plan_8dart_afa48cd9d89c25ab1b9445bc2684112d2}{\+\_\+add\+Workout}} ()
+\item 
+void \mbox{\hyperlink{plan_8dart_acdc05bb06890138c53b4fba7dd01e97a}{\+\_\+add\+Exercise}} (int \mbox{\hyperlink{home_8dart_a032b8c0bc79c9afb6ca20ec24a48ef5a}{index}})
+\item 
+void \mbox{\hyperlink{plan_8dart_a760f9fd5953f25794a4a5c60ddf8cbbc}{\+\_\+remove\+Workout}} (int \mbox{\hyperlink{home_8dart_a032b8c0bc79c9afb6ca20ec24a48ef5a}{index}})
+\item 
+void \mbox{\hyperlink{plan_8dart_a4d7aec4334722b4ecaa7331cd9210fc4}{\+\_\+remove\+Exercise}} (int workout\+Index, int exercise\+Index)
+\item 
+override Widget \mbox{\hyperlink{plan_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}{build}} (Build\+Context context)
+\item 
+\mbox{\hyperlink{plan_8dart_ae02a359d77b9eaaf230e7b890c85fa0e}{Exercise}} (\{ required \mbox{\hyperlink{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}{this.\+name}}, required \mbox{\hyperlink{plan_8dart_a40e8940a2fbaaec1db487b8c54c272c1}{this.\+weight}}, required \mbox{\hyperlink{plan_8dart_a1c4dd15a6a25eb590418a91a99aa7bc5}{this.\+repetitions}}, required \mbox{\hyperlink{plan_8dart_acfe56b2dac2b49b32d678ca1fc7fcd76}{this.\+sets}}, \})
+\item 
+Map$<$ String, dynamic $>$ \mbox{\hyperlink{plan_8dart_acb7406c2d7fd5cdb800aadb668a25879}{to\+Map}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+class Plan extends \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}} \mbox{\hyperlink{plan_8dart_a9a8bd658cd73db94eaafe17fbc16ebb1}{workouts}} = \mbox{[}$\,$\mbox{]}
+\item 
+class \mbox{\hyperlink{class_workout}{Workout}} \mbox{\hyperlink{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}{name}}
+\item 
+String \mbox{\hyperlink{plan_8dart_a40e8940a2fbaaec1db487b8c54c272c1}{weight}}
+\item 
+String \mbox{\hyperlink{plan_8dart_a1c4dd15a6a25eb590418a91a99aa7bc5}{repetitions}}
+\item 
+String \mbox{\hyperlink{plan_8dart_acfe56b2dac2b49b32d678ca1fc7fcd76}{sets}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{plan_8dart_acdc05bb06890138c53b4fba7dd01e97a}\index{plan.dart@{plan.dart}!\_addExercise@{\_addExercise}}
+\index{\_addExercise@{\_addExercise}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_addExercise()}{\_addExercise()}}
+{\footnotesize\ttfamily \label{plan_8dart_acdc05bb06890138c53b4fba7dd01e97a} 
+void \+\_\+add\+Exercise (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_afa48cd9d89c25ab1b9445bc2684112d2}\index{plan.dart@{plan.dart}!\_addWorkout@{\_addWorkout}}
+\index{\_addWorkout@{\_addWorkout}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_addWorkout()}{\_addWorkout()}}
+{\footnotesize\ttfamily \label{plan_8dart_afa48cd9d89c25ab1b9445bc2684112d2} 
+void \+\_\+add\+Workout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_a28a8050f635c489495871c0e22eceb72}\index{plan.dart@{plan.dart}!\_deleteWorkout@{\_deleteWorkout}}
+\index{\_deleteWorkout@{\_deleteWorkout}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_deleteWorkout()}{\_deleteWorkout()}}
+{\footnotesize\ttfamily \label{plan_8dart_a28a8050f635c489495871c0e22eceb72} 
+Future$<$ void $>$ \+\_\+delete\+Workout (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_ae733ef33fc123af3fc96809ca1639189}\index{plan.dart@{plan.dart}!\_fetchWorkouts@{\_fetchWorkouts}}
+\index{\_fetchWorkouts@{\_fetchWorkouts}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_fetchWorkouts()}{\_fetchWorkouts()}}
+{\footnotesize\ttfamily \label{plan_8dart_ae733ef33fc123af3fc96809ca1639189} 
+Future$<$ void $>$ \+\_\+fetch\+Workouts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_a4d7aec4334722b4ecaa7331cd9210fc4}\index{plan.dart@{plan.dart}!\_removeExercise@{\_removeExercise}}
+\index{\_removeExercise@{\_removeExercise}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_removeExercise()}{\_removeExercise()}}
+{\footnotesize\ttfamily \label{plan_8dart_a4d7aec4334722b4ecaa7331cd9210fc4} 
+void \+\_\+remove\+Exercise (\begin{DoxyParamCaption}\item[{int}]{workout\+Index}{, }\item[{int}]{exercise\+Index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_a760f9fd5953f25794a4a5c60ddf8cbbc}\index{plan.dart@{plan.dart}!\_removeWorkout@{\_removeWorkout}}
+\index{\_removeWorkout@{\_removeWorkout}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_removeWorkout()}{\_removeWorkout()}}
+{\footnotesize\ttfamily \label{plan_8dart_a760f9fd5953f25794a4a5c60ddf8cbbc} 
+void \+\_\+remove\+Workout (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_a92494c2a63c83d4c7d50e209e78b92d0}\index{plan.dart@{plan.dart}!\_saveWorkout@{\_saveWorkout}}
+\index{\_saveWorkout@{\_saveWorkout}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{\_saveWorkout()}{\_saveWorkout()}}
+{\footnotesize\ttfamily \label{plan_8dart_a92494c2a63c83d4c7d50e209e78b92d0} 
+Future$<$ void $>$ \+\_\+save\+Workout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_workout}{Workout}}}]{workout}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}\index{plan.dart@{plan.dart}!build@{build}}
+\index{build@{build}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{plan_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a} 
+override Widget build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_adc6a41dae270c3f85099e64cde569a41}\index{plan.dart@{plan.dart}!deserializeWorkouts@{deserializeWorkouts}}
+\index{deserializeWorkouts@{deserializeWorkouts}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{deserializeWorkouts()}{deserializeWorkouts()}}
+{\footnotesize\ttfamily \label{plan_8dart_adc6a41dae270c3f85099e64cde569a41} 
+void deserialize\+Workouts (\begin{DoxyParamCaption}\item[{List$<$ Map$<$ String, dynamic $>$ $>$}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_ae02a359d77b9eaaf230e7b890c85fa0e}\index{plan.dart@{plan.dart}!Exercise@{Exercise}}
+\index{Exercise@{Exercise}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{Exercise()}{Exercise()}}
+{\footnotesize\ttfamily \label{plan_8dart_ae02a359d77b9eaaf230e7b890c85fa0e} 
+Exercise (\begin{DoxyParamCaption}\item[{\{ required \mbox{\hyperlink{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}{this.\+name}}, required \mbox{\hyperlink{plan_8dart_a40e8940a2fbaaec1db487b8c54c272c1}{this.\+weight}}, required \mbox{\hyperlink{plan_8dart_a1c4dd15a6a25eb590418a91a99aa7bc5}{this.\+repetitions}}, required \mbox{\hyperlink{plan_8dart_acfe56b2dac2b49b32d678ca1fc7fcd76}{this.\+sets}}, \}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_ab339d53d3945a16dfdd20004616a8ddc}\index{plan.dart@{plan.dart}!initState@{initState}}
+\index{initState@{initState}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{initState()}{initState()}}
+{\footnotesize\ttfamily \label{plan_8dart_ab339d53d3945a16dfdd20004616a8ddc} 
+override void init\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{plan_8dart_acb7406c2d7fd5cdb800aadb668a25879}\index{plan.dart@{plan.dart}!toMap@{toMap}}
+\index{toMap@{toMap}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily \label{plan_8dart_acb7406c2d7fd5cdb800aadb668a25879} 
+Map$<$ String, dynamic $>$ to\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a}\index{plan.dart@{plan.dart}!name@{name}}
+\index{name@{name}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{plan_8dart_aa59261f8eb211d95bcbc6f46369b951a} 
+class \mbox{\hyperlink{class_workout}{Workout}} name}
+
+\Hypertarget{plan_8dart_a1c4dd15a6a25eb590418a91a99aa7bc5}\index{plan.dart@{plan.dart}!repetitions@{repetitions}}
+\index{repetitions@{repetitions}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{repetitions}{repetitions}}
+{\footnotesize\ttfamily \label{plan_8dart_a1c4dd15a6a25eb590418a91a99aa7bc5} 
+String repetitions}
+
+\Hypertarget{plan_8dart_acfe56b2dac2b49b32d678ca1fc7fcd76}\index{plan.dart@{plan.dart}!sets@{sets}}
+\index{sets@{sets}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{sets}{sets}}
+{\footnotesize\ttfamily \label{plan_8dart_acfe56b2dac2b49b32d678ca1fc7fcd76} 
+String sets}
+
+\Hypertarget{plan_8dart_a40e8940a2fbaaec1db487b8c54c272c1}\index{plan.dart@{plan.dart}!weight@{weight}}
+\index{weight@{weight}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \label{plan_8dart_a40e8940a2fbaaec1db487b8c54c272c1} 
+String weight}
+
+\Hypertarget{plan_8dart_a9a8bd658cd73db94eaafe17fbc16ebb1}\index{plan.dart@{plan.dart}!workouts@{workouts}}
+\index{workouts@{workouts}!plan.dart@{plan.dart}}
+\doxysubsubsection{\texorpdfstring{workouts}{workouts}}
+{\footnotesize\ttfamily \label{plan_8dart_a9a8bd658cd73db94eaafe17fbc16ebb1} 
+class Plan extends \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}} workouts = \mbox{[}$\,$\mbox{]}}
+

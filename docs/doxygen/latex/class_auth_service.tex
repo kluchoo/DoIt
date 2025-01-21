@@ -1,0 +1,70 @@
+\doxysection{Auth\+Service Class Reference}
+\hypertarget{class_auth_service}{}\label{class_auth_service}\index{AuthService@{AuthService}}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Future$<$ String $>$ \mbox{\hyperlink{class_auth_service_a022f15cdbb10efdf085b1ce7635615c7}{encode}} (String \mbox{\hyperlink{testowy_8dart_a28d54a0b8c496d6472ee22ed223c81be}{img}}) async
+\item 
+Future$<$ App\+User?$>$ \mbox{\hyperlink{class_auth_service_aebee1efe426fd8cf9e708abfc167ca1f}{sign\+Up}} (String email, String password) async
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Future$<$ App\+User?$>$ \mbox{\hyperlink{class_auth_service_a3de5925f681babb3190d2c4d166fa062}{sign\+In}} (String email, String password) async
+\item 
+static Future$<$ void $>$ \mbox{\hyperlink{class_auth_service_ac65317fac7c26e8c4ad771f389190ce6}{sign\+Out}} () async
+\item 
+static App\+User \mbox{\hyperlink{class_auth_service_ac64e660216f360b7adbee4c3602ca0f7}{get\+Current\+User}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Firebase\+Auth \mbox{\hyperlink{class_auth_service_aa14e3a3b8cce3e7174d3438e00cbce5d}{\+\_\+firebase\+Auth}} = Firebase\+Auth.\+instance
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_auth_service_a022f15cdbb10efdf085b1ce7635615c7}\index{AuthService@{AuthService}!encode@{encode}}
+\index{encode@{encode}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily \label{class_auth_service_a022f15cdbb10efdf085b1ce7635615c7} 
+Future$<$ String $>$ Auth\+Service\+::encode (\begin{DoxyParamCaption}\item[{String}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_auth_service_ac64e660216f360b7adbee4c3602ca0f7}\index{AuthService@{AuthService}!getCurrentUser@{getCurrentUser}}
+\index{getCurrentUser@{getCurrentUser}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{getCurrentUser()}{getCurrentUser()}}
+{\footnotesize\ttfamily \label{class_auth_service_ac64e660216f360b7adbee4c3602ca0f7} 
+static App\+User Auth\+Service\+::get\+Current\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_auth_service_a3de5925f681babb3190d2c4d166fa062}\index{AuthService@{AuthService}!signIn@{signIn}}
+\index{signIn@{signIn}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{signIn()}{signIn()}}
+{\footnotesize\ttfamily \label{class_auth_service_a3de5925f681babb3190d2c4d166fa062} 
+static Future$<$ App\+User?$>$ Auth\+Service\+::sign\+In (\begin{DoxyParamCaption}\item[{String}]{email}{, }\item[{String}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_auth_service_ac65317fac7c26e8c4ad771f389190ce6}\index{AuthService@{AuthService}!signOut@{signOut}}
+\index{signOut@{signOut}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{signOut()}{signOut()}}
+{\footnotesize\ttfamily \label{class_auth_service_ac65317fac7c26e8c4ad771f389190ce6} 
+static Future$<$ void $>$ Auth\+Service\+::sign\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_auth_service_aebee1efe426fd8cf9e708abfc167ca1f}\index{AuthService@{AuthService}!signUp@{signUp}}
+\index{signUp@{signUp}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{signUp()}{signUp()}}
+{\footnotesize\ttfamily \label{class_auth_service_aebee1efe426fd8cf9e708abfc167ca1f} 
+Future$<$ App\+User?$>$ Auth\+Service\+::sign\+Up (\begin{DoxyParamCaption}\item[{String}]{email}{, }\item[{String}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_auth_service_aa14e3a3b8cce3e7174d3438e00cbce5d}\index{AuthService@{AuthService}!\_firebaseAuth@{\_firebaseAuth}}
+\index{\_firebaseAuth@{\_firebaseAuth}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{\_firebaseAuth}{\_firebaseAuth}}
+{\footnotesize\ttfamily \label{class_auth_service_aa14e3a3b8cce3e7174d3438e00cbce5d} 
+final Firebase\+Auth Auth\+Service\+::\+\_\+firebase\+Auth = Firebase\+Auth.\+instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/services/\mbox{\hyperlink{auth__service_8dart}{auth\+\_\+service.\+dart}}\end{DoxyCompactItemize}

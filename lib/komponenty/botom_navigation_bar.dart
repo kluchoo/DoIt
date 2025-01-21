@@ -182,7 +182,7 @@ class _CustomBottomNavigationBarState
               child: GestureDetector(
                 onTap: () {
                   widget.onItemSelected(2);
-                  ref.read(titleProvider).changeTitle('Plan Treningowy');
+                  ref.read(titleProvider).changeTitle('Trening');
                 }, // Wywołanie funkcji przy kliknięciu
                 child: widget.chosenIndex == 2
                     ? FractionallySizedBox(

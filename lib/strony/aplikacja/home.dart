@@ -8,6 +8,7 @@ import 'package:do_it/strony/aplikacja/progressDocumentations.dart';
 import 'package:do_it/strony/aplikacja/zakladki/cytaty.dart';
 import 'package:do_it/strony/aplikacja/zakladki/plan_treningowy.dart';
 import 'package:do_it/strony/aplikacja/zakladki/profil_uzytkownika.dart';
+import 'package:do_it/strony/autoryzacja/welcome.dart';
 import 'package:do_it/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -200,7 +201,14 @@ class _HomeState extends ConsumerState<Home> {
                     'Wyloguj',
                   ),
                   onTap: () {
+                    Navigator.of(context).pop();
+
                     ref.read(appUserProvider).logOut();
+
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WelcomeScreen()));
                   },
                 ),
               ],

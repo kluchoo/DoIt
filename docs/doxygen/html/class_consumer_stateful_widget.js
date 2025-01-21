@@ -1,0 +1,27 @@
+var class_consumer_stateful_widget =
+[
+    [ "createState", "class_consumer_stateful_widget.html#aa97d757a64de61e150f509fe1463883f", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a550575c7527879fc00b840495299d7c2", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a0952635a3929187f292538afd47243cb", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a37bf20c7cad041bdef254b7004440db6", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a190214800a35a44ed6d1d97a616e98f2", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a05fd9ef7a2cd45d621cc6617e7c9df32", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a0c62e39a9910d5108da18aaae23b4363", null ],
+    [ "createState", "class_consumer_stateful_widget.html#ad7945de705b78eef260b92ca89d7f605", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a4ec66067817734ee026f63a885054a9a", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a42217ea7e8935e6df46451fbe4b2e5a1", null ],
+    [ "createState", "class_consumer_stateful_widget.html#a057985809f5f113719bbef940595b2d4", null ],
+    [ "CustomBottomNavigationBar", "class_consumer_stateful_widget.html#a9074dbffdb7db18082334ccec349e4e9", null ],
+    [ "Home", "class_consumer_stateful_widget.html#a9b79f0b08f07b2aa258dd43d839e103d", null ],
+    [ "ProfileSettingsPage", "class_consumer_stateful_widget.html#a22ece81c1443b648a320dbd1945427e7", null ],
+    [ "Progressdocumentations", "class_consumer_stateful_widget.html#a5f5f9d7fa8ad3f4dacfb6d671464ca13", null ],
+    [ "Quotes", "class_consumer_stateful_widget.html#a3b90fcc278b237efda85d4f411f4bc4f", null ],
+    [ "ReLogIn", "class_consumer_stateful_widget.html#a42bf3c22b5e3a3a1c6f7d156a0d30308", null ],
+    [ "serializeProgress", "class_consumer_stateful_widget.html#add76ba706164275666c6aa05737a7e86", null ],
+    [ "SignInForm", "class_consumer_stateful_widget.html#af42c639b802d69acf07b50ffe561a04c", null ],
+    [ "SignUpForm", "class_consumer_stateful_widget.html#ac5af078c3680a92dfe897e27edb03941", null ],
+    [ "Testy", "class_consumer_stateful_widget.html#a703b5b8c6fc3fc42906202988607f45f", null ],
+    [ "TworzenieCytatu", "class_consumer_stateful_widget.html#aea8067afe76d8b8d9e3162c0bc2eecd2", null ],
+    [ "chosenIndex", "class_consumer_stateful_widget.html#ac370102b98d2ae3d715c8c55b7bb5107", null ],
+    [ "onItemSelected", "class_consumer_stateful_widget.html#a3f3948bee08e82e898e277b1b23029ae", null ]
+];

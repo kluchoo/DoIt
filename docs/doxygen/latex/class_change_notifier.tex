@@ -1,0 +1,461 @@
+\doxysection{Change\+Notifier Class Reference}
+\hypertarget{class_change_notifier}{}\label{class_change_notifier}\index{ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_change_notifier_a4647d6554dc86001ac9ea3760830c232}{App\+User}} (\{required this.\+uid, required this.\+email, required this.\+name\})
+\item 
+void \mbox{\hyperlink{class_change_notifier_a143355cd6c58a5ba1bd4cc29d393bc02}{update}} (\mbox{\hyperlink{class_change_notifier_a4647d6554dc86001ac9ea3760830c232}{App\+User}} user)
+\item 
+Future$<$ int $>$ \mbox{\hyperlink{class_change_notifier_acec0f552cae36512895c9c935ba20ff8}{day\+Strike\+Update}} () async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a46f91c8981a858ba4b2797862237170c}{fetch\+User\+Auth\+Data}} () async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a29e96aa38a3378d2c1c532ab58d64c7e}{fetch\+User\+Data}} () async
+\item 
+Future$<$ String $>$ \mbox{\hyperlink{class_change_notifier_a727b1802a59bc34544375e6b1ce27de3}{encode}} (String \mbox{\hyperlink{testowy_8dart_a28d54a0b8c496d6472ee22ed223c81be}{img}}) async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_ab6590890e9e3e47993eaf340f864ded5}{add\+New\+Users\+Document}} () async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_ad732a51a1f3d5c9dc17ccd39f45c655f}{log\+Out}} () async
+\item 
+\mbox{\hyperlink{class_change_notifier_ad06c3973d870e3444f91ee50ac7d2aa6}{Auto\+Brightness\+View\+Model}} ()
+\item 
+override void \mbox{\hyperlink{class_change_notifier_a71f30b5a33eb22e299b1121e4c1257ee}{dispose}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_adfa7663aed7dd23fa713a6fb53b2699f}{toggle\+Auto\+Brightness}} (bool is\+Enabled) async
+\item 
+void \mbox{\hyperlink{class_change_notifier_a443b2660c42aad55b4f13b5092c82a55}{\+\_\+enable\+Auto\+Brightness}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a8ab2713924962884b9a1ba342cc3323a}{\+\_\+disable\+Auto\+Brightness}} () async
+\item 
+void \mbox{\hyperlink{class_change_notifier_ae2eb8132da0c91b5627e0efda97d813b}{\+\_\+observe\+System\+Brightness}} ()
+\item 
+void \mbox{\hyperlink{class_change_notifier_a7ffcbd019a672b6ef68a5fb79336d0ee}{update\+Title}} (String value)
+\item 
+void \mbox{\hyperlink{class_change_notifier_a5fba6b3fb1dc11bd52602f9f60693c92}{update\+Description}} (String value)
+\item 
+void \mbox{\hyperlink{class_change_notifier_af940fc24d12b0bce92adb27a25515d2d}{update\+Category}} (\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}} \mbox{\hyperlink{class_change_notifier_a7b6b317b485485ad30a7d30ba821e000}{category}})
+\item 
+\mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}} (\{ required this.\+title, required this.\+category, required this.\+description, this.\+image, this.\+date, \})
+\item 
+void \mbox{\hyperlink{class_change_notifier_a7dc3e63c33aeceee40b5f6c6e8451603}{update\+Progress}} (List$<$ \mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}} $>$ new\+Progress)
+\item 
+void \mbox{\hyperlink{class_change_notifier_a65ae3545911b06b4c27409c8f076f5a0}{add\+Progress}} (\mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}} new\+Progress)
+\item 
+List$<$ Map $>$ \mbox{\hyperlink{class_change_notifier_af5969266c037376ec51f77af9ca768c4}{serialize\+Progress}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a875ebc2f6dba5dee79e86f67ff10a07c}{fetch\+Progress}} (Widget\+Ref ref) async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a3fcd44f451695f4b5e5db02bc5fb406f}{save\+Progress}} (Widget\+Ref ref) async
+\item 
+void \mbox{\hyperlink{class_change_notifier_aad31977bb961025e93d7006301dbe4c1}{deserialize\+Progress}} (List$<$ Map $>$ data)
+\item 
+void \mbox{\hyperlink{class_change_notifier_a5e8b6c0fac28cbc6bcea89fef9e9ccee}{remove\+Progress}} (int \mbox{\hyperlink{home_8dart_a032b8c0bc79c9afb6ca20ec24a48ef5a}{index}}, Widget\+Ref ref)
+\item 
+void \mbox{\hyperlink{class_change_notifier_a49e374175de183bb9e96c6741eb28883}{add\+Quote}} (\mbox{\hyperlink{class_quote}{Quote}} \mbox{\hyperlink{cytat_8dart_ab3d2efbb1059954b5e308b7aa79e1d21}{quote}})
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a6a282afe3cff9078a8a1eec3e9aad705}{to\+Firestore}} (\mbox{\hyperlink{class_quote}{Quote}} \mbox{\hyperlink{cytat_8dart_ab3d2efbb1059954b5e308b7aa79e1d21}{quote}}) async
+\item 
+Future$<$ bool $>$ \mbox{\hyperlink{class_change_notifier_a7069709a16689eb98103a26d42bd2d43}{fetch\+Quotes}} (Widget\+Ref ref, Build\+Context context) async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_change_notifier_a423ffb46a3923136447517e2ae761ccd}{fetch\+And\+Add\+Quote}} (\mbox{\hyperlink{class_quote}{Quote}} \mbox{\hyperlink{cytat_8dart_ab3d2efbb1059954b5e308b7aa79e1d21}{quote}}, Widget\+Ref ref, context) async
+\item 
+\mbox{\hyperlink{class_change_notifier_a0fabc7046e13bee5cca7f0fdf82f0db6}{Title\+Provider}} (\{ this.\+title="{}Cytaty"{}, \})
+\item 
+void \mbox{\hyperlink{class_change_notifier_a6692e44f101bc8cff46ab1156315d231}{change\+Title}} (String \mbox{\hyperlink{class_change_notifier_a00c21c67b8dc54b1a681173490af95ca}{title}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{class_change_notifier_a89027428393ede79588dbd0bd6b99cd3}{uid}}
+\item 
+String \mbox{\hyperlink{class_change_notifier_a343532738ee5d44e29f0faf76895a5cd}{email}}
+\item 
+String \mbox{\hyperlink{class_change_notifier_a557465a2a31b0e1f2b6e2c0cc06c8959}{name}}
+\item 
+Uint8\+List \mbox{\hyperlink{class_change_notifier_a301f7c49fb637effc4c824476fc4f97a}{photo}}
+\item 
+double \mbox{\hyperlink{class_change_notifier_a41c523b07f8361bea533827a49496657}{\+\_\+brightness}} = 0.\+5
+\item 
+bool \mbox{\hyperlink{class_change_notifier_a10b06f5046d97fdaed471379340dd82d}{\+\_\+is\+Auto\+Brightness\+Enabled}} = false
+\item 
+Stream\+Subscription$<$ int $>$ \mbox{\hyperlink{class_change_notifier_a5793711fd09f8483457b2d7bf3967b2d}{\+\_\+light\+Subscription}}
+\item 
+Stream\+Subscription$<$ double $>$ \mbox{\hyperlink{class_change_notifier_aefa14ccc6d6c9f6361c0b9723b945db4}{\+\_\+system\+Brightness\+Subscription}}
+\item 
+double get \mbox{\hyperlink{class_change_notifier_a0053d84334959cb76663c27cdd44f16d}{brightness}} =$>$ \mbox{\hyperlink{class_change_notifier_a41c523b07f8361bea533827a49496657}{\+\_\+brightness}}
+\item 
+bool get \mbox{\hyperlink{class_change_notifier_a8871207f823800c046212e342804db16}{is\+Auto\+Brightness\+Enabled}} =$>$ \mbox{\hyperlink{class_change_notifier_a10b06f5046d97fdaed471379340dd82d}{\+\_\+is\+Auto\+Brightness\+Enabled}}
+\item 
+String \mbox{\hyperlink{class_change_notifier_a00c21c67b8dc54b1a681173490af95ca}{title}} = \textquotesingle{}\textquotesingle{}
+\item 
+String \mbox{\hyperlink{class_change_notifier_ab176a276854afd6824da1b2a622547b6}{description}} = \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}} \mbox{\hyperlink{class_change_notifier_a63a361b94c010447bba2323329efad37}{selected\+Category}}
+\item 
+String \mbox{\hyperlink{class_change_notifier_ad4f65733979e7c2fdd7f4b37972c7401}{chosen\+Category}} = \textquotesingle{}Wybierz kategorię\textquotesingle{}
+\item 
+final String \mbox{\hyperlink{class_change_notifier_aa91ed6ab99b5e7229350ed016617c826}{title}}
+\item 
+\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}} \mbox{\hyperlink{class_change_notifier_a7b6b317b485485ad30a7d30ba821e000}{category}}
+\item 
+final String \mbox{\hyperlink{class_change_notifier_a5b55cf3de5bcef75a678d13c3b5cc73b}{description}}
+\item 
+final Uint8\+List \mbox{\hyperlink{class_change_notifier_aac14c2642cfcf0a7be9fea63b8032434}{image}}
+\item 
+Date\+Time \mbox{\hyperlink{class_change_notifier_a2b2c21fb1ab2922378342178e3e5ccdd}{date}}
+\item 
+List$<$ \mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}} $>$ \mbox{\hyperlink{class_change_notifier_a0b333eb5f45f3a9c48dd16747017bf0c}{progress\+Data}} = \mbox{[}$\,$\mbox{]}
+\item 
+final List$<$ \mbox{\hyperlink{class_quote}{Quote}} $>$ \mbox{\hyperlink{class_change_notifier_ae86499b0b8919515fd2a828e47d73834}{\+\_\+quotes\+Data}}
+\item 
+List$<$ \mbox{\hyperlink{class_quote}{Quote}} $>$ get \mbox{\hyperlink{class_change_notifier_ac508d58630728a45653d382e64116aa5}{quotes\+Data}} =$>$ \mbox{\hyperlink{class_change_notifier_ae86499b0b8919515fd2a828e47d73834}{\+\_\+quotes\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_change_notifier_a8ab2713924962884b9a1ba342cc3323a}\index{ChangeNotifier@{ChangeNotifier}!\_disableAutoBrightness@{\_disableAutoBrightness}}
+\index{\_disableAutoBrightness@{\_disableAutoBrightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_disableAutoBrightness()}{\_disableAutoBrightness()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a8ab2713924962884b9a1ba342cc3323a} 
+Future$<$ void $>$ Change\+Notifier\+::\+\_\+disable\+Auto\+Brightness (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a443b2660c42aad55b4f13b5092c82a55}\index{ChangeNotifier@{ChangeNotifier}!\_enableAutoBrightness@{\_enableAutoBrightness}}
+\index{\_enableAutoBrightness@{\_enableAutoBrightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_enableAutoBrightness()}{\_enableAutoBrightness()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a443b2660c42aad55b4f13b5092c82a55} 
+void Change\+Notifier\+::\+\_\+enable\+Auto\+Brightness (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ae2eb8132da0c91b5627e0efda97d813b}\index{ChangeNotifier@{ChangeNotifier}!\_observeSystemBrightness@{\_observeSystemBrightness}}
+\index{\_observeSystemBrightness@{\_observeSystemBrightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_observeSystemBrightness()}{\_observeSystemBrightness()}}
+{\footnotesize\ttfamily \label{class_change_notifier_ae2eb8132da0c91b5627e0efda97d813b} 
+void Change\+Notifier\+::\+\_\+observe\+System\+Brightness (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ab6590890e9e3e47993eaf340f864ded5}\index{ChangeNotifier@{ChangeNotifier}!addNewUsersDocument@{addNewUsersDocument}}
+\index{addNewUsersDocument@{addNewUsersDocument}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{addNewUsersDocument()}{addNewUsersDocument()}}
+{\footnotesize\ttfamily \label{class_change_notifier_ab6590890e9e3e47993eaf340f864ded5} 
+Future$<$ void $>$ Change\+Notifier\+::add\+New\+Users\+Document (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a65ae3545911b06b4c27409c8f076f5a0}\index{ChangeNotifier@{ChangeNotifier}!addProgress@{addProgress}}
+\index{addProgress@{addProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{addProgress()}{addProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a65ae3545911b06b4c27409c8f076f5a0} 
+void Change\+Notifier\+::add\+Progress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}}}]{new\+Progress}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a49e374175de183bb9e96c6741eb28883}\index{ChangeNotifier@{ChangeNotifier}!addQuote@{addQuote}}
+\index{addQuote@{addQuote}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{addQuote()}{addQuote()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a49e374175de183bb9e96c6741eb28883} 
+void Change\+Notifier\+::add\+Quote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quote}{Quote}}}]{quote}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a4647d6554dc86001ac9ea3760830c232}\index{ChangeNotifier@{ChangeNotifier}!AppUser@{AppUser}}
+\index{AppUser@{AppUser}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{AppUser()}{AppUser()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a4647d6554dc86001ac9ea3760830c232} 
+Change\+Notifier\+::\+App\+User (\begin{DoxyParamCaption}\item[{\{required this.\+uid, required this.\+email, required this.\+name\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ad06c3973d870e3444f91ee50ac7d2aa6}\index{ChangeNotifier@{ChangeNotifier}!AutoBrightnessViewModel@{AutoBrightnessViewModel}}
+\index{AutoBrightnessViewModel@{AutoBrightnessViewModel}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{AutoBrightnessViewModel()}{AutoBrightnessViewModel()}}
+{\footnotesize\ttfamily \label{class_change_notifier_ad06c3973d870e3444f91ee50ac7d2aa6} 
+Change\+Notifier\+::\+Auto\+Brightness\+View\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a6692e44f101bc8cff46ab1156315d231}\index{ChangeNotifier@{ChangeNotifier}!changeTitle@{changeTitle}}
+\index{changeTitle@{changeTitle}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{changeTitle()}{changeTitle()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a6692e44f101bc8cff46ab1156315d231} 
+void Change\+Notifier\+::change\+Title (\begin{DoxyParamCaption}\item[{String}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_acec0f552cae36512895c9c935ba20ff8}\index{ChangeNotifier@{ChangeNotifier}!dayStrikeUpdate@{dayStrikeUpdate}}
+\index{dayStrikeUpdate@{dayStrikeUpdate}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{dayStrikeUpdate()}{dayStrikeUpdate()}}
+{\footnotesize\ttfamily \label{class_change_notifier_acec0f552cae36512895c9c935ba20ff8} 
+Future$<$ int $>$ Change\+Notifier\+::day\+Strike\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_aad31977bb961025e93d7006301dbe4c1}\index{ChangeNotifier@{ChangeNotifier}!deserializeProgress@{deserializeProgress}}
+\index{deserializeProgress@{deserializeProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{deserializeProgress()}{deserializeProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_aad31977bb961025e93d7006301dbe4c1} 
+void Change\+Notifier\+::deserialize\+Progress (\begin{DoxyParamCaption}\item[{List$<$ Map $>$}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a71f30b5a33eb22e299b1121e4c1257ee}\index{ChangeNotifier@{ChangeNotifier}!dispose@{dispose}}
+\index{dispose@{dispose}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{dispose()}{dispose()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a71f30b5a33eb22e299b1121e4c1257ee} 
+override void Change\+Notifier\+::dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a727b1802a59bc34544375e6b1ce27de3}\index{ChangeNotifier@{ChangeNotifier}!encode@{encode}}
+\index{encode@{encode}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a727b1802a59bc34544375e6b1ce27de3} 
+Future$<$ String $>$ Change\+Notifier\+::encode (\begin{DoxyParamCaption}\item[{String}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a423ffb46a3923136447517e2ae761ccd}\index{ChangeNotifier@{ChangeNotifier}!fetchAndAddQuote@{fetchAndAddQuote}}
+\index{fetchAndAddQuote@{fetchAndAddQuote}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{fetchAndAddQuote()}{fetchAndAddQuote()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a423ffb46a3923136447517e2ae761ccd} 
+Future$<$ void $>$ Change\+Notifier\+::fetch\+And\+Add\+Quote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quote}{Quote}}}]{quote}{, }\item[{Widget\+Ref}]{ref}{, }\item[{context}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a875ebc2f6dba5dee79e86f67ff10a07c}\index{ChangeNotifier@{ChangeNotifier}!fetchProgress@{fetchProgress}}
+\index{fetchProgress@{fetchProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{fetchProgress()}{fetchProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a875ebc2f6dba5dee79e86f67ff10a07c} 
+Future$<$ void $>$ Change\+Notifier\+::fetch\+Progress (\begin{DoxyParamCaption}\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a7069709a16689eb98103a26d42bd2d43}\index{ChangeNotifier@{ChangeNotifier}!fetchQuotes@{fetchQuotes}}
+\index{fetchQuotes@{fetchQuotes}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{fetchQuotes()}{fetchQuotes()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a7069709a16689eb98103a26d42bd2d43} 
+Future$<$ bool $>$ Change\+Notifier\+::fetch\+Quotes (\begin{DoxyParamCaption}\item[{Widget\+Ref}]{ref}{, }\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a46f91c8981a858ba4b2797862237170c}\index{ChangeNotifier@{ChangeNotifier}!fetchUserAuthData@{fetchUserAuthData}}
+\index{fetchUserAuthData@{fetchUserAuthData}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{fetchUserAuthData()}{fetchUserAuthData()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a46f91c8981a858ba4b2797862237170c} 
+Future$<$ void $>$ Change\+Notifier\+::fetch\+User\+Auth\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a29e96aa38a3378d2c1c532ab58d64c7e}\index{ChangeNotifier@{ChangeNotifier}!fetchUserData@{fetchUserData}}
+\index{fetchUserData@{fetchUserData}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{fetchUserData()}{fetchUserData()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a29e96aa38a3378d2c1c532ab58d64c7e} 
+Future$<$ void $>$ Change\+Notifier\+::fetch\+User\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ad732a51a1f3d5c9dc17ccd39f45c655f}\index{ChangeNotifier@{ChangeNotifier}!logOut@{logOut}}
+\index{logOut@{logOut}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{logOut()}{logOut()}}
+{\footnotesize\ttfamily \label{class_change_notifier_ad732a51a1f3d5c9dc17ccd39f45c655f} 
+Future$<$ void $>$ Change\+Notifier\+::log\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}\index{ChangeNotifier@{ChangeNotifier}!Progress@{Progress}}
+\index{Progress@{Progress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{Progress()}{Progress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d} 
+Change\+Notifier\+::\+Progress (\begin{DoxyParamCaption}\item[{\{ required this.\+title, required this.\+category, required this.\+description, this.\+image, this.\+date, \}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a5e8b6c0fac28cbc6bcea89fef9e9ccee}\index{ChangeNotifier@{ChangeNotifier}!removeProgress@{removeProgress}}
+\index{removeProgress@{removeProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{removeProgress()}{removeProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a5e8b6c0fac28cbc6bcea89fef9e9ccee} 
+void Change\+Notifier\+::remove\+Progress (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a3fcd44f451695f4b5e5db02bc5fb406f}\index{ChangeNotifier@{ChangeNotifier}!saveProgress@{saveProgress}}
+\index{saveProgress@{saveProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{saveProgress()}{saveProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a3fcd44f451695f4b5e5db02bc5fb406f} 
+Future$<$ void $>$ Change\+Notifier\+::save\+Progress (\begin{DoxyParamCaption}\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_af5969266c037376ec51f77af9ca768c4}\index{ChangeNotifier@{ChangeNotifier}!serializeProgress@{serializeProgress}}
+\index{serializeProgress@{serializeProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{serializeProgress()}{serializeProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_af5969266c037376ec51f77af9ca768c4} 
+List$<$ Map $>$ Change\+Notifier\+::serialize\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a0fabc7046e13bee5cca7f0fdf82f0db6}\index{ChangeNotifier@{ChangeNotifier}!TitleProvider@{TitleProvider}}
+\index{TitleProvider@{TitleProvider}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{TitleProvider()}{TitleProvider()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a0fabc7046e13bee5cca7f0fdf82f0db6} 
+Change\+Notifier\+::\+Title\+Provider (\begin{DoxyParamCaption}\item[{\{ this.\+title="{}Cytaty"{}, \}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a6a282afe3cff9078a8a1eec3e9aad705}\index{ChangeNotifier@{ChangeNotifier}!toFirestore@{toFirestore}}
+\index{toFirestore@{toFirestore}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{toFirestore()}{toFirestore()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a6a282afe3cff9078a8a1eec3e9aad705} 
+Future$<$ void $>$ Change\+Notifier\+::to\+Firestore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quote}{Quote}}}]{quote}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_adfa7663aed7dd23fa713a6fb53b2699f}\index{ChangeNotifier@{ChangeNotifier}!toggleAutoBrightness@{toggleAutoBrightness}}
+\index{toggleAutoBrightness@{toggleAutoBrightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{toggleAutoBrightness()}{toggleAutoBrightness()}}
+{\footnotesize\ttfamily \label{class_change_notifier_adfa7663aed7dd23fa713a6fb53b2699f} 
+Future$<$ void $>$ Change\+Notifier\+::toggle\+Auto\+Brightness (\begin{DoxyParamCaption}\item[{bool}]{is\+Enabled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a143355cd6c58a5ba1bd4cc29d393bc02}\index{ChangeNotifier@{ChangeNotifier}!update@{update}}
+\index{update@{update}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a143355cd6c58a5ba1bd4cc29d393bc02} 
+void Change\+Notifier\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_change_notifier_a4647d6554dc86001ac9ea3760830c232}{App\+User}}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_af940fc24d12b0bce92adb27a25515d2d}\index{ChangeNotifier@{ChangeNotifier}!updateCategory@{updateCategory}}
+\index{updateCategory@{updateCategory}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{updateCategory()}{updateCategory()}}
+{\footnotesize\ttfamily \label{class_change_notifier_af940fc24d12b0bce92adb27a25515d2d} 
+void Change\+Notifier\+::update\+Category (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}}}]{category}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a5fba6b3fb1dc11bd52602f9f60693c92}\index{ChangeNotifier@{ChangeNotifier}!updateDescription@{updateDescription}}
+\index{updateDescription@{updateDescription}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{updateDescription()}{updateDescription()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a5fba6b3fb1dc11bd52602f9f60693c92} 
+void Change\+Notifier\+::update\+Description (\begin{DoxyParamCaption}\item[{String}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a7dc3e63c33aeceee40b5f6c6e8451603}\index{ChangeNotifier@{ChangeNotifier}!updateProgress@{updateProgress}}
+\index{updateProgress@{updateProgress}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{updateProgress()}{updateProgress()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a7dc3e63c33aeceee40b5f6c6e8451603} 
+void Change\+Notifier\+::update\+Progress (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}} $>$}]{new\+Progress}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a7ffcbd019a672b6ef68a5fb79336d0ee}\index{ChangeNotifier@{ChangeNotifier}!updateTitle@{updateTitle}}
+\index{updateTitle@{updateTitle}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{updateTitle()}{updateTitle()}}
+{\footnotesize\ttfamily \label{class_change_notifier_a7ffcbd019a672b6ef68a5fb79336d0ee} 
+void Change\+Notifier\+::update\+Title (\begin{DoxyParamCaption}\item[{String}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_change_notifier_a41c523b07f8361bea533827a49496657}\index{ChangeNotifier@{ChangeNotifier}!\_brightness@{\_brightness}}
+\index{\_brightness@{\_brightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_brightness}{\_brightness}}
+{\footnotesize\ttfamily \label{class_change_notifier_a41c523b07f8361bea533827a49496657} 
+double Change\+Notifier\+::\+\_\+brightness = 0.\+5\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a10b06f5046d97fdaed471379340dd82d}\index{ChangeNotifier@{ChangeNotifier}!\_isAutoBrightnessEnabled@{\_isAutoBrightnessEnabled}}
+\index{\_isAutoBrightnessEnabled@{\_isAutoBrightnessEnabled}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_isAutoBrightnessEnabled}{\_isAutoBrightnessEnabled}}
+{\footnotesize\ttfamily \label{class_change_notifier_a10b06f5046d97fdaed471379340dd82d} 
+bool Change\+Notifier\+::\+\_\+is\+Auto\+Brightness\+Enabled = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a5793711fd09f8483457b2d7bf3967b2d}\index{ChangeNotifier@{ChangeNotifier}!\_lightSubscription@{\_lightSubscription}}
+\index{\_lightSubscription@{\_lightSubscription}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_lightSubscription}{\_lightSubscription}}
+{\footnotesize\ttfamily \label{class_change_notifier_a5793711fd09f8483457b2d7bf3967b2d} 
+Stream\+Subscription$<$int$>$ Change\+Notifier\+::\+\_\+light\+Subscription\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ae86499b0b8919515fd2a828e47d73834}\index{ChangeNotifier@{ChangeNotifier}!\_quotesData@{\_quotesData}}
+\index{\_quotesData@{\_quotesData}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_quotesData}{\_quotesData}}
+{\footnotesize\ttfamily \label{class_change_notifier_ae86499b0b8919515fd2a828e47d73834} 
+final List$<$\mbox{\hyperlink{class_quote}{Quote}}$>$ Change\+Notifier\+::\+\_\+quotes\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{quote__model_8dart_a6cb479c36c613049f48a0923809b00c0}{Quote}}(}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{quote__model_8dart_acdc08d3b1ac87e0204f6c7376f49689c}{ownerId}}:\ \textcolor{charliteral}{'0'},}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{class_change_notifier_a2b2c21fb1ab2922378342178e3e5ccdd}{date}}:\ DateTime.now(),}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{cytat_8dart_ab3d2efbb1059954b5e308b7aa79e1d21}{quote}}:\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{quote__model_8dart_a35eb723678af62d46dc98e69d1625f59}{author}}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{quote__model_8dart_ae36bd44c29f3679fdb9ecb34fab1a2a9}{likes}}:\ 0,}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{class_change_notifier_aefa14ccc6d6c9f6361c0b9723b945db4}\index{ChangeNotifier@{ChangeNotifier}!\_systemBrightnessSubscription@{\_systemBrightnessSubscription}}
+\index{\_systemBrightnessSubscription@{\_systemBrightnessSubscription}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{\_systemBrightnessSubscription}{\_systemBrightnessSubscription}}
+{\footnotesize\ttfamily \label{class_change_notifier_aefa14ccc6d6c9f6361c0b9723b945db4} 
+Stream\+Subscription$<$double$>$ Change\+Notifier\+::\+\_\+system\+Brightness\+Subscription\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a0053d84334959cb76663c27cdd44f16d}\index{ChangeNotifier@{ChangeNotifier}!brightness@{brightness}}
+\index{brightness@{brightness}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{brightness}{brightness}}
+{\footnotesize\ttfamily \label{class_change_notifier_a0053d84334959cb76663c27cdd44f16d} 
+double get Change\+Notifier\+::brightness =$>$ \mbox{\hyperlink{class_change_notifier_a41c523b07f8361bea533827a49496657}{\+\_\+brightness}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a7b6b317b485485ad30a7d30ba821e000}\index{ChangeNotifier@{ChangeNotifier}!category@{category}}
+\index{category@{category}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily \label{class_change_notifier_a7b6b317b485485ad30a7d30ba821e000} 
+\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}} Change\+Notifier\+::category\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ad4f65733979e7c2fdd7f4b37972c7401}\index{ChangeNotifier@{ChangeNotifier}!chosenCategory@{chosenCategory}}
+\index{chosenCategory@{chosenCategory}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{chosenCategory}{chosenCategory}}
+{\footnotesize\ttfamily \label{class_change_notifier_ad4f65733979e7c2fdd7f4b37972c7401} 
+String Change\+Notifier\+::chosen\+Category = \textquotesingle{}Wybierz kategorię\textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a2b2c21fb1ab2922378342178e3e5ccdd}\index{ChangeNotifier@{ChangeNotifier}!date@{date}}
+\index{date@{date}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily \label{class_change_notifier_a2b2c21fb1ab2922378342178e3e5ccdd} 
+Date\+Time Change\+Notifier\+::date\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ab176a276854afd6824da1b2a622547b6}\index{ChangeNotifier@{ChangeNotifier}!description@{description}}
+\index{description@{description}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{description}{description}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_change_notifier_ab176a276854afd6824da1b2a622547b6} 
+String Change\+Notifier\+::description = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a5b55cf3de5bcef75a678d13c3b5cc73b}\index{ChangeNotifier@{ChangeNotifier}!description@{description}}
+\index{description@{description}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{description}{description}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_change_notifier_a5b55cf3de5bcef75a678d13c3b5cc73b} 
+final String Change\+Notifier\+::description\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a343532738ee5d44e29f0faf76895a5cd}\index{ChangeNotifier@{ChangeNotifier}!email@{email}}
+\index{email@{email}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily \label{class_change_notifier_a343532738ee5d44e29f0faf76895a5cd} 
+String Change\+Notifier\+::email\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_aac14c2642cfcf0a7be9fea63b8032434}\index{ChangeNotifier@{ChangeNotifier}!image@{image}}
+\index{image@{image}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily \label{class_change_notifier_aac14c2642cfcf0a7be9fea63b8032434} 
+final Uint8\+List Change\+Notifier\+::image\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a8871207f823800c046212e342804db16}\index{ChangeNotifier@{ChangeNotifier}!isAutoBrightnessEnabled@{isAutoBrightnessEnabled}}
+\index{isAutoBrightnessEnabled@{isAutoBrightnessEnabled}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{isAutoBrightnessEnabled}{isAutoBrightnessEnabled}}
+{\footnotesize\ttfamily \label{class_change_notifier_a8871207f823800c046212e342804db16} 
+bool get Change\+Notifier\+::is\+Auto\+Brightness\+Enabled =$>$ \mbox{\hyperlink{class_change_notifier_a10b06f5046d97fdaed471379340dd82d}{\+\_\+is\+Auto\+Brightness\+Enabled}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a557465a2a31b0e1f2b6e2c0cc06c8959}\index{ChangeNotifier@{ChangeNotifier}!name@{name}}
+\index{name@{name}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_change_notifier_a557465a2a31b0e1f2b6e2c0cc06c8959} 
+String Change\+Notifier\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a301f7c49fb637effc4c824476fc4f97a}\index{ChangeNotifier@{ChangeNotifier}!photo@{photo}}
+\index{photo@{photo}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{photo}{photo}}
+{\footnotesize\ttfamily \label{class_change_notifier_a301f7c49fb637effc4c824476fc4f97a} 
+Uint8\+List Change\+Notifier\+::photo\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a0b333eb5f45f3a9c48dd16747017bf0c}\index{ChangeNotifier@{ChangeNotifier}!progressData@{progressData}}
+\index{progressData@{progressData}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{progressData}{progressData}}
+{\footnotesize\ttfamily \label{class_change_notifier_a0b333eb5f45f3a9c48dd16747017bf0c} 
+List$<$\mbox{\hyperlink{class_change_notifier_a0a9a3679b4e0b4fe38bbcac9ee78821d}{Progress}}$>$ Change\+Notifier\+::progress\+Data = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_ac508d58630728a45653d382e64116aa5}\index{ChangeNotifier@{ChangeNotifier}!quotesData@{quotesData}}
+\index{quotesData@{quotesData}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{quotesData}{quotesData}}
+{\footnotesize\ttfamily \label{class_change_notifier_ac508d58630728a45653d382e64116aa5} 
+List$<$\mbox{\hyperlink{class_quote}{Quote}}$>$ get Change\+Notifier\+::quotes\+Data =$>$ \mbox{\hyperlink{class_change_notifier_ae86499b0b8919515fd2a828e47d73834}{\+\_\+quotes\+Data}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a63a361b94c010447bba2323329efad37}\index{ChangeNotifier@{ChangeNotifier}!selectedCategory@{selectedCategory}}
+\index{selectedCategory@{selectedCategory}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{selectedCategory}{selectedCategory}}
+{\footnotesize\ttfamily \label{class_change_notifier_a63a361b94c010447bba2323329efad37} 
+\mbox{\hyperlink{progress__model_8dart_a8aa5b312a41b15f879f9b3abbbe9bd5c}{Category}} Change\+Notifier\+::selected\+Category\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a00c21c67b8dc54b1a681173490af95ca}\index{ChangeNotifier@{ChangeNotifier}!title@{title}}
+\index{title@{title}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{title}{title}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_change_notifier_a00c21c67b8dc54b1a681173490af95ca} 
+String Change\+Notifier\+::title = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_aa91ed6ab99b5e7229350ed016617c826}\index{ChangeNotifier@{ChangeNotifier}!title@{title}}
+\index{title@{title}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{title}{title}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_change_notifier_aa91ed6ab99b5e7229350ed016617c826} 
+final String Change\+Notifier\+::title\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_change_notifier_a89027428393ede79588dbd0bd6b99cd3}\index{ChangeNotifier@{ChangeNotifier}!uid@{uid}}
+\index{uid@{uid}!ChangeNotifier@{ChangeNotifier}}
+\doxysubsubsection{\texorpdfstring{uid}{uid}}
+{\footnotesize\ttfamily \label{class_change_notifier_a89027428393ede79588dbd0bd6b99cd3} 
+String Change\+Notifier\+::uid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/models/\mbox{\hyperlink{app__user_8dart}{app\+\_\+user.\+dart}}\item 
+lib/models/\mbox{\hyperlink{brightness_8dart}{brightness.\+dart}}\item 
+lib/models/\mbox{\hyperlink{form__state_8dart}{form\+\_\+state.\+dart}}\item 
+lib/models/\mbox{\hyperlink{progress__model_8dart}{progress\+\_\+model.\+dart}}\item 
+lib/models/\mbox{\hyperlink{quote__model_8dart}{quote\+\_\+model.\+dart}}\item 
+lib/providers/\mbox{\hyperlink{home__page__providers_8dart}{home\+\_\+page\+\_\+providers.\+dart}}\end{DoxyCompactItemize}

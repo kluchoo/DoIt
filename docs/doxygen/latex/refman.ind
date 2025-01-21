@@ -1,0 +1,917 @@
+\begin{theindex}
+
+  \item {\_addExercise}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_addWorkout}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_auth}
+    \subitem {LocalAuth}, \hyperpage{23}
+  \item {\_brightness}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {\_canAuthenticate}
+    \subitem {LocalAuth}, \hyperpage{23}
+  \item {\_deleteWorkout}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_disableAutoBrightness}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {\_emailController}
+    \subitem {logowanie.dart}, \hyperpage{64}
+    \subitem {rejestracja.dart}, \hyperpage{66}
+  \item {\_enableAutoBrightness}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {\_errorFeedback}
+    \subitem {logowanie.dart}, \hyperpage{64}
+    \subitem {rejestracja.dart}, \hyperpage{66}
+  \item {\_fetchWorkouts}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_firebaseAuth}
+    \subitem {AuthService}, \hyperpage{9}
+  \item {\_formKey}
+    \subitem {logowanie.dart}, \hyperpage{64}
+    \subitem {rejestracja.dart}, \hyperpage{66}
+  \item {\_initializeSeria}
+    \subitem {progressDocumentations.dart}, \hyperpage{53}
+  \item {\_isAutoBrightnessEnabled}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {\_isInitialized}
+    \subitem {cytaty.dart}, \hyperpage{57}
+  \item {\_lightSubscription}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {\_observeSystemBrightness}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {\_passwordController}
+    \subitem {logowanie.dart}, \hyperpage{64}
+    \subitem {rejestracja.dart}, \hyperpage{66}
+  \item {\_quotesData}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {\_removeExercise}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_removeWorkout}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_saveWorkout}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {\_setupCameraController}
+    \subitem {camera.dart}, \hyperpage{55}
+  \item {\_systemBrightnessSubscription}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+  \item {\_timeString}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {\_timer}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {\_updateTime}
+    \subitem {progressDocumentations.dart}, \hyperpage{53}
+
+  \indexspace
+
+  \item {addNewUsersDocument}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {addProgress}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {addQuote}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {AppColors}, \hyperpage{7}
+    \subitem {element}, \hyperpage{7}
+    \subitem {highlightColor}, \hyperpage{7}
+    \subitem {primaryAccent}, \hyperpage{7}
+    \subitem {primaryColor}, \hyperpage{7}
+    \subitem {secondaryAccent}, \hyperpage{7}
+    \subitem {secondaryColor}, \hyperpage{8}
+    \subitem {successColor}, \hyperpage{8}
+    \subitem {textColor}, \hyperpage{8}
+    \subitem {titleColor}, \hyperpage{8}
+  \item {AppUser}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {appUserProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{49}
+  \item {auth\_provider.dart}
+    \subitem {authProvider}, \hyperpage{47}
+  \item {authenticate}
+    \subitem {LocalAuth}, \hyperpage{23}
+  \item {authenticated}
+    \subitem {logowanie.dart}, \hyperpage{64}
+  \item {author}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+  \item {authProvider}
+    \subitem {auth\_provider.dart}, \hyperpage{47}
+  \item {AuthService}, \hyperpage{8}
+    \subitem {\_firebaseAuth}, \hyperpage{9}
+    \subitem {encode}, \hyperpage{9}
+    \subitem {getCurrentUser}, \hyperpage{9}
+    \subitem {signIn}, \hyperpage{9}
+    \subitem {signOut}, \hyperpage{9}
+    \subitem {signUp}, \hyperpage{9}
+  \item {AutoBrightnessViewModel}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {autorController}
+    \subitem {tworzenie\_cytatu.dart}, \hyperpage{63}
+  \item {Aystent}
+    \subitem {StatelessWidget}, \hyperpage{26}
+
+  \indexspace
+
+  \item {botom\_navigation\_bar.dart}
+    \subitem {build}, \hyperpage{34}
+    \subitem {chosenIndex}, \hyperpage{34}
+    \subitem {createState}, \hyperpage{34}
+    \subitem {CustomBottomNavigationBar}, \hyperpage{34}
+    \subitem {onItemSelected}, \hyperpage{34}
+  \item {brightness}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+  \item {brightnessProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{49}
+  \item {build}
+    \subitem {botom\_navigation\_bar.dart}, \hyperpage{34}
+    \subitem {buttons.dart}, \hyperpage{35}
+    \subitem {camera.dart}, \hyperpage{55}
+    \subitem {ConsumerState$<$ ReLogIn $>$}, \hyperpage{17}
+    \subitem {ConsumerWidget}, \hyperpage{21}
+    \subitem {cytat.dart}, \hyperpage{36}
+    \subitem {cytaty.dart}, \hyperpage{56}
+    \subitem {home.dart}, \hyperpage{52}
+    \subitem {logowanie.dart}, \hyperpage{63}
+    \subitem {main.dart}, \hyperpage{41}
+    \subitem {plan.dart}, \hyperpage{58}
+    \subitem {plan\_treningowy.dart}, \hyperpage{60}
+    \subitem {profil\_uzytkownika.dart}, \hyperpage{61}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+    \subitem {rejestracja.dart}, \hyperpage{65}
+    \subitem {StatelessWidget}, \hyperpage{26--28}
+    \subitem {styled\_button.dart}, \hyperpage{37}
+    \subitem {styled\_text.dart}, \hyperpage{38}
+    \subitem {testowy.dart}, \hyperpage{67}
+    \subitem {text.dart}, \hyperpage{40}
+    \subitem {tworzenie\_cytatu.dart}, \hyperpage{62}
+  \item {buttons.dart}
+    \subitem {build}, \hyperpage{35}
+    \subitem {Function}, \hyperpage{35}
+    \subitem {PrzyciskZUkrytymTlem}, \hyperpage{35}
+    \subitem {StygiButon}, \hyperpage{35}
+    \subitem {text}, \hyperpage{35}
+
+  \indexspace
+
+  \item {Camera}
+    \subitem {StatefulWidget}, \hyperpage{25}
+  \item {camera.dart}
+    \subitem {\_setupCameraController}, \hyperpage{55}
+    \subitem {build}, \hyperpage{55}
+    \subitem {cameraController}, \hyperpage{56}
+    \subitem {cameras}, \hyperpage{56}
+    \subitem {cameraUI}, \hyperpage{55}
+    \subitem {initState}, \hyperpage{55}
+  \item {cameraController}
+    \subitem {camera.dart}, \hyperpage{56}
+  \item {cameras}
+    \subitem {camera.dart}, \hyperpage{56}
+  \item {cameraUI}
+    \subitem {camera.dart}, \hyperpage{55}
+  \item {Category}
+    \subitem {progress\_model.dart}, \hyperpage{43}
+  \item {category}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+  \item {changeAccount}
+    \subitem {ponowne\_logowanie.dart}, \hyperpage{65}
+  \item {ChangeNotifier}, \hyperpage{10}
+    \subitem {\_brightness}, \hyperpage{14}
+    \subitem {\_disableAutoBrightness}, \hyperpage{11}
+    \subitem {\_enableAutoBrightness}, \hyperpage{11}
+    \subitem {\_isAutoBrightnessEnabled}, \hyperpage{14}
+    \subitem {\_lightSubscription}, \hyperpage{14}
+    \subitem {\_observeSystemBrightness}, \hyperpage{11}
+    \subitem {\_quotesData}, \hyperpage{14}
+    \subitem {\_systemBrightnessSubscription}, \hyperpage{15}
+    \subitem {addNewUsersDocument}, \hyperpage{11}
+    \subitem {addProgress}, \hyperpage{11}
+    \subitem {addQuote}, \hyperpage{11}
+    \subitem {AppUser}, \hyperpage{11}
+    \subitem {AutoBrightnessViewModel}, \hyperpage{11}
+    \subitem {brightness}, \hyperpage{15}
+    \subitem {category}, \hyperpage{15}
+    \subitem {changeTitle}, \hyperpage{11}
+    \subitem {chosenCategory}, \hyperpage{15}
+    \subitem {date}, \hyperpage{15}
+    \subitem {dayStrikeUpdate}, \hyperpage{12}
+    \subitem {description}, \hyperpage{15}
+    \subitem {deserializeProgress}, \hyperpage{12}
+    \subitem {dispose}, \hyperpage{12}
+    \subitem {email}, \hyperpage{15}
+    \subitem {encode}, \hyperpage{12}
+    \subitem {fetchAndAddQuote}, \hyperpage{12}
+    \subitem {fetchProgress}, \hyperpage{12}
+    \subitem {fetchQuotes}, \hyperpage{12}
+    \subitem {fetchUserAuthData}, \hyperpage{12}
+    \subitem {fetchUserData}, \hyperpage{12}
+    \subitem {image}, \hyperpage{15}
+    \subitem {isAutoBrightnessEnabled}, \hyperpage{16}
+    \subitem {logOut}, \hyperpage{13}
+    \subitem {name}, \hyperpage{16}
+    \subitem {photo}, \hyperpage{16}
+    \subitem {Progress}, \hyperpage{13}
+    \subitem {progressData}, \hyperpage{16}
+    \subitem {quotesData}, \hyperpage{16}
+    \subitem {removeProgress}, \hyperpage{13}
+    \subitem {saveProgress}, \hyperpage{13}
+    \subitem {selectedCategory}, \hyperpage{16}
+    \subitem {serializeProgress}, \hyperpage{13}
+    \subitem {title}, \hyperpage{16}
+    \subitem {TitleProvider}, \hyperpage{13}
+    \subitem {toFirestore}, \hyperpage{13}
+    \subitem {toggleAutoBrightness}, \hyperpage{13}
+    \subitem {uid}, \hyperpage{16}
+    \subitem {update}, \hyperpage{13}
+    \subitem {updateCategory}, \hyperpage{14}
+    \subitem {updateDescription}, \hyperpage{14}
+    \subitem {updateProgress}, \hyperpage{14}
+    \subitem {updateTitle}, \hyperpage{14}
+  \item {changeTitle}
+    \subitem {ChangeNotifier}, \hyperpage{11}
+  \item {child}
+    \subitem {plan\_treningowy.dart}, \hyperpage{60}
+    \subitem {StatelessWidget}, \hyperpage{30}
+    \subitem {styled\_button.dart}, \hyperpage{38}
+  \item {chosenCategory}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+  \item {chosenIndex}
+    \subitem {botom\_navigation\_bar.dart}, \hyperpage{34}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{21}
+  \item {color}
+    \subitem {StatelessWidget}, \hyperpage{30}
+    \subitem {text.dart}, \hyperpage{40}
+  \item {ConsumerState$<$ ReLogIn $>$}, \hyperpage{17}
+    \subitem {build}, \hyperpage{17}
+    \subitem {initState}, \hyperpage{17}
+  \item {ConsumerStatefulWidget}, \hyperpage{18}
+    \subitem {chosenIndex}, \hyperpage{21}
+    \subitem {createState}, \hyperpage{18, 19}
+    \subitem {CustomBottomNavigationBar}, \hyperpage{19}
+    \subitem {Home}, \hyperpage{19}
+    \subitem {onItemSelected}, \hyperpage{21}
+    \subitem {ProfileSettingsPage}, \hyperpage{19}
+    \subitem {Progressdocumentations}, \hyperpage{20}
+    \subitem {Quotes}, \hyperpage{20}
+    \subitem {ReLogIn}, \hyperpage{20}
+    \subitem {serializeProgress}, \hyperpage{20}
+    \subitem {SignInForm}, \hyperpage{20}
+    \subitem {SignUpForm}, \hyperpage{20}
+    \subitem {Testy}, \hyperpage{20}
+    \subitem {TworzenieCytatu}, \hyperpage{20}
+  \item {ConsumerWidget}, \hyperpage{21}
+    \subitem {build}, \hyperpage{21}
+    \subitem {WelcomeScreen}, \hyperpage{22}
+  \item {controler}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {controller}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {copyWith}
+    \subitem {current\_quote\_provider.dart}, \hyperpage{48}
+  \item {createState}
+    \subitem {botom\_navigation\_bar.dart}, \hyperpage{34}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{18, 19}
+    \subitem {cytat.dart}, \hyperpage{36}
+    \subitem {ponowne\_logowanie.dart}, \hyperpage{65}
+    \subitem {StatefulWidget}, \hyperpage{25}
+  \item {current\_quote\_provider.dart}
+    \subitem {copyWith}, \hyperpage{48}
+    \subitem {CurrentQuoteState}, \hyperpage{48}
+    \subitem {displayed}, \hyperpage{48}
+    \subitem {skipped}, \hyperpage{48}
+  \item {currentPlatform}
+    \subitem {DefaultFirebaseOptions}, \hyperpage{22}
+  \item {currentQuoteProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{49}
+  \item {CurrentQuoteState}
+    \subitem {current\_quote\_provider.dart}, \hyperpage{48}
+  \item {CustomBottomNavigationBar}
+    \subitem {botom\_navigation\_bar.dart}, \hyperpage{34}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{19}
+  \item {cytat.dart}
+    \subitem {build}, \hyperpage{36}
+    \subitem {createState}, \hyperpage{36}
+    \subitem {quote}, \hyperpage{36}
+    \subitem {QuotesCard}, \hyperpage{36}
+  \item {cytaty.dart}
+    \subitem {\_isInitialized}, \hyperpage{57}
+    \subitem {build}, \hyperpage{56}
+    \subitem {didChangeDependencies}, \hyperpage{56}
+    \subitem {swiperController}, \hyperpage{57}
+
+  \indexspace
+
+  \item {date}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+    \subitem {StatefulWidget}, \hyperpage{25}
+    \subitem {tworzenie\_cytatu.dart}, \hyperpage{63}
+    \subitem {Workout}, \hyperpage{32}
+  \item {dateString}
+    \subitem {Workout}, \hyperpage{32}
+  \item {dayStrikeUpdate}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {decode}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {DefaultFirebaseOptions}, \hyperpage{22}
+    \subitem {currentPlatform}, \hyperpage{22}
+    \subitem {ios}, \hyperpage{22}
+  \item {description}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+  \item {deserializeProgress}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {deserializeWorkouts}
+    \subitem {plan.dart}, \hyperpage{58}
+  \item {detoks}
+    \subitem {progress\_model.dart}, \hyperpage{43}
+  \item {didChangeDependencies}
+    \subitem {cytaty.dart}, \hyperpage{56}
+  \item {displayed}
+    \subitem {current\_quote\_provider.dart}, \hyperpage{48}
+    \subitem {home\_page\_providers.dart}, \hyperpage{50}
+  \item {dispose}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {do\_it}, \hyperpage{1}
+  \item {downloadProfileImg}
+    \subitem {testowy.dart}, \hyperpage{67}
+
+  \indexspace
+
+  \item {element}
+    \subitem {AppColors}, \hyperpage{7}
+  \item {email}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+  \item {encode}
+    \subitem {AuthService}, \hyperpage{9}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {encodeBytes}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {Exercise}
+    \subitem {plan.dart}, \hyperpage{59}
+  \item {exercises}
+    \subitem {Workout}, \hyperpage{32}
+
+  \indexspace
+
+  \item {fetchAndAddQuote}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {fetchProgress}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {fetchQuotes}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {fetchUserAuthData}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {fetchUserData}
+    \subitem {ChangeNotifier}, \hyperpage{12}
+  \item {fromString}
+    \subitem {progress\_model.dart}, \hyperpage{43}
+  \item {Function}
+    \subitem {buttons.dart}, \hyperpage{35}
+    \subitem {StatelessWidget}, \hyperpage{28}
+    \subitem {styled\_button.dart}, \hyperpage{37}
+
+  \indexspace
+
+  \item {getCurrentUser}
+    \subitem {AuthService}, \hyperpage{9}
+
+  \indexspace
+
+  \item {highlightColor}
+    \subitem {AppColors}, \hyperpage{7}
+  \item {Home}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{19}
+  \item {home.dart}
+    \subitem {build}, \hyperpage{52}
+    \subitem {index}, \hyperpage{53}
+    \subitem {initState}, \hyperpage{52}
+    \subitem {isScreenDimmed}, \hyperpage{53}
+    \subitem {profileImage}, \hyperpage{53}
+    \subitem {updateIndex}, \hyperpage{52}
+  \item {home\_page\_providers.dart}
+    \subitem {appUserProvider}, \hyperpage{49}
+    \subitem {brightnessProvider}, \hyperpage{49}
+    \subitem {currentQuoteProvider}, \hyperpage{49}
+    \subitem {displayed}, \hyperpage{50}
+    \subitem {increment}, \hyperpage{49}
+    \subitem {progressProvider}, \hyperpage{50}
+    \subitem {quotesProvider}, \hyperpage{50}
+    \subitem {restart}, \hyperpage{49}
+    \subitem {skipped}, \hyperpage{50}
+    \subitem {titleProvider}, \hyperpage{50}
+
+  \indexspace
+
+  \item {icon}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {id}
+    \subitem {Workout}, \hyperpage{32}
+  \item {image}
+    \subitem {ChangeNotifier}, \hyperpage{15}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+  \item {img}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {increment}
+    \subitem {home\_page\_providers.dart}, \hyperpage{49}
+    \subitem {StateNotifier$<$ CurrentQuoteState $>$}, \hyperpage{31}
+  \item {index}
+    \subitem {home.dart}, \hyperpage{53}
+  \item {initState}
+    \subitem {camera.dart}, \hyperpage{55}
+    \subitem {ConsumerState$<$ ReLogIn $>$}, \hyperpage{17}
+    \subitem {home.dart}, \hyperpage{52}
+    \subitem {plan.dart}, \hyperpage{59}
+    \subitem {profil\_uzytkownika.dart}, \hyperpage{61}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {ios}
+    \subitem {DefaultFirebaseOptions}, \hyperpage{22}
+  \item {isAutoBrightnessEnabled}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {isFav}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+  \item {isScreenDimmed}
+    \subitem {home.dart}, \hyperpage{53}
+  \item {isSignUpFormProvider}
+    \subitem {providers.dart}, \hyperpage{51}
+
+  \indexspace
+
+  \item {lib/firebase\_options.dart}, \hyperpage{33}
+  \item {lib/komponenty/app\_background\_colors.dart}, \hyperpage{33}
+  \item {lib/komponenty/botom\_navigation\_bar.dart}, \hyperpage{33}
+  \item {lib/komponenty/buttons.dart}, \hyperpage{34}
+  \item {lib/komponenty/cytat.dart}, \hyperpage{36}
+  \item {lib/komponenty/profile.dart}, \hyperpage{37}
+  \item {lib/komponenty/styled\_button.dart}, \hyperpage{37}
+  \item {lib/komponenty/styled\_text.dart}, \hyperpage{38}
+  \item {lib/komponenty/text.dart}, \hyperpage{39}
+  \item {lib/komponenty/textfield.dart}, \hyperpage{40}
+  \item {lib/main.dart}, \hyperpage{41}
+  \item {lib/models/app\_user.dart}, \hyperpage{41}
+  \item {lib/models/brightness.dart}, \hyperpage{42}
+  \item {lib/models/form\_state.dart}, \hyperpage{42}
+  \item {lib/models/progress\_model.dart}, \hyperpage{42}
+  \item {lib/models/quote\_model.dart}, \hyperpage{45}
+  \item {lib/providers.dart}, \hyperpage{50}
+  \item {lib/providers/auth\_provider.dart}, \hyperpage{47}
+  \item {lib/providers/current\_quote\_provider.dart}, \hyperpage{47}
+  \item {lib/providers/home\_page\_providers.dart}, \hyperpage{48}
+  \item {lib/providers/providers.dart}, \hyperpage{51}
+  \item {lib/services/auth\_service.dart}, \hyperpage{51}
+  \item {lib/services/local\_auth\_service.dart}, \hyperpage{51}
+  \item {lib/strony/aplikacja/home.dart}, \hyperpage{52}
+  \item {lib/strony/aplikacja/progressDocumentations.dart}, 
+		\hyperpage{53}
+  \item {lib/strony/aplikacja/zakladki/aystent.dart}, \hyperpage{54}
+  \item {lib/strony/aplikacja/zakladki/camera.dart}, \hyperpage{55}
+  \item {lib/strony/aplikacja/zakladki/cytaty.dart}, \hyperpage{56}
+  \item {lib/strony/aplikacja/zakladki/plan.dart}, \hyperpage{57}
+  \item {lib/strony/aplikacja/zakladki/plan\_treningowy.dart}, 
+		\hyperpage{60}
+  \item {lib/strony/aplikacja/zakladki/pomiary.dart}, \hyperpage{61}
+  \item {lib/strony/aplikacja/zakladki/profil\_uzytkownika.dart}, 
+		\hyperpage{61}
+  \item {lib/strony/aplikacja/zakladki/tworzenie\_cytatu.dart}, 
+		\hyperpage{62}
+  \item {lib/strony/autoryzacja/logowanie.dart}, \hyperpage{63}
+  \item {lib/strony/autoryzacja/ponowne\_logowanie.dart}, 
+		\hyperpage{64}
+  \item {lib/strony/autoryzacja/rejestracja.dart}, \hyperpage{65}
+  \item {lib/strony/autoryzacja/welcome.dart}, \hyperpage{66}
+  \item {lib/strony/testowy.dart}, \hyperpage{66}
+  \item {lib/theme.dart}, \hyperpage{68}
+  \item {likes}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+  \item {LocalAuth}, \hyperpage{23}
+    \subitem {\_auth}, \hyperpage{23}
+    \subitem {\_canAuthenticate}, \hyperpage{23}
+    \subitem {authenticate}, \hyperpage{23}
+  \item {logOut}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {logowanie.dart}
+    \subitem {\_emailController}, \hyperpage{64}
+    \subitem {\_errorFeedback}, \hyperpage{64}
+    \subitem {\_formKey}, \hyperpage{64}
+    \subitem {\_passwordController}, \hyperpage{64}
+    \subitem {authenticated}, \hyperpage{64}
+    \subitem {build}, \hyperpage{63}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.dart}, \hyperpage{41}
+    \subitem {widget\_test.dart}, \hyperpage{68}
+  \item {main.dart}
+    \subitem {build}, \hyperpage{41}
+    \subitem {main}, \hyperpage{41}
+    \subitem {NoSessionLogin}, \hyperpage{41}
+    \subitem {SessionLogin}, \hyperpage{41}
+  \item {MainAppBackground}
+    \subitem {StatelessWidget}, \hyperpage{28}
+
+  \indexspace
+
+  \item {name}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+    \subitem {plan.dart}, \hyperpage{59}
+    \subitem {Workout}, \hyperpage{32}
+  \item {nameController}
+    \subitem {profil\_uzytkownika.dart}, \hyperpage{62}
+  \item {NoSessionLogin}
+    \subitem {main.dart}, \hyperpage{41}
+
+  \indexspace
+
+  \item {obscuretxt}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {onItemSelected}
+    \subitem {botom\_navigation\_bar.dart}, \hyperpage{34}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{21}
+  \item {onPressed}
+    \subitem {plan\_treningowy.dart}, \hyperpage{60}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {ownerId}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{47}
+    \subitem {tworzenie\_cytatu.dart}, \hyperpage{63}
+
+  \indexspace
+
+  \item {photo}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {pickedImageBytes}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {plan.dart}
+    \subitem {\_addExercise}, \hyperpage{58}
+    \subitem {\_addWorkout}, \hyperpage{58}
+    \subitem {\_deleteWorkout}, \hyperpage{58}
+    \subitem {\_fetchWorkouts}, \hyperpage{58}
+    \subitem {\_removeExercise}, \hyperpage{58}
+    \subitem {\_removeWorkout}, \hyperpage{58}
+    \subitem {\_saveWorkout}, \hyperpage{58}
+    \subitem {build}, \hyperpage{58}
+    \subitem {deserializeWorkouts}, \hyperpage{58}
+    \subitem {Exercise}, \hyperpage{59}
+    \subitem {initState}, \hyperpage{59}
+    \subitem {name}, \hyperpage{59}
+    \subitem {repetitions}, \hyperpage{59}
+    \subitem {sets}, \hyperpage{59}
+    \subitem {toMap}, \hyperpage{59}
+    \subitem {weight}, \hyperpage{59}
+    \subitem {workouts}, \hyperpage{59}
+  \item {plan\_treningowy.dart}
+    \subitem {build}, \hyperpage{60}
+    \subitem {child}, \hyperpage{60}
+    \subitem {onPressed}, \hyperpage{60}
+    \subitem {PlanTreningowy}, \hyperpage{60}
+    \subitem {style}, \hyperpage{60}
+  \item {PlanTreningowy}
+    \subitem {plan\_treningowy.dart}, \hyperpage{60}
+  \item {Pomiary}
+    \subitem {StatelessWidget}, \hyperpage{28}
+  \item {ponowne\_logowanie.dart}
+    \subitem {changeAccount}, \hyperpage{65}
+    \subitem {createState}, \hyperpage{65}
+    \subitem {ReLogIn}, \hyperpage{65}
+  \item {postanowienie}
+    \subitem {progress\_model.dart}, \hyperpage{44}
+  \item {primaryAccent}
+    \subitem {AppColors}, \hyperpage{7}
+  \item {primaryColor}
+    \subitem {AppColors}, \hyperpage{7}
+  \item {primaryTheme}
+    \subitem {theme.dart}, \hyperpage{68}
+  \item {profil\_uzytkownika.dart}
+    \subitem {build}, \hyperpage{61}
+    \subitem {initState}, \hyperpage{61}
+    \subitem {nameController}, \hyperpage{62}
+    \subitem {profileImage}, \hyperpage{62}
+    \subitem {updateProfileImg}, \hyperpage{61}
+  \item {profileImage}
+    \subitem {home.dart}, \hyperpage{53}
+    \subitem {profil\_uzytkownika.dart}, \hyperpage{62}
+  \item {ProfileScreen}
+    \subitem {StatelessWidget}, \hyperpage{28}
+  \item {ProfileSettingsPage}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{19}
+  \item {Progress}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+    \subitem {progress\_model.dart}, \hyperpage{44}
+  \item {progress\_model.dart}
+    \subitem {Category}, \hyperpage{43}
+    \subitem {category}, \hyperpage{45}
+    \subitem {date}, \hyperpage{45}
+    \subitem {description}, \hyperpage{45}
+    \subitem {detoks}, \hyperpage{43}
+    \subitem {fromString}, \hyperpage{43}
+    \subitem {icon}, \hyperpage{45}
+    \subitem {image}, \hyperpage{45}
+    \subitem {postanowienie}, \hyperpage{44}
+    \subitem {Progress}, \hyperpage{44}
+    \subitem {rozwoj\_osobisty}, \hyperpage{44}
+    \subitem {title}, \hyperpage{45}
+    \subitem {trening\_kardio}, \hyperpage{44}
+    \subitem {trening\_silowy}, \hyperpage{44}
+  \item {progressData}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {Progressdocumentations}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {progressDocumentations.dart}
+    \subitem {\_initializeSeria}, \hyperpage{53}
+    \subitem {\_timeString}, \hyperpage{54}
+    \subitem {\_timer}, \hyperpage{54}
+    \subitem {\_updateTime}, \hyperpage{53}
+    \subitem {build}, \hyperpage{54}
+    \subitem {controller}, \hyperpage{54}
+    \subitem {dispose}, \hyperpage{54}
+    \subitem {initState}, \hyperpage{54}
+    \subitem {seria}, \hyperpage{54}
+  \item {progressFormProvider}
+    \subitem {providers.dart}, \hyperpage{51}
+  \item {progressProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{50}
+  \item {providers.dart}
+    \subitem {isSignUpFormProvider}, \hyperpage{51}
+    \subitem {progressFormProvider}, \hyperpage{51}
+  \item {PrzyciskZUkrytymTlem}
+    \subitem {buttons.dart}, \hyperpage{35}
+    \subitem {StatelessWidget}, \hyperpage{28}
+
+  \indexspace
+
+  \item {Quote}, \hyperpage{23}
+    \subitem {author}, \hyperpage{24}
+    \subitem {date}, \hyperpage{24}
+    \subitem {likes}, \hyperpage{24}
+    \subitem {ownerId}, \hyperpage{24}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+  \item {quote}
+    \subitem {cytat.dart}, \hyperpage{36}
+    \subitem {Quote}, \hyperpage{24}
+    \subitem {quote\_model.dart}, \hyperpage{47}
+    \subitem {StatefulWidget}, \hyperpage{25}
+  \item {quote\_model.dart}
+    \subitem {author}, \hyperpage{46}
+    \subitem {date}, \hyperpage{46}
+    \subitem {isFav}, \hyperpage{46}
+    \subitem {likes}, \hyperpage{46}
+    \subitem {ownerId}, \hyperpage{47}
+    \subitem {Quote}, \hyperpage{46}
+    \subitem {quote}, \hyperpage{47}
+    \subitem {QuoteToCreate}, \hyperpage{46}
+  \item {quoteController}
+    \subitem {tworzenie\_cytatu.dart}, \hyperpage{63}
+  \item {Quotes}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {QuotesCard}
+    \subitem {cytat.dart}, \hyperpage{36}
+    \subitem {StatefulWidget}, \hyperpage{25}
+  \item {quotesData}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {quotesProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{50}
+  \item {QuoteToCreate}
+    \subitem {quote\_model.dart}, \hyperpage{46}
+
+  \indexspace
+
+  \item {README.md}, \hyperpage{68}
+  \item {rejestracja.dart}
+    \subitem {\_emailController}, \hyperpage{66}
+    \subitem {\_errorFeedback}, \hyperpage{66}
+    \subitem {\_formKey}, \hyperpage{66}
+    \subitem {\_passwordController}, \hyperpage{66}
+    \subitem {build}, \hyperpage{65}
+  \item {ReLogIn}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+    \subitem {ponowne\_logowanie.dart}, \hyperpage{65}
+  \item {removeProgress}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {repetitions}
+    \subitem {plan.dart}, \hyperpage{59}
+  \item {restart}
+    \subitem {home\_page\_providers.dart}, \hyperpage{49}
+    \subitem {StateNotifier$<$ CurrentQuoteState $>$}, \hyperpage{31}
+  \item {rozwoj\_osobisty}
+    \subitem {progress\_model.dart}, \hyperpage{44}
+
+  \indexspace
+
+  \item {saveProgress}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {secondaryAccent}
+    \subitem {AppColors}, \hyperpage{7}
+  \item {secondaryColor}
+    \subitem {AppColors}, \hyperpage{8}
+  \item {selectedCategory}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {seria}
+    \subitem {progressDocumentations.dart}, \hyperpage{54}
+  \item {serializeProgress}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {SessionLogin}
+    \subitem {main.dart}, \hyperpage{41}
+    \subitem {StatelessWidget}, \hyperpage{29}
+  \item {sets}
+    \subitem {plan.dart}, \hyperpage{59}
+  \item {signIn}
+    \subitem {AuthService}, \hyperpage{9}
+  \item {SignInForm}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {signOut}
+    \subitem {AuthService}, \hyperpage{9}
+  \item {signUp}
+    \subitem {AuthService}, \hyperpage{9}
+  \item {SignUpForm}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {skipped}
+    \subitem {current\_quote\_provider.dart}, \hyperpage{48}
+    \subitem {home\_page\_providers.dart}, \hyperpage{50}
+  \item {StatefulWidget}, \hyperpage{24}
+    \subitem {Camera}, \hyperpage{25}
+    \subitem {createState}, \hyperpage{25}
+    \subitem {date}, \hyperpage{25}
+    \subitem {quote}, \hyperpage{25}
+    \subitem {QuotesCard}, \hyperpage{25}
+  \item {StatelessWidget}, \hyperpage{26}
+    \subitem {Aystent}, \hyperpage{26}
+    \subitem {build}, \hyperpage{26--28}
+    \subitem {child}, \hyperpage{30}
+    \subitem {color}, \hyperpage{30}
+    \subitem {controler}, \hyperpage{30}
+    \subitem {Function}, \hyperpage{28}
+    \subitem {icon}, \hyperpage{30}
+    \subitem {MainAppBackground}, \hyperpage{28}
+    \subitem {obscuretxt}, \hyperpage{30}
+    \subitem {onPressed}, \hyperpage{30}
+    \subitem {Pomiary}, \hyperpage{28}
+    \subitem {ProfileScreen}, \hyperpage{28}
+    \subitem {PrzyciskZUkrytymTlem}, \hyperpage{28}
+    \subitem {SessionLogin}, \hyperpage{29}
+    \subitem {style}, \hyperpage{30}
+    \subitem {StyledAppBarText}, \hyperpage{29}
+    \subitem {StyledBodyText}, \hyperpage{29}
+    \subitem {StyledButton}, \hyperpage{29}
+    \subitem {StylizowanePoleTekstowe}, \hyperpage{29}
+    \subitem {StylizowanyText}, \hyperpage{29}
+    \subitem {StylizowanyTytul}, \hyperpage{29}
+    \subitem {text}, \hyperpage{30}
+    \subitem {widget}, \hyperpage{30}
+  \item {StateNotifier$<$ CurrentQuoteState $>$}, \hyperpage{31}
+    \subitem {increment}, \hyperpage{31}
+    \subitem {restart}, \hyperpage{31}
+  \item {StygiButon}
+    \subitem {buttons.dart}, \hyperpage{35}
+  \item {style}
+    \subitem {plan\_treningowy.dart}, \hyperpage{60}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {styled\_button.dart}
+    \subitem {build}, \hyperpage{37}
+    \subitem {child}, \hyperpage{38}
+    \subitem {Function}, \hyperpage{37}
+    \subitem {StyledButton}, \hyperpage{37}
+    \subitem {StyledButtonText}, \hyperpage{37}
+    \subitem {text}, \hyperpage{38}
+  \item {styled\_text.dart}
+    \subitem {build}, \hyperpage{38}
+    \subitem {StyledAppBarText}, \hyperpage{38}
+    \subitem {StyledBodyText}, \hyperpage{39}
+    \subitem {StyledErrorText}, \hyperpage{39}
+    \subitem {StyledHeading}, \hyperpage{39}
+    \subitem {text}, \hyperpage{39}
+  \item {StyledAppBarText}
+    \subitem {StatelessWidget}, \hyperpage{29}
+    \subitem {styled\_text.dart}, \hyperpage{38}
+  \item {StyledBodyText}
+    \subitem {StatelessWidget}, \hyperpage{29}
+    \subitem {styled\_text.dart}, \hyperpage{39}
+  \item {StyledButton}
+    \subitem {StatelessWidget}, \hyperpage{29}
+    \subitem {styled\_button.dart}, \hyperpage{37}
+  \item {StyledButtonText}
+    \subitem {styled\_button.dart}, \hyperpage{37}
+  \item {StyledErrorText}
+    \subitem {styled\_text.dart}, \hyperpage{39}
+  \item {StyledHeading}
+    \subitem {styled\_text.dart}, \hyperpage{39}
+  \item {StylizowanePoleTekstowe}
+    \subitem {StatelessWidget}, \hyperpage{29}
+  \item {StylizowanyNaglowek}
+    \subitem {text.dart}, \hyperpage{40}
+  \item {StylizowanyText}
+    \subitem {StatelessWidget}, \hyperpage{29}
+    \subitem {text.dart}, \hyperpage{40}
+  \item {StylizowanyTytul}
+    \subitem {StatelessWidget}, \hyperpage{29}
+  \item {successColor}
+    \subitem {AppColors}, \hyperpage{8}
+  \item {swiperController}
+    \subitem {cytaty.dart}, \hyperpage{57}
+
+  \indexspace
+
+  \item {test/widget\_test.dart}, \hyperpage{68}
+  \item {testowy.dart}
+    \subitem {build}, \hyperpage{67}
+    \subitem {decode}, \hyperpage{67}
+    \subitem {downloadProfileImg}, \hyperpage{67}
+    \subitem {encode}, \hyperpage{67}
+    \subitem {encodeBytes}, \hyperpage{67}
+    \subitem {img}, \hyperpage{67}
+    \subitem {pickedImageBytes}, \hyperpage{67}
+    \subitem {updateProfileImg}, \hyperpage{67}
+  \item {Testy}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+  \item {text}
+    \subitem {buttons.dart}, \hyperpage{35}
+    \subitem {StatelessWidget}, \hyperpage{30}
+    \subitem {styled\_button.dart}, \hyperpage{38}
+    \subitem {styled\_text.dart}, \hyperpage{39}
+    \subitem {text.dart}, \hyperpage{40}
+  \item {text.dart}
+    \subitem {build}, \hyperpage{40}
+    \subitem {color}, \hyperpage{40}
+    \subitem {StylizowanyNaglowek}, \hyperpage{40}
+    \subitem {StylizowanyText}, \hyperpage{40}
+    \subitem {text}, \hyperpage{40}
+  \item {textColor}
+    \subitem {AppColors}, \hyperpage{8}
+  \item {theme.dart}
+    \subitem {primaryTheme}, \hyperpage{68}
+  \item {title}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+    \subitem {progress\_model.dart}, \hyperpage{45}
+  \item {titleColor}
+    \subitem {AppColors}, \hyperpage{8}
+  \item {TitleProvider}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {titleProvider}
+    \subitem {home\_page\_providers.dart}, \hyperpage{50}
+  \item {toFirestore}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {toggleAutoBrightness}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {toMap}
+    \subitem {plan.dart}, \hyperpage{59}
+  \item {trening\_kardio}
+    \subitem {progress\_model.dart}, \hyperpage{44}
+  \item {trening\_silowy}
+    \subitem {progress\_model.dart}, \hyperpage{44}
+  \item {tworzenie\_cytatu.dart}
+    \subitem {autorController}, \hyperpage{63}
+    \subitem {build}, \hyperpage{62}
+    \subitem {date}, \hyperpage{63}
+    \subitem {ownerId}, \hyperpage{63}
+    \subitem {quoteController}, \hyperpage{63}
+  \item {TworzenieCytatu}
+    \subitem {ConsumerStatefulWidget}, \hyperpage{20}
+
+  \indexspace
+
+  \item {uid}
+    \subitem {ChangeNotifier}, \hyperpage{16}
+  \item {update}
+    \subitem {ChangeNotifier}, \hyperpage{13}
+  \item {updateCategory}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {updateDescription}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {updateIndex}
+    \subitem {home.dart}, \hyperpage{52}
+  \item {updateProfileImg}
+    \subitem {profil\_uzytkownika.dart}, \hyperpage{61}
+    \subitem {testowy.dart}, \hyperpage{67}
+  \item {updateProgress}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+  \item {updateTitle}
+    \subitem {ChangeNotifier}, \hyperpage{14}
+
+  \indexspace
+
+  \item {weight}
+    \subitem {plan.dart}, \hyperpage{59}
+  \item {WelcomeScreen}
+    \subitem {ConsumerWidget}, \hyperpage{22}
+  \item {widget}
+    \subitem {StatelessWidget}, \hyperpage{30}
+  \item {widget\_test.dart}
+    \subitem {main}, \hyperpage{68}
+  \item {Workout}, \hyperpage{31}
+    \subitem {date}, \hyperpage{32}
+    \subitem {dateString}, \hyperpage{32}
+    \subitem {exercises}, \hyperpage{32}
+    \subitem {id}, \hyperpage{32}
+    \subitem {name}, \hyperpage{32}
+    \subitem {Workout}, \hyperpage{32}
+  \item {workouts}
+    \subitem {plan.dart}, \hyperpage{59}
+
+\end{theindex}

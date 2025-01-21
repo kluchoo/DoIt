@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['testowy_2edart_0',['testowy.dart',['../testowy_8dart.html',1,'']]],
+  ['testy_1',['Testy',['../class_consumer_stateful_widget.html#a703b5b8c6fc3fc42906202988607f45f',1,'ConsumerStatefulWidget']]],
+  ['text_2',['text',['../class_stateless_widget.html#a5a003b02c8689a9f470f93fa9e6322ce',1,'StatelessWidget::text'],['../buttons_8dart.html#a9bbb374607de1480da48d5bf493ff637',1,'text:&#160;buttons.dart'],['../styled__button_8dart.html#a9bbb374607de1480da48d5bf493ff637',1,'text:&#160;styled_button.dart'],['../styled__text_8dart.html#a9bbb374607de1480da48d5bf493ff637',1,'text:&#160;styled_text.dart'],['../text_8dart.html#a9bbb374607de1480da48d5bf493ff637',1,'text:&#160;text.dart']]],
+  ['text_2edart_3',['text.dart',['../text_8dart.html',1,'']]],
+  ['textcolor_4',['textColor',['../class_app_colors.html#a0a842e86d34719935fbe54b016ca728d',1,'AppColors']]],
+  ['textfield_2edart_5',['textfield.dart',['../textfield_8dart.html',1,'']]],
+  ['theme_2edart_6',['theme.dart',['../theme_8dart.html',1,'']]],
+  ['title_7',['title',['../class_change_notifier.html#a00c21c67b8dc54b1a681173490af95ca',1,'ChangeNotifier::title'],['../class_change_notifier.html#aa91ed6ab99b5e7229350ed016617c826',1,'ChangeNotifier::title'],['../progress__model_8dart.html#afd9c25c8bb225d84acb57581b638f792',1,'title:&#160;progress_model.dart']]],
+  ['titlecolor_8',['titleColor',['../class_app_colors.html#a5e386c8c10e68dfa012c38edb3636834',1,'AppColors']]],
+  ['titleprovider_9',['TitleProvider',['../class_change_notifier.html#a0fabc7046e13bee5cca7f0fdf82f0db6',1,'ChangeNotifier']]],
+  ['titleprovider_10',['titleProvider',['../home__page__providers_8dart.html#ae11a19c790e2b944744aa3ffc379b3a2',1,'home_page_providers.dart']]],
+  ['tofirestore_11',['toFirestore',['../class_change_notifier.html#a6a282afe3cff9078a8a1eec3e9aad705',1,'ChangeNotifier']]],
+  ['toggleautobrightness_12',['toggleAutoBrightness',['../class_change_notifier.html#adfa7663aed7dd23fa713a6fb53b2699f',1,'ChangeNotifier']]],
+  ['tomap_13',['toMap',['../plan_8dart.html#acb7406c2d7fd5cdb800aadb668a25879',1,'plan.dart']]],
+  ['trening_5fkardio_14',['trening_kardio',['../progress__model_8dart.html#a9fd6334cc7ad73897402c44f64253993',1,'progress_model.dart']]],
+  ['trening_5fsilowy_15',['trening_silowy',['../progress__model_8dart.html#a0d4c1b6e83fa27368c56c04c0ebc103e',1,'progress_model.dart']]],
+  ['tworzenie_5fcytatu_2edart_16',['tworzenie_cytatu.dart',['../tworzenie__cytatu_8dart.html',1,'']]],
+  ['tworzeniecytatu_17',['TworzenieCytatu',['../class_consumer_stateful_widget.html#aea8067afe76d8b8d9e3162c0bc2eecd2',1,'ConsumerStatefulWidget']]]
+];

@@ -115,19 +115,6 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
 
             // logowanie z palca
 
-            TextButton(
-              onPressed: () async {
-                final authenticate = await LocalAuth.authenticate();
-                setState(() {
-                  authenticated = authenticate;
-                });
-              },
-              child: Text('Odcisk Palca',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w800,
-                  )),
-            ),
-
             // submit button
             StyledButton(
               onPressed: () async {
