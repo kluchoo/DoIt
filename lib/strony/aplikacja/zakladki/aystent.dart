@@ -16,8 +16,6 @@ class _AystentState extends State<Aystent> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _activityLevelController =
-      TextEditingController();
 
   void _calculateBMI() {
     if (_bmiFormKey.currentState!.validate()) {
@@ -33,28 +31,14 @@ class _AystentState extends State<Aystent> {
     }
   }
 
-  String _bmiCategory(double bmi) {
-    if (bmi < 18.5) {
-      return 'Niedowaga';
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
-      return 'Prawidłowa waga';
-    } else if (bmi >= 25.0 && bmi <= 29.9) {
-      return 'Nadwaga';
-    } else {
-      return 'Otyłość';
-    }
-  }
-
   void _calculateCalories() {
     if (_calorieFormKey.currentState!.validate()) {
       try {
         double weight = double.parse(_weightController.text);
         int age = int.parse(_ageController.text);
         double height = double.parse(_heightController.text) / 100;
-        double activityLevel = double.parse(_activityLevelController.text);
         setState(() {
-          _calorieResult = (10 * weight + 6.25 * (height * 100) - 5 * age + 5) *
-              activityLevel;
+          _calorieResult = 10 * weight + 6.25 * (height * 100) - 5 * age + 5;
         });
       } catch (e) {
         debugPrint('Błąd podczas obliczania zapotrzebowania kalorycznego: $e');
@@ -155,7 +139,6 @@ class _AystentState extends State<Aystent> {
                     ),
                   ),
                   Text('Twoje BMI: $_bmiResult'),
-                  Text('Kategoria BMI: ${_bmiCategory(_bmiResult)}'),
                 ],
               ),
             ),
@@ -184,19 +167,6 @@ class _AystentState extends State<Aystent> {
                     },
                   ),
                   TextFormField(
-                    controller: _heightController,
-                    decoration: const InputDecoration(labelText: 'Wzrost (cm)'),
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(
-                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Proszę wprowadzić wzrost';
-                      }
-                      return null;
-                    },
-                  ),
-                  TextFormField(
                     controller: _ageController,
                     decoration: const InputDecoration(labelText: 'Wiek (lata)'),
                     keyboardType: TextInputType.number,
@@ -205,20 +175,6 @@ class _AystentState extends State<Aystent> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Proszę wprowadzić wiek';
-                      }
-                      return null;
-                    },
-                  ),
-                  TextFormField(
-                    controller: _activityLevelController,
-                    decoration: const InputDecoration(
-                        labelText: 'Poziom aktywności (1-3)'),
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(
-                        color: Color(0xFF8B4513)), // Dodano kolor jasnobrązowy
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Proszę wprowadzić poziom aktywności';
                       }
                       return null;
                     },
