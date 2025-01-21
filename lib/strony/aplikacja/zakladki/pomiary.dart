@@ -129,7 +129,7 @@ class _PomiaryState extends State<Pomiary> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
                         child: const Text(
-                          'Jak się mierzyć',
+                          'Jak się mierzyć?',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
